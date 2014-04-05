@@ -1,0 +1,592 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CD90D7DC-1141-49CD-A96F-5062EF12E601}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>iTSfv.My.MyApplication</StartupObject>
+    <RootNamespace>iTSfv</RootNamespace>
+    <AssemblyName>iTSfv</AssemblyName>
+    <MyType>WindowsForms</MyType>
+    <ApplicationIcon>Resources\itsfv2.ico</ApplicationIcon>
+    <OptionStrict>On</OptionStrict>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <OptionInfer>On</OptionInfer>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>4C9F3CB5FCA3115F4A619914C91ACEB7F8E54650</ManifestCertificateThumbprint>
+    <ManifestKeyFile>iTSfv_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <PublishUrl>ftp://ftp.powweb.com/htdocs/mcored/research/itsfv/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Background</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://wmwiki.com/mcored/research/itsfv/</InstallUrl>
+    <SupportUrl>http://sourceforge.net/forum/forum.php%3fforum_id=729721</SupportUrl>
+    <ProductName>iTSfv</ProductName>
+    <PublisherName>McoreD</PublisherName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>index.html</WebPage>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>5.60.22.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>iTSfv.xml</DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>iTSfv.xml</DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>iTSfv.xml</DocumentationFile>
+    <WarningLevel>1</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>iTSfv.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <WarningLevel>1</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.4.369, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.ITDETECTORLib">
+      <HintPath>..\lib\Interop.ITDETECTORLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.iTunesLib">
+      <HintPath>..\lib\Interop.iTunesLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="McoreIndexer, Version=2.9.2907.39509, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\McoreIndexer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="taglib-sharp, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\taglib-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="UploadersLib">
+      <HintPath>..\lib\UploadersLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Artwork\cArtworkAmazon.vb" />
+    <Compile Include="Artwork\cArtworkSearch.vb" />
+    <Compile Include="Artwork\cITunesStore.vb" />
+    <Compile Include="Artwork\iArtworkSearch.vb" />
+    <Compile Include="Artwork\cArtworkITMS.vb" />
+    <Compile Include="Artwork\cArtworkSource.vb" />
+    <Compile Include="Artwork\cArtworkSources.vb" />
+    <Compile Include="Forms\dlgHelp.Designer.vb">
+      <DependentUpon>dlgHelp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\dlgHelp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\dlgPowerOptions.Designer.vb">
+      <DependentUpon>dlgPowerOptions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\dlgPowerOptions.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSetInfo.Designer.vb">
+      <DependentUpon>frmSetInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSetInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="iTunesLib\cIITFileOrCDTrackComparer.vb" />
+    <Compile Include="My Project\Settings1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Player\cInfoAlbum.vb" />
+    <Compile Include="Player\cInfoDisc.vb" />
+    <Compile Include="cBwJob.vb" />
+    <Compile Include="Playlists\cPlaylistWriter.vb" />
+    <Compile Include="cUpdateChecker.vb" />
+    <Compile Include="cWatcher.vb" />
+    <Compile Include="Forms\dlgArtistsList.Designer.vb">
+      <DependentUpon>dlgArtistsList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\dlgArtistsList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\dlgArtworkList.Designer.vb">
+      <DependentUpon>dlgArtworkList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\dlgArtworkList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAbout.Designer.vb">
+      <DependentUpon>frmAbout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAbout.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddArtwork.Designer.vb">
+      <DependentUpon>frmAddArtwork.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAddArtwork.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmArtworkGrabberIT.Designer.vb">
+      <DependentUpon>frmArtworkGrabberIT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmArtworkGrabberIT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDebug.Designer.vb">
+      <DependentUpon>frmDebug.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDebug.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDuplicateTracks.Designer.vb">
+      <DependentUpon>frmDuplicateTracks.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDuplicateTracks.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEmailSettings.Designer.vb">
+      <DependentUpon>frmEmailSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEmailSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLyricsViewer.Designer.vb">
+      <DependentUpon>frmLyricsViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLyricsViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmValidator.Designer.vb">
+      <DependentUpon>frmValidator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmValidator.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmWMPfv.Designer.vb">
+      <DependentUpon>frmWMPfv.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmWMPfv.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddNewFiles.Designer.vb">
+      <DependentUpon>frmAddNewFiles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAddNewFiles.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmErrors.designer.vb">
+      <DependentUpon>frmErrors.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmErrors.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="iTunesLib\cStatValues.vb" />
+    <Compile Include="iTunesLib\cLibraryTasks.vb" />
+    <Compile Include="iTunesLib\cStatsMaker.vb" />
+    <Compile Include="Player\cXmlTrack.vb" />
+    <Compile Include="Player\cXmlArtwork.vb" />
+    <Compile Include="Forms\frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMain.Designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmOptions.Designer.vb">
+      <DependentUpon>frmOptions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmOptions.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSplash.Designer.vb">
+      <DependentUpon>frmSplash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSplash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmStatistics.Designer.vb">
+      <DependentUpon>frmStatistics.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmStatistics.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTrackReplace.Designer.vb">
+      <DependentUpon>frmTrackReplace.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmTrackReplace.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmVer.designer.vb">
+      <DependentUpon>frmVer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmVer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="iTunesLib\cITCGen.vb" />
+    <Compile Include="Helpers\cLastFmGenreTagger.vb" />
+    <Compile Include="Modules\mAdapter.vb" />
+    <Compile Include="Modules\mErrorCodes.vb" />
+    <Compile Include="Modules\mFileSystem.vb" />
+    <Compile Include="Modules\mLibrary.vb" />
+    <Compile Include="Modules\mAppMode.vb" />
+    <Compile Include="Modules\mFormControls.vb" />
+    <Compile Include="Modules\mJobsIT.vb" />
+    <Compile Include="Modules\mJobsTagLib.vb" />
+    <Compile Include="Modules\mJobsWMP.vb" />
+    <Compile Include="Modules\mProgress.vb" />
+    <Compile Include="Modules\mSettings.vb" />
+    <Compile Include="Modules\mScripts.vb" />
+    <Compile Include="Modules\mWarnings.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="iTunesLib\cLibraryParser.vb" />
+    <Compile Include="Helpers\cLastFmPlayCounts.vb" />
+    <Compile Include="Player\cPlayer.vb" />
+    <Compile Include="Player\cXmlTrackComparer.vb" />
+    <Compile Include="Player\iPlayer.vb" />
+    <Compile Include="Player\cPlayerIT.vb" />
+    <Compile Include="Player\cPlayerWMP.vb" />
+    <Compile Include="Player\cXmlAlbum.vb" />
+    <Compile Include="Player\cXmlAlbumArtist.vb" />
+    <Compile Include="Player\cXmlArtworkSource.vb" />
+    <Compile Include="Player\cXmlDisc.vb" />
+    <Compile Include="Playlists\cXspfCreator.vb" />
+    <Compile Include="Playlists\cXspf.vb" />
+    <Compile Include="Settings.vb" />
+    <Compile Include="Validator\cArtworkGrabberIT.vb" />
+    <Compile Include="Validator\cCommandLine.vb" />
+    <Compile Include="Validator\cDiscArtistFinder.vb" />
+    <Compile Include="Validator\cDupRemover.vb" />
+    <Compile Include="Validator\cFileDownloader.vb" />
+    <Compile Include="Validator\cFolderRemover.vb" />
+    <Compile Include="Validator\cObjectWriter.vb" />
+    <Compile Include="Validator\cRatingAdjuster.vb" />
+    <Compile Include="Validator\cTrackEditor.vb" />
+    <Compile Include="Validator\cValidator.vb" />
+    <Compile Include="Validator\cValidatorOptions.vb" />
+    <Compile Include="Validator\cXmlDiscArtistFinder.vb" />
+    <Compile Include="Validator\cXmlDiscNumberFinder.vb" />
+    <Compile Include="WMPLib\cUrlToCoverParser.vb" />
+    <Compile Include="WMPLib\mTypes.vb" />
+    <Compile Include="WMPLib\WMPArtwork.vb" />
+    <Compile Include="WMPLib\WMPTrack.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\frmMain.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings1.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\app.manifest" />
+    <EmbeddedResource Include="Forms\dlgArtistsList.resx">
+      <DependentUpon>dlgArtistsList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\dlgArtworkList.resx">
+      <DependentUpon>dlgArtworkList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\dlgHelp.resx">
+      <DependentUpon>dlgHelp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\dlgPowerOptions.resx">
+      <DependentUpon>dlgPowerOptions.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAbout.resx">
+      <DependentUpon>frmAbout.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAddArtwork.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAddArtwork.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmArtworkGrabberIT.resx">
+      <DependentUpon>frmArtworkGrabberIT.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDebug.resx">
+      <DependentUpon>frmDebug.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDuplicateTracks.resx">
+      <DependentUpon>frmDuplicateTracks.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEmailSettings.resx">
+      <DependentUpon>frmEmailSettings.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLyricsViewer.resx">
+      <DependentUpon>frmLyricsViewer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSetInfo.resx">
+      <DependentUpon>frmSetInfo.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmValidator.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmValidator.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmWMPfv.resx">
+      <DependentUpon>frmWMPfv.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAddNewFiles.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAddNewFiles.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmErrors.resx">
+      <DependentUpon>frmErrors.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmOptions.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmOptions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSplash.resx">
+      <DependentUpon>frmSplash.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmStatistics.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmStatistics.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTrackReplace.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmTrackReplace.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmVer.resx">
+      <DependentUpon>frmVer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="html.txt" />
+    <EmbeddedResource Include="Help\UpdateToIdenticalButDifferentKindFiles.txt" />
+    <EmbeddedResource Include="Help\BrowsePreviousXMLlibrary.txt" />
+    <EmbeddedResource Include="Help\ItunesStoreStandard.txt" />
+    <EmbeddedResource Include="Help\AddArtworkFromArtworkJpg.txt" />
+    <EmbeddedResource Include="Help\TagsSupported.txt" />
+    <None Include="Resources\folder_image.png" />
+    <Content Include="Resources\itsfv2.ico" />
+    <EmbeddedResource Include="Resources\replace-words.txt" />
+    <None Include="Resources\itsfv2.png" />
+    <Content Include="iTunes 001.ico" />
+    <None Include="Resources\report.png" />
+    <None Include="Resources\email.png" />
+    <None Include="Resources\help.png" />
+    <None Include="Resources\folder_add.png" />
+    <None Include="Resources\stop.png" />
+    <None Include="Resources\folder_find.png" />
+    <None Include="Resources\control_play.png" />
+    <None Include="Resources\LastFM.png" />
+    <None Include="Resources\find.png" />
+    <None Include="Resources\award_star_bronze_1.png" />
+    <None Include="Resources\page_white_acrobat.png" />
+    <None Include="Resources\application_edit.png" />
+    <None Include="Resources\folder_explore.png" />
+    <None Include="Resources\page_copy.png" />
+    <None Include="Resources\star.png" />
+    <None Include="Resources\mp3tag.png" />
+    <None Include="Resources\database_refresh.png" />
+    <None Include="Resources\chart_bar.png" />
+    <None Include="Resources\database_delete.png" />
+    <None Include="Resources\folder_delete.png" />
+    <None Include="Resources\musicfolder.png" />
+    <None Include="Resources\exit.png" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\v5-plans.txt" />
+    <EmbeddedResource Include="VersionHistory.txt" />
+    <None Include="Resources\world.png" />
+    <None Include="TODO.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ITDETECTORLib">
+      <Guid>{D6995525-B33A-4980-A106-9DF58570CC66}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="iTunesLib">
+      <Guid>{9E93C96F-CF0D-43F6-8BA8-B807A3370712}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>12</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\lib\CommandLineParser\CommandLineParser.vbproj">
+      <Project>{0750FD5C-105A-474E-AB36-CA98DC1FA2E4}</Project>
+      <Name>CommandLineParser</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lib\Graphing.V3\Graphing.vbproj">
+      <Project>{F7EEDE10-D3BB-4AE3-84BA-F791B93AFB61}</Project>
+      <Name>Graphing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lib\McoreSystem\McoreSystem.csproj">
+      <Project>{31F006C6-E007-4954-816F-0F83EFC7484D}</Project>
+      <Name>McoreSystem</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,5 @@
+Since iTunes 7 the Artwork is not saved directly to the file when you 
+get Artwork via iTunes. So when you move your tracks to a new computer 
+you will not see your artwork. If this checkBox is checked then for each 
+track in iTunes music library with iTunes Store artwork downloaded tracks
+iTSfv will embed the artwork in to the track. 

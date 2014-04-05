@@ -1,0 +1,1047 @@
+Version 5.62 - 20091210
+
+5.62.01.0 Replaced LyricWiki by Lyricsfly
+5.62.00.0 Fill missing "Sort Artist" tab using "Album Artist"
+5.61.02.1 None of the Selected Tracks related tasks worked with iTunes 9
+5.61.02.0 Changes to Lyrics Viewer due to recent LyricWiki API issues 
+
+Version 5.61 - 20090715
+
+5.61.01.2 Prevented possible crash while scanning for new music files
+5.61.01.1 Replace '' and ''' in LyricWiki Lyrics with Empty String [ptha]
+5.61.01.0 Added File > Save Statistics to File As... 
+5.61.00.1 iTSfv will not attempt to replace ", " by a new Line or any other built-in string replacements anymore [ptha]
+5.61.00.0 Ability to manually override Rating including half ratings by incrementing from -100 to 100. [ptha]
+5.60.25.2 Conversion from string "" to type 'Integer' is not valid. while reading last.fm charts... [EvilPuppetMaster]
+5.60.25.1 Fixed System.ArgumentNullException: Value cannot be null error on new when no WMP is installed [RGB]
+5.60.25.0 Importing Lyrics via LyricWiki feature is now enabled by default to support iLyrics behaviour
+5.60.24.1 Removed possibility where carriage return would be replaced in Lyrics with carriage return and a line return [Jojo]
+5.60.24.0 Import Lyrics from LyricWiki if the character count is at least a user configurable number [Jojo]
+5.60.23.1 Delete Dead or Foreign Track checkBoxes in Library tab did not work while validating selected tracks
+5.60.23.0 Ability to import Artwork from iTunes Store for selected tracks already in the library [Jojo]
+5.60.22.1 When LyricWiki "Not Found" was erraneously treated as lyrics were found [pt_ha]
+5.60.22.0 Option to fill "Sort Album Artist" tag from "Sort Artist" tag as part of filling Album Artist tag from Artist tag [pt_ha]
+5.60.21.1 Removal of missing tracks will be skipped if iTSfv finds out one or more music folder locations are inaccessble at the time of operation
+5.60.21.0 Add New Files window will show recommended Album Artist tag with an Autofill button to ease the decision of overwriting tags before adding tracks to library
+5.60.20.3 Did not find lyrics for songs with brackets such as Sufjan Stevens: Flint (For The Unemployed And Underpaid) from LyricWiki [pt_ha]
+5.60.20.2 When searching for lyrics, iTSfv will consider Artist tag as well as the AlbumArtist tag [pt_ha]
+5.60.20.1 Removed dependence from iLyics and ensured lyrics are imported in UTF-8 [pt_ha]
+5.60.20.0 Added new command line flag "synchroclean" which is the same as "add_folder remove_dead"
+5.60.19.0 Forcing tags to be refreshed while adding new files to library is now an option in Options : Explorer [Steffen M.]
+5.60.18.0 ReverseScrobble is now possible using command line interface using flag reverse_scrobble
+5.60.17.0 Import PlayedCount from POPM or PCNT Frame for MP3 files using Library tab
+5.60.16.0 Lyrics from LyricWiki will support all UTF-8 characters
+5.60.15.3 Could not determine the music folder path where most of the music files are in the library when music files were in the root drive
+5.60.15.2 Selected Tracks : Export iTunes Store Artwork... always exported artwork of the firstly selected track [Jojo]
+5.60.15.1 Fix for Windows XP bug in Scheduled Task where command line would not process if Start In textBox path has no quotation marks
+5.60.15.0 Importing and Export Lyrics will now make use of replace-words.txt 
+5.60.14.2 Temporary fixes for characters such as â€™ in Lyrics from LyricWiki [Jojo]
+5.60.14.1 Command line argument adjust_ratings did not sometimes read user settings [neonstorm]
+5.60.14.0 Extended Automatic Rating system to include influence of previous rating adjustable from 0% to 99%
+5.60.13.2 Fixed rare possibility where TrackCount could be not written for some mp3 files
+5.60.13.1 Fix for crash while writing warnings log and exiting iTSfv in some rare situations [amnioticentity]
+5.60.13.0 Extended Automatic Rating system to reduce PlayedCount scaling of long tracks from 1% to 100%
+5.60.12.2 Fixed possibility where TrackNumber could be cleared while writing DiscCount etc. during some rare cases after build 5.60.08.1
+5.60.12.1 Bug Report Wizard did not successfully report bugs for POP email addresses that sometimes require password [jgcrews]
+5.60.12.0 Capitalizing words can now utilize a file called ignore-words.txt to avoid being processed [jgcrews]
+5.60.11.0 Extended ability to replace characters with whitespaces e.g. ,,,,_,,,, ,,,, via replace-words.txt 
+5.60.10.1 Fixing folder thumbnail will retain the folder modification date
+5.60.10.0 Extended Export Selected Tracks to optionally also export Artwork if present [jgcrews]
+5.60.09.0 Added %BitRate% syntax for getting string from pattern [jgcrews]
+5.60.08.3 Getting string from Pattern truncated strings in brackets for Name tag [jgcrews]
+5.60.08.2 Fixed possibility where Update Database refreshing tags in file setting could execute if enabled as part of Check Standard in Selected Tracks 
+5.60.08.1 Prevented possibility where Album Artist, DiscNumber and DiscCount tags were not updated when iTunes erraneously showed these tags were populated
+5.60.08.0 Overwrite tags checkBox is now disabled for Add New Files prompt when multiple albums are found in order to prevent accidental overwriting of wrong album tags into another album
+5.60.07.0 iTSfv will no longer attempt to remove any empty folders with System attribute
+5.60.06.5 Fixed possible instabilities while removing empty folders [darkluminaz34]
+5.60.06.4 Selected Tracks : Export Tracks did not respect custom file name patterns [jgcrews]
+5.60.06.3 Fixed any possibility where iTunes would refuse to add files copied by iTSfv
+5.60.06.2 Overwriting Genre did not really work if the tracks already had Genre tag filled
+5.60.06.1 Fixed issue where having spaces at the end in AlbumArtist and Album tags prevented adding files to iTunes
+5.60.06.0 Optionally update POPM and PCNT frames while automatically adjusting ratings via Options : OneTouch : Library
+5.60.05.6 Overwriting tags would not have worked if adding files belongs to a music folder after build 5.60.3.0
+5.60.05.5 Fixed possible instabities while restoring rating tags from file [msg_id=4973339]
+5.60.05.4 PDF files in iTunes Library were processed by iTSfv to add artwork and import lyrics causing warnings [alexcel]
+5.60.05.3 Removed possibility where iTunes database comments could sometimes be written back to ID3v2 comments tag [alexcel]
+5.60.05.2 Adding music files from Music folder did not work properly if Organize files checkBox was turned on after build 5.60.3.0 [xanadu1979]
+5.60.05.1 Albums without consecutive tracks log file was not updated for validating selected tracks [Pythago]
+5.60.05.0 Remove Lyrics from Track feature in Selected Tracks : Editor is now extended to remove Comments
+5.60.04.3 Update Database refreshing tags in file settings did not sometimes remove junk comments such as 000005D1 0000069B 000012D6 000015BE 0002B584 0002DD24 000063B0 [alexcel]
+5.60.04.2 Checking for missing Artwork checked the presence of all possible artwork files in the album directory [alexcel]
+5.60.04.1 Checking for missing Artwork did not run for Check Standard in Selected Tracks button
+5.60.04.0 Artwork thumbnail in the Artwork Chooser dialog box is double clickable
+5.60.03.3 Fixed instability during editing tracks if the track locations were longer than 260 characters
+5.60.03.2 Fixed instability during validation of discs if the track locations were longer than 260 characters [MJC]
+5.60.03.1 Fixed instability due to possible invalid charactors while getting file name from pattern [JoseHidalgo]
+5.60.03.0 Ability to move files from the source folder to Music folder before adding files to iTunes [DrKnowLittle]
+5.60.02.2 Function paramaters with a space e.g. $cut(tag, number) was not handled the same way as $cut(tag,number) [DrKnowLittle]
+5.60.02.1 Did not move all non-audio files when organizing music files before adding to iTunes without copying [DrKnowLittle]
+5.60.02.0 Verbose mode will auto scroll to latest status message [NearlyGod]
+5.60.01.2 Fixed instability due to possible Value cannot be null error while getting file name path [zirconiumzephyr]
+5.60.01.1 Fixed instability due possible Index was outside the bounds of the array exception while retrieving fixed case [kevinnsmithh]
+5.60.01.0 Abililty to organize music files according to a folder structure without having to Copy files [DrKnowLittle]
+5.60.00.0 Added title formatting support initially supporting $cut(tag,number) that can be used as $cut(%AlbumArtist%,1) in Options [DrKnowLittle]
+5.59.04.2 Customized Music Folder structure patterns were not added to Music Folder structure list for next launch
+5.59.04.1 Fixed possible application crashes when initiating TabLib# Editor
+5.59.04.0 Import PlayedCount and Rating information from POPM and/or PCNT Frames as an OneTouch action via OneTouch : Library tab
+5.59.03.0 Write PlayedCount and Rating information to POPM and PCNT frames as an OneTouch action via OneTouch : Tracks tab
+5.59.02.0 Main Window is now resizable and maximizable [xanadu1979]
+5.59.01.0 Track Replace Assistant Window is now resizable and maximizable
+5.59.00.2 Fixed glitch where Track Replace Assistant would display a file multiple times [xanadu1979]
+5.59.00.1 Main Window was not displaying controls properly for 120 DPI settings from build 5.52.2.0 [xanadu1979]
+5.59.00.0 Import Rating from PCNT or POPM Frame as part of validation via Library tab
+5.58.00.0 Write PlayedCount information to PCNT frame as part of validation via Options : Tracks : Ratings|PlayedCount tab
+5.57.00.0 Write PlayedCount|Rating information to POPM frame as part of validation via Options : Tracks : Ratings|PlayedCount
+5.56.00.5 Fixed crash due to Object reference not set to an instance of an object error while saving validation results to M3U playlist [Chris Daniels]
+5.56.00.4 Fixed crash due to possible Object reference not set to an instance of an object errors while grabbing Artwork using iTunes Artwork Grabber [ChipT]
+5.56.00.3 Fixed Object reference not set to an instance of an object error introduced after build 5.55.0.1 while getting Artwork [Bill]
+5.56.00.2 Fixed instability due to possible unauthorized copy file operations [drewaf63]
+5.56.00.1 DiscCount was not updated for new files added to iTunes via iTSfv after build 5.55.1.0
+5.56.00.0 Added Power Management options after long operations listed in Options : Advanced : Appearance [msg_id=4916939]
+5.55.02.1 iTSfv would not unnecessarily look up Last.fm for Genre if Disc already has Genre while filling missing Genre
+5.55.02.0 Track Progress as a percentage is now shown next to Track Progress Bar
+5.55.01.0 Revised filling TrackCount, DiscNumber and DiscCount procedure to show more accurate progress 
+5.55.00.3 Fixed bug where iTSfv Add New Files window would not display Tags of a DiscCount filled Multi-Disc Album
+5.55.00.2 Having a large number of tracks selected in iTunes while loading iTSfv would have delayed iTSfv initialization
+5.55.00.1 Fixed possible System.OutOfMemoryException error due to Artwork being stored in memory while performing long operations such as validating a large library
+5.55.00.0 Automatically search for artwork using Album Art Downloader Command Line Interface prior to validating albums
+5.54.01.8 Fixed bug where automatically selected artwork not always being the highest resolution (choosing 600x597 instead of 600x600 which may have found later)
+5.54.01.7 Fixed crash due to "The request was aborted" while finding Genre using Last.fm [Miguel]
+5.54.01.6 Further bug fixing in Help - Submit Bug Report...
+
+Version 5.54 - 20080417
+
+5.54.1.5 Command Line operations will not force AlbumArtist to be "Various Artists" when adding more than one album via add_files commmand
+5.54.1.4 Fixed bug where add_folder was always required as a Command Line so other arguments would not work
+5.54.1.3 Command line arguments passed by uTorrent e.g. "G:\apps\iTSfv.exe" add_folder "%D" were not parsed properly
+5.54.1.2 Did not capitalize tracks in album from build 5.52.0.1 if AlbumArtist tag was not filled 
+5.54.1.1 Importing Artwork to Track status was not displayed accurately in the tracks status bar
+5.54.1.0 Extended support to add an external folder to iTunes via Command Line e.g. add_folder "E:\Completed\Björk-Medúlla-2004"
+5.54.0.1 Fixed possibility where Locations with illegal paths could crash the current operation
+5.54.0.0 Added support for searching album of selected track using customized search engines via Selected Tracks menu
+5.53.2.0 Ability to exclude folders from scanning for new music via Options > Explorer > Music [xanadu1979]
+5.53.1.1 Fixed possible crash while creating temporary directory while searching for unencrypted Artwork in iTunes Store [Samuel]
+5.53.1.0 Update AAC tags unreable in other players to be readable as part of Update Databse refreshing Tags
+5.53.0.0 Manually choose best Artwork to save during batch exporting iTunes Store Artwork to user defined music folder [Jojo]
+5.52.4.0 iTunes Artwork Grabber dummy file is now downloaded from http://wmwiki.com/mcored/itunes-artwork-grabber.mp3
+5.52.3.0 When adding new files to iTunes via iTSfv, iTunes is now able to download iTunes Store Artwork (if exists) to tracks already has embedded artwork
+5.52.2.0 Verbose Mode for Jobs displaying all the Status messages via Jobs > Verbose Mode
+5.52.1.1 Downloading iTunes Store artwork did not work from build 5.51.7.0
+5.52.1.0 Search selected track in Google via Selected Tracks menu [NearlyGod]
+5.52.0.1 Regrouping tracks / Capitalizing AlbumArtist would crash iTSfv if AlbumArtist tag was Empty [NearlyGod]
+5.52.0.0 Option to manually choose best artwork before embedding artwork via Options - Advanced - Validation - Artwork 
+5.51.8.0 Support for %Folder% and %Location% syntax for use with Selected Tracks - Clipboard 
+5.51.7.0 Option to manually select artist for downloading iTunes Store track artwork from multiple artists are found
+5.51.6.0 Tabs now have icons from Silk icon set 1.3 by Mark James [Sadie]
+5.51.5.0 Support for using %Conductor% syntax to read ID3 tags
+5.51.4.1 ToolTip text will not appear truncated anymore
+5.51.4.0 Add New Files window supports overwriting Artist tag if necessary 
+5.51.3.1 Fixed instability due to unknown application crash while exporting iTunes Store Artwork [NearlyGod]
+5.51.3.0 Artwork Sources are now configurable using Options - Advanced - Validation [Jeff]
+5.51.2.0 Increased accuracy for downloading iTunes Artwork from Albums such as "Mozart: The Symphonies" by "Academy of Ancient Music, Christopher Hogwood & Jaap Schröder"
+5.51.1.0 Added Options - File System - Rule to Always Fix Artist Folder Icon during Validation of Selected Tracks
+5.51.0.0 Support for changing Picture type from Other to Cover (front) [williamsardar]
+5.50.1.0 Retry downloading iTunes Store artwork for tracks with the second Artist that is seperated by "&" character
+5.50.0.0 Support for appending for prepending strings to Name, Album, Artist, AlbumArtist or Genre using Selected Tracks - Editor
+5.49.3.1 Fixed bug where %DiscCount% in patterns were returning %DiscNumber% values! 
+5.49.3.0 Support for %Grouping% syntax for dealing with Box Sets
+5.49.2.0 Clipboard preview is now multiline compatible and supports preview of all the selected tracks
+5.49.1.0 Support for new line character "\n" to be used when copying Tag Information to clipboard. Do not use it for file names. 
+5.49.0.1 Possibility of crashing iTSfv while capitalizing AlbumArtist tag in tracks in a Smart Playlist. This function is now limited only in playlists safe to perform the task.
+5.49.0.0 Convert embedded non-JPG Artwork (PNG or GIF) to JPG Format as part of validation. Results are logged to file. [Chris Daniels]
+5.48.3.1 Created blank iTunes metatags playlist if Check for metatags option and Save results as iTunes Playlists checkBoxes were checked
+5.48.3.0 Retry downloading iTunes Store artwork with "Compilation" as the artist tag if iTunes Store artwork was not retrievable with default tags [Jose Hidalgo]
+5.48.2.0 Retry downloading iTunes Store artwork for tracks with the first Artist that is seperated by "&" character [Jose Hidalgo]
+5.48.1.4 Fixed instabilities caused by catastrophic failures while exporting lyrics [kenny]
+5.48.1.3 Progress for writing TrackCount, DiscCount etc. is integrated into the progress of Validating Disc [NearlyGod]
+5.48.1.2 Tracks with low resolution artwork list was not sometimes written to XHTML report depending on the settings chosen [xanadu1979]
+5.48.1.1 Option to display number of seconds remaining count down was showing negative values [NearlyGod]
+5.48.1.0 Retry downloading iTunes Store artwork with "Various Artists" as the artist tag if iTunes Store artwork was not retrievable with default tags [Jose Hidalgo]
+5.48.0.2 iTunes Store artwork was not retrievable for Compilation Albums [Jose Hidalgo]
+5.48.0.1 Prevent crash while reading track metatags as part of Validating Library [Henk]
+5.48.0.0 Support for batch exporting iTunes Artwork from an alternate Music folder e.g. FLAC
+5.47.5.0 File formats handled by iTSfv are now customizable using Advanced - Formats tab
+5.47.4.1 Attempts to search artwork using Album Art Download XUI by clicking iTunes Store tracks, crashed iTSfv [Jose Hidalgo]
+5.47.4.0 Minor tweaks for more sensible Progress Bars and Job completion progress in Applicate Title [NearlyGod]
+5.47.3.2 Saving iTunes Store track artwork crashed iTSfv on new systems where Options were never configured [Rocket Man]
+5.47.3.1 Removed CustomPlaces from SaveFileDialog. Saving iTunes Store track artwork crashed iTSfv in some systems that did not have at least .NET Framewokr 2.0 SP1 installed [Rocket Man]
+5.47.3.0 Clipboard data in Selected Tracks can now be optionally sorted
+5.47.2.1 Option to automatically restore missing user.config from Settings folder is now disabled by default to prevent rare startup problems
+5.47.2.0 Status Bar messages and Progress are handled by a seperate background worker
+5.47.1.0 Manually search iTunes Music Store to save Artwork, using Tools > iTunes Artwork Grabber
+5.47.0.0 Save iTunes Artwork from selected track in iTunes Music Store
+5.46.7.1 Submit Bug Report did not work on instances where Submit Bug Report Dialog was not shown 
+5.46.7.0 Statistics window is now sizable and maximizable
+5.46.6.0 Tracks in a disc are now validated in a reverse order to show a track count down in the secondary status bar
+5.46.5.0 Application now has two status bars to show seperated status for per disc tasks and per track tasks [NearlyGod]
+5.46.4.1 Fixed iTunes bug where Capitalization of AlbumArtist tag would detach the first track or the last track from the album [NearlyGod]
+5.46.4.0 Ability to move folders without any audio files, to Recycle Bin; these folders are indexed in Logs\folders-yyyyMM-no-audio.txt
+5.46.3.0 GUI Relocation in Options for better access. TabControl (Rating, Cleaning) in Options - Library is moved to OneTouch - Library
+5.46.2.0 Advanced tab in Main window is renamed to "OneTouch" and introduced OneTouch Options
+5.46.1.0 Folders with only one file will be indexed using TreeGUI as part of removing empty folders
+5.46.0.0 Ability to remove empty folders from Advanced - File System
+
+Version 5.45 - 20080302
+
+5.45.4.5 Port Number in Options - Advanced - Internet - Email Settings did not show values over 100
+5.45.4.4 Modification Date was not retained if enabled for Update Library refreshing Tags after build 5.43.1.0 
+5.45.4.3 Update Library refreshing Tags did not work for Read-Only files after build 5.43.1.0 
+5.45.4.2 Library was not updated after removing Null Characters from tags
+5.45.4.1 Removing foreign tracks method also removed dead tracks
+5.45.4.0 Support for sending bug reports using GMail accounts. Other webmail accounts are not supported yet.
+5.45.3.1 Fixed possible crash while sending bug reports if the error log does not exist yet for a new month
+5.45.3.0 Ability to send a bug report manually from Help - Submit Bug Report
+5.45.2.1 Attempt to prevent all known possibilities where TagLib# could save ID3v1 tags as ID3v2 revision 2.4 instead of ID3v2 revision 2.3 [Fowler]
+5.45.2.0 Option to automatically capitalize tags as part of validation if iTSfv finds all tags are lower case in Options.Tracks.Rules
+5.45.1.2 Fixed ampersand character getting multiplied in Status Bar text when validating albums names with ampersand [NearlyGod]
+5.45.1.1 Tab ordering in Add New Files window was not in expected order
+5.45.1.0 Keyboard shortcuts Ctrl+1, Ctrl+2, Ctrl+3 and Ctrl+4 for Checks, Validating Tracks, Library and File System
+5.45.0.0 Ability to Check for iTunes Store standards or Validate Tracks, Library or File System independently via Buttons in each tab and Selected Tracks > Validate menu
+5.44.2.0 Support for %Composer% syntax for tasks such as copying tags to Clipboard and File Names
+5.44.1.0 Updated Application Startup Mode for Beta versions of iTSfv to include a Preview version of Windows Media Player file validator that supports updating UrlCoverArt.dat with higher resolution artwork
+5.44.0.0 Added new rule in Options > Tracks > Rules to remove double spaces from tags as part of validation
+5.43.4.0 Enhanced About window with the inclusion of new Application Icon 
+5.43.3.1 Did not capitalize tags properly if the tags contained double or more spaces after build 5.42.5.3
+5.43.3.0 Added options to set new folder.jpg file attributes as System or Hidden/System [TwoToad]
+5.43.2.0 Open music folder of selected track or disc using Mp3tag using Selected Tracks menu
+5.43.1.1 Removed possible chance where Track would be set to Read-Only for being Tag Complete while editing tracks
+5.43.1.0 Enhanced Update Library refreshing Tags to fix uneditable tracks in iTunes [Chris Daniels]
+5.43.0.1 Update Library refreshing Tags in file did not update numeric tags which are TrackNumber, TrackCount, DiscNumber, DiscCount and Year
+5.43.0.0 Check for tracks metatag versions as part of validation and log results to track_yyyyMMdd_metatags.txt [Chris Daniels]
+5.42.6.0 Application now has a new icon contributed by Chris Daniels and is compatible with Windows Vista 256x256 Extra Large Icon view
+5.42.5.3 Strings such as "(Lp" were not properly captilized to "(LP" etc.
+5.42.5.2 Google Search URL was not URL Encoded so characters such as & were not properly included in the search string
+5.42.5.1 Artists with a directory seperator such as "AC/DC" were read as "AC" while adding files to library [ itsfv-Bugs-1895768 ]
+5.42.5.0 Search for Artwork passing arguments to Album Art Downloader XUI from Selected Tracks > Search Artwork...
+5.42.4.0 Added new "Selected Tracks" menu to group jobs related to Selected Tracks
+5.42.3.9 Beta versions with the same major build number as the final version did not get downloaded as part of Checking Updates
+5.42.3.8 Workaround for Artists with a directory seperator such as AC/DC being read as AC while Updating library refresh tags in file
+5.42.3.7 Words in replace-words.txt when used as part of fixing case in track tags could cause iTunes not finding the track
+5.42.3.6 Track Count update in the status bar while a Dialog Box is opened in iTunes, crashed application
+5.42.3.5 Double urlencode Artist and Song to look up genre in Last.fm as the Artists such "AC/DC" did not work properly
+5.42.3.4 Genre choosen from Last.fm did not undergo proper capitalization
+5.42.3.3 Fixed bug if the first track looked up using Last.fm for Genre returned nothing then the choosen Genre was nothing
+
+Version 5.42 - 20080217
+
+5.42.3.2 Fixed some stablity issues due to timer controlled reporting progress method
+5.42.3.1 Replace strings such as &amp;quot; and &amp;amp; in lyrics downloaded from LyricWiki
+5.42.3.0 Automatically restore settings from Documents\iTSfv\Settings\user.config when orignal user.config is not found (new Windows installation)
+5.42.2.0 Option to scan for Genre from Last.fm for the first track instead of scanning all tracks for the most common Genre [NearlyGod]
+5.42.1.0 Duplicate Tracks are logged to tracks-yyyyMM-duplicate.txt in Logs folder
+5.42.0.0 Ability to remove duplicate tracks from Library in Advanced > Library according to Options > Library > Cleaning
+5.41.2.0 Reconfigure GUI in Advanced tab to accommodate room for upcoming features
+5.41.1.0 Creation of Artwork (600x600).jpg is not dependent on the setting Tracks > Resize Artwork before importing
+5.41.0.1 Resize Artwork was saved in Album folder disregarding the setting Disable Artwork (600x600).jpg in Options > File System
+5.41.0.0 Check for tracks without BPM. Log file saved in Logs folder. 
+5.40.3.0 Switched to a timer controlled reporting progress method report status more descriptively
+5.40.2.0 The most common Genre for the album is determined using the most common genre for each track of the album according to Last.fm
+5.40.1.1 Synchroclean portion of a previous implementation unchecked all the checkboxes in Main Window and did not restore the settings [Fowler]
+5.40.1.0 iTSfv will attempt to look for artwork saved using Album Art Downloader
+5.40.0.2 Progress timers in ReverseScrobble affected the progress status in Validation
+5.40.0.1 Fixed instability due to crashes while scanning access denied system folders for new files [Fowler]
+5.40.0.0 ReverseScrobble® - Added support to update iTunes tracks playedCount using Last.fm user charts [urlwolf]
+5.39.1.0 Controls in Options > Tracks are reorganized tab to facilitate adding upcoming options
+5.39.0.0 Automatic genre tagger using Last.fm web services for validating tracks [Kaos713]
+5.38.3.7 Debug Window will be dynamically updated when iTSfv is busy
+5.38.3.6 iTSfv did not continue renaming files if an error occured
+5.38.3.5 Renaming file as part of capitalization did not work always
+5.38.3.4 Fixed possible instability when attempting to browse a disc in Discs Browser that is being deleted
+5.38.3.3 Jobs > Remove dead or foreign Tracks operation will no longer depend on Resume Tracks checkBox in Advanced
+5.38.3.2 Validation did not continue for discs without AlbumArtist from build 5.38.2.0 [Sean]
+5.38.3.1 Track Progress Bar did not update while editing tracks in Selected Tracks > Editor
+5.38.3.0 Option to disable scaling playedCount based on Track Duration for automatic ratings [neonstorm]
+5.38.2.0 Improved Capitalize Word function to support capitalizing certain words such as EP, CDS etc. using Settings > capital-words.txt [Sean]
+5.38.1.0 Ability to specify "selected tracks complete a single disc" to ease overwriting AlbumArtist of a multi-artist disc that is scattered in iTunes
+5.38.0.0 Option to choose most common Artist as the AlbumArtist for multi-Artist discs. Options > Tracks > AlbumArtist
+5.37.4.3 Remove code that could overwrite Track Number when adding an album that is not properly sorted in Explorer according to Track Number
+5.37.4.2 Remove accidental leftover white spaces by the user when Replace Text in Tags is used
+5.37.4.1 AlbumArtist already set as "Various" or "VA" was not overwritten by "Various Artists" tag [trw]
+5.37.4.0 Ability to turn on/off using Artwork Cache for validating jobs in Options > Advanced > Validate
+5.37.3.2 Report was not generated when validating selected disc
+5.37.3.1 Generate report after validating newly added files was missing
+5.37.3.0 Saving the Artwork in the original file format is now optional in Options > File System > Artwork
+5.37.2.1 Memory Leak in Warnings writer from in the build 5.37.2.0
+5.37.2.0 Ability to overwrite AlbumArtist in Options > Tracks > General
+5.37.1.4 AlbumArtist tag was set to Unknown Artist from build 5.37.1.1 [trw]
+5.37.1.3 Fixed crash during reloading Discs Browser after tags are changed: Item has already been added. 
+5.37.1.2 Compilation tag was not read by XmlTrack implementation
+5.37.1.1 If AlbumArtist tag was empty and the Disc had different track artists, AlbumArtist tag was filled with Track Artist instead of "Various Artists" [trw]
+5.37.1.0 Added Advanced > Warning tab to turn on/off warnings with a warning for validating with remove low resolution artwork checkbox checked
+5.37.0.4 Reporting Progress functions are wrapped in a Try/Catch block to prevent crashes when iTunes is busy [trw]
+5.37.0.3 Strip HTML tags in Lyrics downloaded from LyricWiki [Jojo]
+5.37.0.2 Accidental inverse logic in build 5.36.1.0 when determining if folder artwork is low resolution 
+5.37.0.1 Falsely displayed information in status bar as removing dead or foreign tracks
+5.37.0.0 Ability to log folders without artwork to file [trw]
+5.36.1.0 Low Resolution artwork files can now be avoided from being embedded in Options > Tracks > Artwork
+5.36.0.0 Option in Tracks tab to remove low resolution artwork as part of validation
+5.35.3.1 Fixed possible crash on Application startup when registry access was denied to see if iTSfv loads on startup [John]
+5.35.3.0 Multi-select Tags XML files to restore tags 
+5.35.2.8 First disc of a box set did not follow the list by Grouping tag in Discs Browser
+5.35.2.7 Workaround to detect iTunes in 64-bit editions of Windows [Anusha]
+5.35.2.6 Add new Files window and Add new Artwork window were not the top most windows when shown
+
+Version 5.35 - 20080120
+
+5.35.02.5 Workaround for lyrics containing "</lyric>" tags when retrieved from LyricsWiki until comptable parsers are implemented [Jojo]
+5.35.02.4 Files > Context Menu > Remove File did not remove the file reference in Watched files
+5.35.02.3 The GUI was lagging when iTSfv was configuring watch folders in the network on application start up
+5.35.02.2 Prevented crash upon application startup when attempting to Folder Watch a non-existant folder [tucobenedito]
+5.35.02.1 iTSfv is now more error resilient when adding new files to library
+5.35.02.0 Copying external files that are not under any of the user configured music folders, to Default music folder, is now an option [tucobenedito]
+5.35.01.0 iTSfv will copy a single external JPG image from source folder to album folder whenever "Import Artwork from any single image file" checkBox is unchecked
+5.35.00.1 Synchroclean / Find New Files did not happen if iTunes Library was empty [tucobenedito]
+5.35.00.0 Support for command line interface as documented in the Manual [martgadget]
+5.34.15.0 Context Menu in Explorer > Files lets you remove files from the list prior to manually adding them to iTunes [martgadget]
+5.34.14.1 Pressing Stop button did not pause the currently active job [Jojo]
+5.34.14.0 Option to overwrite existing lyics while importing in Options > Validate > Tracks > Lyrics [Jojo]
+5.34.13.3 Importing lyrics did not make use of minimum number of characters that defines no lyrics [Jojo]
+5.34.13.2 Words such as 80s, 3rd were capitalized incorrected as 80S, 3Rd during capitalization [Alex]
+5.34.13.1 Settings changed immediately prior to running as Scheduled Tasks were not applied
+5.34.13.0 Choice of when to create Report in Options > Advanced Reports & Logs 
+5.34.12.1 Opening report after validating whole library sometimes caused a crash [Zoe]
+5.34.12.0 Settings in Selected Tracks Editor excluding Trim function are now rememebered [Jojo]
+5.34.11.7 Custom folder path for exporting lyrics was shown as true/false in the main window [Jojo]
+5.34.11.6 Could not browse for a custom folder to import lyrics from [Jojo]
+5.34.11.5 Export to custom folder setting showed a True/False value instead of the folder path in Validate > File System tab [Jojo]
+5.34.11.4 Application could crash in the background due to Preview Clipboard feature when iTunes was busy [Zoe]
+5.34.11.3 Update Artwork cache if the Artwork dimensions were zero
+5.34.11.2 Use of TagLib to save Artwork on the event iTSfv fails to save compare Artwork via iTunes
+5.34.11.1 Send To Tray context menu item is now no longer enabled when the application is in the tray
+5.34.11.0 Option to scan only folders modified in the last X number of days for Synchroclean / Find New files [martgadget]
+5.34.10.1 Display Statistics did not work if there was no previous cache file availble from build 5.32.0.0 onwards [Corey]
+5.34.10.0 Much faster Recovery of Tags using a previous iTunes Music Library.xml 
+5.34.09.0 Verbose output that is not currently logged to file are now shown in a Debug Window [Corey]
+5.34.08.0 Recover Tags can recover Play Count, Rating etc. Settings are in Options [Corey]
+5.34.07.1 Error handling for Recovering tags from previous iTunes Music Library. 
+5.34.07.0 Recover Tags and Backup/Restore tabs are located in Tags tab.
+5.34.06.4 Advice user to use Recover Tags if they try to restore tags from iTunes Music Library.xml
+5.34.06.3 Modified Date is retained for Editing Selected Tracks [Jojo]
+5.34.06.2 Prevent crash due to track is not modifiable error while emptying lyrics
+5.34.06.1 iTSfv will ask for SMTP Host to automatically send bug reports
+5.34.06.0 Support for %FileName% syntax which retrieves the file name without extension of a track
+5.34.05.8 Moved "Import Lyrics from LyricWiki" checkBox to Options > Advanced > Internet to better reflect its use
+5.34.05.7 iTSfv tried to fetch lyrics online for the songs that have no lyrics despite the "Import Lyrics from LyricWiki" being unchecked. [Jojo]
+5.34.05.6 iTSfv is minimized just after user presses the Close button to finish garbage collecting iTunes application
+5.34.05.5 Retrieving Artwork dimensions sometimes overwrote the higher resolution artwork in Artwork Directory
+5.34.05.4 Replace Tracks function in Advanced was not working for some time
+5.34.05.3 Force releasing iTunes object before quitting iTSfv
+5.34.05.2 Apply Capitalize settings in Selected Tracks during validation checkBox is now in Options > Validate > Tracks
+5.34.05.1 Minimum number of characters in Lyrics tag before track is considered to have no lyrics is now optional in Options > Checks [Jojo]
+5.34.05.0 Find and Replace textBoxes are now comboBoxes and the text are remembered for next session
+5.34.04.0 Added support to Capitalize first word, replace and Trim for Genre tag
+5.34.03.0 Tracks that tags were refreshed are logged to file [Jojo]
+5.34.02.0 Option to update database refreshing tags before backing up tags
+5.34.01.3 iTSfv backed up tracks only if they were played at least once or rating greater than zero [Jojo]
+5.34.01.2 Added stability for Access is denied and Artwork has been deleted errors while attempting to save track Artwork [Kenny/Julie]
+5.34.01.1 Did not attempt importing lyrics from local HDD if lyrics from LyricWiki was not found
+5.34.01.0 Option to Import or Export Lyrics to the pattern same as track file name
+5.34.00.0 Added support for adding new files with m4v, mp4, mov and mpg extensions [NTolerance]
+5.33.00.1 Music Folder Structure did not make use of the overwritten Album Artist, Album etc Tags in Add New Files Window
+5.33.00.0 Trim specified number of characters from left or right of a tag in Selected Tracks > Editor
+5.32.01.0 Selected Tracks > General tab renamed to Editor and supports multiple operations at once. Press Edit Selected Tracks
+5.32.00.4 iTSfv showed duplicated tracklists if the same album was added to iTunes multiple times
+5.32.00.3 Read-Only attribute was not properly cleared prior to restoring tags
+5.32.00.2 The "Enabled" tag was backed up but was not restored
+5.32.00.1 Fixed critical bug in Backup Tags: SkippedCount was PlayedCount and SkippedDate was PlayedDate [Jojo]
+5.32.00.0 Music when added via iTSfv can be automatically organized in a customized folder structure
+5.31.09.1 Lyrics with only Lf per line will be now properly saved with CrLf
+5.31.09.0 Option to automatically or manually add newly found files via Folder Monitoring. Options > Explorer
+5.31.08.0 Application's default button changed from "Validate iTunes Music Library" to "Validate Selected Tracks"
+5.31.07.0 Swapped control locations of "Validate iTunes Music Library" and "Display iTunes Music Library Statistics"
+5.31.06.3 Was not possible to add new files to iTunes if the iTunes music library was empty
+5.31.06.2 iTSfv did not look for Higher Resolution artwork in the Album folder while adding new files that already had embedded artwork
+5.31.06.1 Pattern %Genre% was not supported and remained unchanged
+5.31.06.0 Add New Files dialog was redesigned to include Genre and Year
+5.31.05.1 Fixed stability for crashes during timeouts occured when downloading lyrics
+5.31.05.0 iTSfv is compatible with multiple instances for a reasonable scope of simultaneous operations
+5.31.04.2 Debug Writing is much more efficient and compatible with multiple instances of iTSfv
+5.31.04.1 Load with Windows checkBox status was not accurate in Options > Advanced > Appearance
+5.31.04.0 Explorer > Activity tab replacing Explorer > Options tab. Controls in Explorer > Options tab were moved to Explorer > Files tab
+5.31.03.1 Options > Appearance : Minimize to System Tray was mistakenly said Minimize to System Tray on Close
+5.31.03.0 Improved iTunes Watch Folders to include all the user configured music folder locations
+5.31.02.1 TagLib could not fix tags in newly added files in Silent Mode while Synchronizing or Adding files
+5.31.02.0 Enabling and Disabling Folder Monitor is performed without requiring to restart iTSfv
+5.31.01.3 An internal caching logic in build 5.29.3.0 caused iTSfv to always import artwork in rare situations
+5.31.01.2 During the saving validation results as iTunes Playlists the GUI was not responding 
+5.31.01.1 Illegal characters in path while getting pattern [Raphael]
+5.31.01.0 Optional automated emailing bug report feature enabled by default in Options> Advanced > Internet
+5.31.00.0 Application user.config file is now backed up to Settings directory by default with option to Restore 
+5.30.04.2 Double clicking Validate Selected Tracks button could have crashed iTSfv because BackgroundWorker is busy
+5.30.04.1 Overwrite AlbumArtSmall.jpg for upcoming features to update Vista Media Center cache
+5.30.04.0 Clean Temporary Files upon Exit. Enabled by default in Options > Advanced > Folders
+5.30.03.2 Dropping any single file was copied to Temporary folder without first checking it is a valid artwork
+5.30.03.1 Fixed iTSfv to delete another variant of temp files e.g. iT 1.tmp from iTunes folder
+5.30.03.0 Start as iTSfv Lite mode in Options > Advanced > Appearance - Application Startup
+5.30.02.0 Scheduled Tasks can be manually run using the "Run Scheduled Tasks Now" button
+5.30.01.0 Validate Library can now run as a Scheduled Task 
+5.30.00.0 Option to Load with Windows to System Tray. Options > Advanced > Appearance
+5.29.03.0 Artwork files from track are saved in iTSfv Artwork directory under AlbumArtist\Album 
+5.29.02.0 Files listBox will show the current file count it holds
+5.29.01.1 Directory seperator charactor was not appeneded to the music folder browsed from Options > Explorer
+
+Version 5.29 - 20071222
+
+5.29.1.0 Tag Blank Album is improved to tag with Track Name with a desired suffix: CDS, CDM etc. in Options > Tracks > General [Jojo]
+5.29.0.1 Fixed instability while checking for embedded tracks when artwork is deleted [Zoe]
+5.29.0.0 Added command to batch remove Lyrics from Selected Tracks [Jojo]
+5.28.1.0 Export Lyrics to file without embedding to track [Jose Hidalgo]
+5.28.0.0 Import Lyrics using file pattern from Album folder or custom folder [Jojo]
+5.27.3.0 Restructed GUI in Options > Tracks to accommodate room for more options
+5.27.2.0 Replace Words can be utilized during captilaziing Track Name, Artist, Album and AlbumArtist
+5.27.1.0 Added Settings Menu to access the settings files
+5.27.0.0 Export Lyrics to Album folder or Custom folder as TXT or LRC files [Jose Hidalgo]
+5.26.6.0 Update Database from Tags in File is renamed to Update Database refreshing Tags in File and moved to Tracks tab
+5.26.5.1 Index file name pattern was reset after pressing Apply button
+5.26.5.0 Quirkly symbols in downloaded lyrics text can be replaced using replace-words.txt in Settings folder [Jojo]
+5.26.4.0 Support creating sub-directories for patterns e.g. %AlbumArtist%\(%Year%) %Album%\%TrackNumber% - %Name%
+5.26.3.0 Words to skip during search opearations for Album tags are retrieved from Settings\skip-album-words.txt
+5.26.2.0 Lyrics added tracks are logged to file: tracks-yyyyMM-lyrics-added.log [Jojo]
+5.26.1.2 Modified Date did not retain after importing lyrics [Jojo]
+5.26.1.1 Build 5.25.4.0 onwards crashed while validating tracks with no sources of artwork [James]
+5.26.1.0 File Validator has the option to add missing Lyrics using LyricWiki  
+5.26.0.0 Add missing Lyrics using LyricWiki via iLyrics as a DLL: http://code.google.com/p/ilyrics/ [Jojo]
+5.25.4.1 Composer tag if present in the tag was over-written as Artist tag during updating database
+5.25.4.0 Improved code for choosing Best Artwork for all instances
+5.25.3.2 Adjusting rating did not work while in Schedule mode 
+5.25.3.1 Some fixes to prevent decapitalizing "Finale: Up" as "Final: up" etc. 
+5.25.3.0 Comparing Track Artwork will be up to 50% faster as the Track Artwork dimensions are retrieved from Cache for comparison
+5.25.2.0 iTSfv will be able to open the last log file that was created 
+5.25.1.0 Synchroclean Options including a new Silent Mode are now in Options > Validate > Library 
+
+Version 5.25 - 20071215
+
+5.25.0.5 Handle crash due to possible Index was out of range exception while guessing the folder with most music
+5.25.0.4 Customized iTunes Music folder location in Options > Explorer was always reset to default iTunes Music folder location
+5.25.0.3 Removed possibilty where Synchroclean would not remove dead or foreign tracks if Resume from last album checkBox was checked
+5.25.0.2 Handle possible crash while attempting to set Read-Only attribute to Folder.jpg [glenn]
+5.25.0.1 iTSfv created a Default.css with 0 KiB file size in Logs directory if no Default.css was found
+5.25.0.0 Save validation results as iTunes Playlists (playlist of tracks without artwork etc.) [Jojo]
+5.24.3.0 Removed dead and foreign track information is now logged to file [Leif]
+5.24.2.0 File System Watcher can now be disabled via Options > Advanced > Validate
+5.24.1.3 Artwork was not resized before importing if there was only one artwork file with any name
+5.24.1.2 iTSfv continued to load Discs Browser even if the user only had the two checkBoxes: remove Dead and Foreign tracks checked
+5.24.1.1 Validation report did not properly implement the CSS style if there was no external CSS path set
+5.24.1.0 Creating Log files are now optional via Options > Validate > File System > Logs
+5.24.0.0 Option to force update database from tags in tracks via Validate > Library [Jojo]
+5.23.1.3 iTSfv crashed while moving Logs folder due to File System watcher activity file being in use [Jojo]
+5.23.1.2 Settings folder relocation was not properly saved [Jojo]
+5.23.1.1 Fixed possible crash due to Index was out of range error if tracks were deleted while reloading albums 
+5.23.1.0 iTSfv is now able to open the most recent tracks report in the Logs directory preventing Failed Open error
+5.23.0.0 Ability to remove Null characters in tags accessible via Tracks > Remove Null characters in Tags
+5.22.0.5 Status Bar text will not be blank while validating tracks when the user clicks on a disc in Discs Browser
+5.22.0.4 Debugging events to log should not cause program crashing anymore
+5.22.0.3 Did not copy nfo/log/jpg files from source album folder if the album tag of at least one of the tracks had an appended space 
+5.22.0.2 Handle Catastrophic failure (Exception from HRESULT: 0x8000FFFF (E_UNEXPECTED)) while saving Artwork
+5.22.0.1 By default Documents\iTSfv Logs directory is now in Documents\iTSfv\Logs directory
+5.22.0.0 Support for adding new music by Add folder to Library... menu item in File menu
+5.21.2.1 Warnings are now loggable in both alpha and beta versions of iTSfv
+5.21.2.0 Ability to customize CSS in the iTSfv XHTML Report using an external CSS file via Options > Advanced > Report
+5.21.1.0 Ability to customize CSS in the XHTML version Indexer using an external CSS file via Options > File System > Indexer
+5.21.0.0 Export index to Album folder using TreeGUI Directory Indexer engine
+5.20.2.1 Drag & Drop Artwork did not work due to a file access issue in debug.txt
+5.20.2.0 Reconfigured GUI Controls in Options > File System to support future expansion of features
+5.20.1.0 M3U Playlists generated during Validation will contain Relative paths instead of Full Paths
+5.20.0.0 Support deleting Temp Files in iTunes folder in background. Activate via Options > Explorer
+5.19.4.6 Discs browser will no longer display unreferenced discs due to interrupted validations pressing the Stop button by the user
+5.19.4.5 Fix possible crash when clicking Discs Browser while reading tracks from Library
+5.19.4.4 Status bar text will not show the "&" sign properly [McoreD/jmcilhinney]
+5.19.4.3 Artwork from iTunes Music Store are saved in the same Artist\Album path as iTunes Downloaded Artwork path
+5.19.4.2 Discs Browser will not reload for options changed other than Discs Browser view in iTSfv Options
+5.19.4.1 Words retrieved from simple-words.txt were not trimmed to remove illegal characters before usage
+5.19.4.0 Options > Advanced > Ratings tab content is now moved to Options > Validate > Library
+5.19.3.1 Schedule time if misconfigured will reset to 03:00:00 upon Options form load
+5.19.3.0 When Year tag is empty, file name patterns will ignore year pattern if exists
+5.19.2.2 Artwork was considered as resized if the resize setting was activated even if the source resolution was lower
+5.19.2.1 Fixed possible file being used error while updating Artwork thumbnail in Discs Browser during validation
+5.19.2.0 iTunes Downloaded Artwork are now temporarily saved in iTSfv Artwork directory (by default in Pictures) rather than in iTSfv Temporary Directory
+5.19.1.1 GetAlbumArtist returned "Various Artists" if AlbumArtist was empty but Artist was not 
+5.19.1.0 Setting attributes Read-Only to Folder.jpg is now optional [christian_s]
+5.19.0.1 Possible crash if resized source Artwork was not found while exporting Artwork [urlwolf]
+5.19.0.0 Check for tracks with non-embedded iTunes downloaded Artwork [christian_s]
+5.18.0.2 Fixed instability due to track has been deleted error while determining artwork source [James]
+5.18.0.1 When iTSfv finds out most of your music located not in the library folders during synchroclean it will show in status bar that it is only checking to remove dead tracks from the library [urlwolf]
+5.18.0.0 Support creating XSPF Playlists valid according to http://validator.xspf.org/
+5.17.3.0 Export M3U Playlist with Given Pattern in Options > Files System for each Album validated
+5.17.2.0 Words to Ignore while captilizing are now retrieved using simple-words.txt in Log folder [lordtyris]
+5.17.1.0 Copy to Clipboard function now accepts different patterns  [heathabear]
+5.17.0.2 DiscNumber and TrackCount tags were not overwritten while adding new files if their overwrite value is 1
+5.17.0.1 Fixed crash due to Failed to compare two elements in the array [Wayne]
+5.17.0.0 Added iTSfv Lite so that if iTunes is not detected iTSfv Lite will be loaded which can be used to validate audio files via drag & drop or folder browse
+5.16.3.0 Ability to continue using Track Replace Assistant even after iTSfv Main window is closed
+5.16.2.0 Double clicking Artwork panel in Discs Browser will open the current Artwork in the default image viewer
+5.16.1.5 iTunes Store validator will be henceforth identified as iTSfv in its Window Title to avoid confusion with iTunes Window Title
+5.16.1.4 Folder thumbnail did not fix if the Artist and Album names were identical
+5.16.1.3 Fixed possible crash due to track has been deleted error while synchrocleaning [Thilo]
+5.16.1.2 Adding multiple albums via would be tagged as one single album from build 5.15.3.0
+5.16.1.1 Fixing Folder Icon for Windows Vista will not anymore fix all the Artists at once
+5.16.1.0 Validate Selected Tracks is now in Context Menu accessible via System Tray icon
+5.16.0.0 Copy nfo/log/jpg files from the source album folder to music library while adding one new album at a time
+5.15.7.3 Fixed crash due to The artwork has been deleted while determining artwork sources [Kenny]
+5.15.7.2 Fixed crash HRESULT: 0x80070005 (E_ACCESSDENIED)) while getting Artwork extension [Moses]
+5.15.7.1 iTSfv crashed due to unknown errors parsing the iTunes Music Library.xml [Nick]
+5.15.7.0 Added Google Search Album to Disc Context Menu in Discs Browser
+5.15.6.1 Automatically filling Year tag is now optional via Validate > Tracks. [steveqqq]
+5.15.6.0 Statistics window title will contain the date statistics were generated. 
+5.15.5.0 Tags unreadable by iTunes but readable by iTSfv via TagLib are overwritten before adding to iTunes
+5.15.4.1 iTSfv crashed if the disc being validated was not found in the discs table. [Manuel Jose]
+5.15.4.0 Creation of Folder.jpg, Artwork.jpg, AlbumArtSmall.jpg can be saved from Resized Artwork [steveqqq]
+5.15.3.3 Ability to save resized Artwork was not optional. Now in Options > Validate > File System: Disable automatic creation of Artwork (600x600).jpg
+5.15.3.2 iTunes downloaded Artwork were not resized upon request before embedding to track [Shane, 1828250]
+5.15.3.1 Attempt to prevent failure adding Artwork from images that were dragged from webpages
+5.15.3.0 iTSfv will attempt to show the Album Artist and Album tags of the album you dragged to iTSfv
+5.15.2.4 Stability fixes for validating Tracks deleted in iTunes while the disc is still loaded in Discs Browser
+5.15.2.3 Added option to disable warning for adding tracks without Track Number. So then iTSfv will not warn for missing Track Number during long operations. [Scott]
+5.15.2.2 Delete tracks not in music folder tooltip will now display all the music folders set by user [heathabear]
+5.15.2.1 Validating only disc 1 of a multi-disc album would have overwritten disc count
+5.15.2.0 Ability to overwrite Disc Number and Disc Count before adding new files
+5.15.1.2 Handle errors that can occur during forcing tags while adding files [Scott]
+5.15.1.1 Fixed application crash while backing up Ratings for URL tracks [Mike]
+5.15.1.0 iTSfv will prompt Crop Artwork Wizard when importing single file artwork while Validating Selected Tracks 
+5.15.0.1 Explorer tab will not be automatically activated for Drag&Drop of files other than audio
+5.15.0.0 Drag&Drop Artwork to a selected Disc in Discs Browser and crop artwork before replacing artwork in the disc
+5.14.0.6 iTSfv crashed while checking for lyrics in some track [Heiko]
+5.14.0.5 iTSfv crashed if artwork path HasIllegalCharacters while getting artwork source [JaEson]
+
+Version 5.14 - 20071014
+
+5.14.0.4 Synchrocleaning more than once still showed up and attemped to add the new tracks detected from the first synchroclean
+5.14.0.3 iTSfv will not quit while running active jobs if Close button was accidently pressed; ask for confirmation
+5.14.0.2 Disc Browse will not show DiscCount tag in the Disc Name anymore to prevent unexpected misgrouping of tracks
+5.14.0.1 DiscCount filling method will not clear existing DiscCount if user validates partial albums i.e. only disc 2 and disc 3 etc. [Daniels]
+5.14.0.0 Context Menu operations for Disc Browser with ability to copy Tracklist to Clipboard
+5.13.0.1 Genre tag in ID3v1 would be overwritten with Genre index in ID3v2 2.4. Tags via TagLib# are saved in ID3v2 2.3 to overcome this problem.
+5.13.0.0 Option to resize large artwork to resolution defined as lowest high resolution in Options > Tracks [urlwolf]
+5.12.7.3 Attempted fix 'Object reference not set to an instance of an object.' while adding new tracks to library [urlwolf]
+5.12.7.2 New artwork file names and file name patterns addable from all comboBoxes in Import and Export tabs [Jose]
+5.12.7.1 If iTSfv finds there are tracks in iTunes which do not belong to any music folder location, instead of refusing, iTSfv will continue to Synchroclean, leaving those tracks
+5.12.7.0 Implementation of finding new files to iTunes Library is now 100x quick which makes Synchroclean much faster
+5.12.6.3 iTSfv refused to synchroclean even if tracks were in any one of the music folders specified [urlwolf]
+5.12.6.2 Importing Artwork from Custom folder did not work in build 5.12.3.0 [Jose]
+5.12.6.1 Fixed delays occured in main GUI when retrieving Tracklist after clicking the disc in Discs Browser using a seperate thread
+5.12.6.0 Prompt for overwriting AlbumArtist and Album tags before Adding new files to the library
+5.12.5.0 Attempted some tweaks following http://aitech.ac.jp/~ckelly/midi/help/caps.html for capitalizing Name tag
+5.12.4.1 Fixed Value cannot be null error while attempting to capitalize tracks that did not exist [Tom]
+5.12.4.0 Faster Adjust Rating for Advanced > Adjust Rating avoiding load operation of Disc Browser
+5.12.3.1 Artwork thumbnail was not shown in Discs Browser if artwork was added after the track was loaded to Discs Browser
+5.12.3.0 Added support to retain ModificationDate in Tracks in Options > Validate > Tracks [Jim]
+5.12.2.5 Adjusting rating did not function if no checkBox was checked in Tracks tab in build 5.12.1.2
+5.12.2.4 Fixed Access is denied error (Exception from HRESULT: 0x80070005 (E_ACCESSDENIED)) while importing artwork without exporting them [Jim]
+5.12.2.3 Prevent iTSfv crashing for track is not modifiable error while restoring tags [Chris]
+5.12.2.2 Prevented application crashes while accidentally validating tracks in Read-Only media
+5.12.2.1 iTSfv will no longer run as Top Most by default according to Windows Application Design Guidelines [Jim]
+5.12.2.0 Added Options > Validate > Tracks > Do not import larger Artwork if they will show White Borders in the Artwork Panel
+5.12.1.3 Prevent running Add New Files job when a user drags new files to iTSfv while iTSfv is already adding new music to iTunes
+5.12.1.2 Disc Browser Artwork thumbnail will be rendered from previously determined Artwork Source eliminating a FileWrite
+5.12.1.1 Fixed instability caused by enumerator is bound to has been modified error while background worker is busy [Gareth/Bruce]
+5.12.1.0 Added support for creating M3U Playlists from Albums in Disc Browser (aka Album Browser)
+5.12.0.0 Support for creating M3U Playlists from selected tracks. File > Create M3U Playlist of Selected Tracks [kanak]
+5.11.8.1 iTSfv could not sometimes send the bug report email when the error messages were too long
+5.11.8.0 Compilation checkBox is now a radioButton which enables you to set "Various Artists" tag before adding tracks
+5.11.7.6 Saving iTMS Artwork could have crashed iTSfv if there were Illegal characters in path 
+5.11.7.5 Bug report email ask to attach error_log instead of pasting errors in the email body, to prevent error: data area passed to a system call is too small
+5.11.7.4 Debug information will be written for tracks iTSfv failed to read
+5.11.7.3 Prevent iTSfv crashing while adding artwork to some files probably with long file names [Jojo]
+5.11.7.2 Search iTMS artwork during validation of last 100 tracks was ignored
+5.11.7.1 CheckBoxes in Checks tab will now be remembered for next launch of iTSfv [Jojo]
+5.11.7.0 Implemented several code optimizations to improve performance in validating tracks
+5.11.6.5 Prevented rare cases where iTSfv could sometimes fail to overwrite folder.jpg
+5.11.6.4 Remix tags for CD Singles will be ignored while searching for iTMS artwork [Jojo]
+5.11.6.3 Using improved iTMS artwork search code thanks to david_dl from http://www.hydrogenaudio.org/forums/index.php?showtopic=57720
+5.11.6.2 If folder artwork dimensions match the embedded artwork dimensions, iTSfv did not look for iTMS artwork
+5.11.6.1 Artwork available as TIF in iTMS were not found; they will now be converted to JPG and used as iTMS Artwork source
+5.11.6.0 iTSfv will now search for Artwork from all the available iTunes Music stores in the world
+5.11.5.1 Did not export iTMS downloaded Artwork if there was no embedded artwork in the track
+5.11.5.0 CheckBox text for Import/Export in iTSfv will now represent Import/Export settings in Options
+5.11.4.2 Adding new file name patterns and using them will not anymore require pressing Apply button twice
+5.11.4.1 Album art without any album name, were saved as "Artist - %Album%" [Jojo]
+5.11.4.0 iTSv will not perform Export Artwork 2-pass anymore if Import Artwork checkBox is unchecked
+5.11.3.7 Application crashed while exporting Artwork if iTMS artwork was not found
+5.11.3.6 Did not export iTMS downloaded Artwork if the Import Artwork checkBox was unchecked
+5.11.3.5 Log and Artwork folders paths were detected with two path separators if they were in root drive [Jonnno]
+5.11.3.4 iTSfv did not embed higher resolution iTMS Artwork to tracks with iTunes downloaded Artwork [&D.D]
+5.11.3.3 Attempted fix for Unable to cast COM object of type 'iTunesLib.iTunesAppClass' to interface type 'iTunesLib.IiTunes'
+5.11.3.2 Export/Import to/from folder patterns were not saved in Options [Jojo]
+5.11.3.1 Application could have crashed while filling DiscCount if the track wasn't found in Albums Table
+5.11.3.0 Support application wide logging debug information, located in Logs directory : debug-yyyyMMdd-log.txt
+5.11.2.0 Options to relocate iTSfv Logs, Artwork and Temporary directories : Options > Advanced > Folders
+5.11.1.0 Added options to always import higher resolution artwork during Library validation or Selected Tracks validation : Options > Validate > Tracks
+5.11.0.2 Fixed problem with UNC paths having an extra leading slash removed [John]
+5.11.0.1 For CD Singles with empty Album tag, iTSfv will look for Artwork based on Track Name [Jojo]
+5.11.0.0 Ability to replace existing Artwork with higher resolution (usually 1425x1425) iTunes Music Store artwork if found
+5.10.1.1 Fixed iTSfv crashing during Saving Artwork caused by: Error HRESULT E_FAIL has been returned from a call to a COM component
+5.10.1.0 Statistics window tabs will show the number of Genre, AlbumArtists, Artists, Albums and Tracks count
+5.10.0.2 Resume validation from last checked album checkBox setting will now be remembered
+5.10.0.1 Export/Import to/from folder choices were not saved in Options [Jojo]
+5.10.0.0 Support exporting selected tracks to another directory specified
+5.09.4.1 Incorrectly identified folder with most music, if the iTunes music folder was within that folder
+5.09.4.0 Support for dragging more music albums while iTSfv is already adding music to iTunes
+5.09.3.3 Backup Ratings XML file save path defaulted to Logs Directory
+5.09.3.2 Partially tagged tracks will be accounted for Top # Tracks statistics 
+5.09.3.1 Tweak 5.8.4.0 Tracks without at least Artist, Album and Name tags will be ignored by iTSfv is now optional in General > Validate. [Bluenote]
+5.09.3.0 Added Tracks statistics to Statistics window which is similar to Top Rated smart playlist in iTunes
+5.09.2.0 Statistics increased to Top 10 instead of Top 5. This is user configurable under Advanced.
+5.09.1.1 Fixed another [ itsfv-Bugs-1790526 ] Arithmetic operation resulted in an overflow while adjust ratings
+5.09.1.0 Parsing iTunes Music Library is now much faster as iTSfv now parses the XML database instead of iTunesLib. 15,000 Tracks under one minute.
+
+Version 5.09 - 20070914
+
+5.9.0.3 Artwork dimensions cache table was not loaded to memory if Validation was run more than once
+5.9.0.2 iTSfv will no longer write interrupted validations to the XHTML Report
+5.9.0.1 Log files included duplicate track entries if Validation was run multiple times under same instance [after 5.8.2.0]
+5.9.0.0 Introduced a Menu system to easily navigate through the functions with ability to open statistics files
+5.8.4.0 Tracks without at least Artist, Album and Name tags will be ignored by iTSfv
+5.8.3.3 iTSfv will not display incomplete statistics anymore if the process of interrupted
+5.8.3.2 AlbumArtist tag was overwritten as Various Artists all the time during validation for Compilations
+5.8.3.1 Possible fix for [ itsfv-Bugs-1790524 ] Parameter is not valid at new cXmlArtwork 
+5.8.3.0 iTSfv will attempt adding artwork using TagLib to tracks iTunes failed to AddArtworkFromFile
+5.8.2.1 Fixed [ itsfv-Bugs-1790522 ] HRESULT E_FAIL has been returned from a call to a COM component when iTunes fails to AddArtworkFromFile to some tracks
+5.8.2.0 All the log files will be stored in Documents\iTSfv Logs directory to allow Limited Users to run iTSfv when it is installed in Program Files
+5.8.1.1 iTSfv crashed if embedded artwork was corrupt. [ itsfv-Bugs-1790529 ] generic error occurred in GDI+
+5.8.1.0 While adding new music, tracks with ID3v2 2.4 will have the TrackNumber rewritten so that iTunes can detect them
+5.8.0.1 Browse Album did not work for browsing album outside of iTunes Music folder path
+5.8.0.0 Ability to look for multiple music folder locations for Synchrocleaning. iTSfv will add these files to iTunes without copying
+5.7.5.0 Enabled logging Track Ratings to file. Accessible via Context Menu > Logs > Tracks that Ratings was adjusted...
+5.7.4.6 Delete the generated 0 KiB Music folder activity file on iTSfv exit
+5.7.4.5 Tagging "Unknown Album" to songs where the album tag is blank is now optional [Bluenote]
+5.7.4.4 Adjusting rating fails with 'Object reference not set to an instance of an object' if track tags were incomplete [Ryan/Bluenote]
+5.7.4.3 iTSfv would crash it found a non existant track while determining folder where most music is
+5.7.4.2 iTMS artwork was not embedded if no artwork was found in music folder and also disabled creation of Folder.jpg and Artwork.jpg
+5.7.4.1 Fixed [ itsfv-Bugs-1790526 ] Arithmetic operation resulted in an overflow while adjust ratings [Andre]
+
+Version 5.07 - 20070908
+
+5.7.4.0 Import artwork from any single file that exists in the music folder. Enabled by default. [Jose]
+5.7.3.0 Artwork will be converted to JPEG before saving if the embedded artwork was found to be in a different format
+5.7.2.5 Already existed Custom format artwork file was not overwritten if embedded artwork was found to be larger
+5.7.2.4 Removed a rare possibililty of validation of tracks while adjusting track ratings
+5.7.2.3 Application crash while removing multiple artwork from read-only tracks
+5.7.2.2 iTSfv will ask to report the bug via email on the event it crashes due to something unexpected [urlwolf]
+5.7.2.1 DiscCount was cleared if entire music library was validated more than once without restart iTSfv
+5.7.2.0 Automatically fill track number if not found while adding files to library using taglib-sharp.dll
+5.7.1.2 User preferences on what file to import as artwork, was ignored and checked Artwork.jpg first
+5.7.1.1 Revalidating library would crash iTSfv [bug got introduced after 5.02]
+5.7.1.0 Forcing AlbumArtist and Album will be done prior to adding the tracks to iTunes using taglib-sharp.dll
+5.7.0.0 Option to remove Multiple Artwork in tracks except for the first artwork
+5.6.3.3 Fixed missing link: Tracks without Artwork in Context Menu > Log Files
+5.6.3.2 Prevented possible crash while generating report if music files were in the root drive
+5.6.3.1 Prevented possible crash while loading if artwork dimensions xml file was corrupt
+5.6.3.0 iTSfv will not allow synchrocleaning if iTunes music folder path is not set to location of most of the tracks are [Jonnno]
+5.6.2.0 Ability to change Album Browser view without having to revalidate 
+5.6.1.3 Disabled modifying Album Browser modes while adding tracks to Album Browser
+5.6.1.2 DiscCount was wrong for album names shared by different artists [ffs revalidation of entire iTunes music library is recommended]
+5.6.1.1 During validation of last 100 tracks, DiscCount will not be overwritten for incomplete albums
+5.6.1.0 iTMS Artwork can now be imported saving them in music folder
+5.6.0.1 Crashed during loading tracks data if album tag was empty [Chris]
+5.6.0.0 iTSfv will replace any existing embedded artwork if it finds a higher resolution artwork in the album folder
+5.5.5.0 Ability to disable automatic creation of AlbumArtSmall.jpg, Folder.jpg and Artwork.jpg
+5.5.4.0 Tracks without Artwork will be logged to file; accessible via Context Menu > Log Files
+5.5.3.1 Tracks with Low resolution Log file will now be updated for Validate Selected Tracks 
+5.5.3.0 Introduced Apply button in Options to save and load new file name patterns easier. 
+5.5.2.5 Did not remember last selected Import/Export Artwork file name/pattern
+5.5.2.4 Fixed bug that kept incrementing DiscCount tag after each validation for same album [after 5.5.2.0]
+5.5.2.3 Fixed bug that ignored exporting Artwork to file names with patterns such as %Artist% - %Album%.jpg in Album Folder 
+5.5.2.2 Fixed bug that ignored importing Artwork from file names with patterns such as %Artist% - %Album%.jpg in Album Folder 
+5.5.2.1 Project home changed from WMWiki to SourceForge. Visit http://sourceforge.net/projects/itsfv/
+5.5.2.0 Revised algorithm to accurately detect and tag DiscCount for multi disc albums
+5.5.1.1 Google search artwork string did not contain AlbumArtist for mix albums that were not tagged as Compilations
+5.5.1.0 Tracks with low resolution artwork will be reported in the XHTML report
+5.5.0.1 Repetitive Check for Update would give false update notification in McoreSystem.dll
+5.5.0.0 Ability to log tracks with low resolution artwork. Dimensions are specified in Options [patashnik]
+5.4.1.0 GUI reconfiguration to support additional functionality
+5.4.0.1 Fixed bug where music folder that is a network folder could make FileSystemWatcher crash [x5nder]
+5.4.0.0 iTSfv will remove white spaces in Artist, Album and Name tags during validation
+5.3.0.1 Albums didn't show Disc Number if the Disc Count was absent
+5.3.0.0 Force update Artist Folder thumbnails in music folder (useful in Windows Vista)
+5.2.5.0 Added AlbumArtist statistics to Statistics window
+5.2.4.0 Ability to set Compilation tag before validating tracks
+5.2.3.3 Previous stats file will not be accidentally overwritten if the parsing iTunes library task was interrupted
+5.2.3.2 Manually checking updates did not prompt the Update status dialog box
+
+Version 5.02 - 20070720
+
+5.02.03.1 iTSfv would crash if no tracks were selected before Copy to Clipboard button was pressed
+5.02.03.0 Automatically check for updates [enabled by default. can disable in options > advanced]
+5.02.02.0 Statistics can now be instantly loaded from previous session if the user agrees to do so
+5.02.01.3 Stop button didn't have an effect while adding new files
+5.02.01.2 iTSfv would crash if no tracks were selected before Validate Selected Tracks button was pressed
+5.02.01.1 Artwork was not imported to the album if only a track other than the first track had Artwork
+5.02.01.0 Ability to override Album name when adding music via iTSfv with the Album CheckBox in Explorer
+5.02.00.0 Ability to override AlbumArtist when adding music via iTSfv with the AlbumArtist CheckBox in Explorer
+5.01.04.0 Overriding PlayedDate: the track duration will be accumilated to the PlayedDate
+5.01.03.0 If all tracks are iTunes Store standard after validating selected tracks, the status bar will say so
+5.01.02.0 Added Total time spent listening to music to the Statistics Summary tab
+5.01.01.0 When accessing Options or pressing F2, the approprite Options based on current Tab will be opened by default
+5.01.00.0 During validation of selected tracks, iTSfv will attempt update Track Artwork from a larger dimensions artwork and update Artwork.jpg
+5.00.06.0 Added Bar Chart support and optimized code for graphing
+5.00.05.1 Maximum PlayedCount, TrackDuration and Average TrackDuration will be guessed for the very first time to avoid blank graphs for Recently favorite
+5.00.05.0 Statistics will include Top 5 Albums viewed by All-time favorite, Recently favorite and Storage.
+5.00.04.0 Writing tags status message will have track title instead of album title
+5.00.03.0 Modified default Rating weights. By default SkippedCount is disabled in Rating. 
+5.00.02.1 Replace track with identical but differnt kind file in Advanced tab, crashed if no tracks were selected
+5.00.02.0 Statistics can be viewed by Rating based on the automatic rating algorithm (need to display statistics at least once). 
+5.00.01.1 Track Count was overwritten for the last album that completes the 100 tracks when performing Quick Validation
+5.00.01.0 Backup/Rating Rating etc. includes SkippedCount and SkippedDate
+5.00.00.2 Restoring ratings feature was bug freed for restoring ratings of URL tracks
+5.00.00.1 iTSfv will no longer crash if there are no tracks in iTunes library [HotRod]
+5.00.00.0 Further modularization and review of code to take care of implicit conversions
+4.24.00.0 iTSfv Statistics window displaying Top 5 Genres and Artists viewed by Storage or Preference [Graphing.V3.dll by Bruce Smith]
+4.23.04.0 Keyboard Shortcut F12 to minimize iTSfv to System Tray
+4.23.03.1 Drag & Drop files did not work if the file extension was in capital
+4.23.03.0 Validate selected tracks button will work only if more than one track is selected
+4.23.02.0 Support adding more file extensions to track replace assistant
+4.23.01.1 Fixed a possible case where the calculated rating could be negative
+4.23.01.0 Files will be added to iTunes starting from the last track of the album
+4.23.00.0 Added Browse Album location in Album Browser
+4.22.16.0 Added files will be validated only if Validate checkBox is checked. Checked by default.
+4.22.15.1 Stop button did not work within album validation but between albums
+4.22.15.0 When capitalizing, Dj will be DJ. Other fixes are yet to follow. 
+4.22.14.0 If track is a compilation then AlbumArtist will be overwritten  as Various Artists
+4.22.13.1 Compilation albums should take precedence and now group properly in Album Browser
+4.22.13.0 Status bar will mention importing artwork to track
+
+Version 4.22 - 20070602
+
+4.22.12.0 Import Artwork to track from Artwork.jpg is now enabled by default
+4.22.11.0 Tracks in the Explorer tab list box will be sorted alphabetically
+4.22.10.2 Settings were not saved and reloaded for Validate Selected Tracks
+4.22.10.1 The main form did not read the latest settings from Options for some variables 
+4.22.10.0 Album Browser will list multi disks in Disk 02/05 etc. for Disk 2 out of 5
+4.22.09.1 EToC or remaing time in seconds will now work for operations at track level in addition to album level
+4.22.09.0 Support for several options on how Album Browser should list box set and/or multi disk albums
+4.22.08.0 DiscNumber will be formatted for example as 01. 02 instead of 1, 2 etc.
+4.22.07.0 Albums are listed in Artist - Grouping - Disk Number - Album for box set and/or multi disk albums
+4.22.06.1 Similar file names will be skipped in Track Replace Assistant
+4.22.06.0 Percentage of Progress for each track is now in the start of Applicaion Title
+4.22.05.0 Support to Capitalize AlbumArtist 
+4.22.04.0 Albums are listed in Artist - Album instead of Album - Artist format
+4.22.03.0 Tracks are now grouped in Album Browser according to AlbumArtist without depending on Compilation tag
+4.22.02.0 AlbumArtist tag will be updated only if it is empty. Compilation tracks will have AlbumArtist as Various Artists. 
+4.22.01.0 Merged Capitalize, Replace and Decompile tabs to a new General tab in Selected Tracks
+4.22.00.1 Tracks were capitalized while adjusting ratings
+4.22.00.0 Options to Automatically capitalize words in newly added files
+4.21.01.0 Artist and Album checkBoxes are checked by default for Capitalizing
+4.21.00.0 Replace selected tracks with different kind files (will have to manually delete old tracks)
+4.20.01.0 Copy the LastPlayed tag from old tracks to new files while replacing tracks in Explorer tab
+4.20.00.0 Track Replace Assistant to ease replacing albums with higher bit rate tracks
+4.19.00.2 Fixed bug where Artwork.jpg could be possibly saved twice
+4.19.00.1 Prevented program crash attempting to overwrite read-only Artwork.jpg
+4.19.00.0 Automatically fill missing Year if the year is detected by subsequent tracks
+4.18.04.0 Backup/Restore: Backup ratings etc. of selected tracks
+4.18.03.1 Fixed a possible arithmatic overflow in automatic rating function
+4.18.03.0 Support to drag and drop music from outside of music folder
+4.18.02.0 Clear Button to clear the list of tracks in Explorer tab
+4.18.01.0 AppStarting mouse cursor when BackgroundWorker is busy
+4.18.00.0 Selected Tracks: Support to Validate selected tracks of an album
+4.17.02.0 While importing artwork to tracks, iTSfv will first try to export the iTunes downloaded Artwork before looking for the folder.jpg
+4.17.01.2 User filled Album Artist tag will not be overwritten with "Various Artists" for Compilations
+
+Version 4.17 - 20070430
+
+4.17.1.1 Tracks List in Explorer tab was not cleared prior to scheduled task
+4.17.1.0 Fill Disc Count first before filling Disc Number to avoid file getting renamed twice
+4.17.0.0 Copy AlbumArtSmall.jpg to Album folder if file does not exist
+4.16.1.0 Rearranged Context Menu to facilitate performing tasks
+4.16.0.0 Schedule: automatically find new files in Music folder and add to library
+4.15.7.1 Errors while background folder monitoring will now be silent
+4.15.7.0 Merged Offset tab into Override tab
+4.15.6.3 Track checks are now performed after Track edits track report to be accurate
+4.15.6.2 Selected Tracks: File will be only renamed if the file name already not in proper case
+4.15.6.1 Selected Tracks: First letter of the File Extension was capitalized
+4.15.6.0 Report title will include application version and current date/time
+4.15.5.1 Prevented possible application crash when browse Albums in Album Browser
+4.15.5.0 Log tracks with multiple artwork to file
+4.15.4.0 Notify Icon now displays progress of a task 
+4.15.3.0 Favor long tracks in auto rating so they will not get under rated due to low played count
+4.15.2.0 Option: Advanced, Minimize to System Tray
+4.15.1.0 Application Title will display current job operation description
+4.15.0.0 Schedule: automatically Adjust the Rating according to Play pattern 
+4.14.1.0 Auto rating algorithm now implements use of Skipped Count
+4.14.0.3 Choosing Rating Weight using NumericUpDown controls should be now more user friendly
+4.14.0.2 Checking Updates for next time showed the message iTSfv is up-to-date
+4.14.0.1 Only checking for Artwork and Track Number will be enabled by default on first load
+4.14.0.0 Save/Restore settings between validation sessions and when iTSfv starts [Chip]
+4.13.2.0 General tab controls were grouped according to target locations iTSfv modify data
+4.13.1.0 Library tab was renamed to General
+4.13.0.1 Prevent automatically selecting settings that modify track or iTunes Library data in anyway [Chip] 
+4.13.0.0 Notify Icon in System Tray with iTSfv Context Menu operations
+4.12.1.0 Warn the user and link to Mp3tag if added track does not have Track Number
+4.12.0.1 Overrode Played Date was same for all the tracks
+4.12.0.0 Selected Tracks: Override Played Count and Played Date tag information
+4.11.1.0 New Folder.jpg files created using iTSfv will be Read-Only [John Lockwood]
+4.11.0.0 Added Synchroclean button to perform joint operation as in iTunes Libray Updater
+4.10.2.1 Stop opening Report after adjusting track Ratings
+4.10.2.0 Moved Adjust Ratings button to a new Advanced tab
+4.10.1.2 iTSfv is not required to reload if initializing iTunes failed first time
+4.10.1.1 Preteching Album Browser information was not working at all
+4.10.1.0 Selected Tracks, Decompile: Added %Name% (feat. %Artist%)
+
+Version 4.10 - 20070325
+
+4.10.0.0 Selected Tracks: Copy tracks list to clipboard with Name, Album and Artist info
+4.9.2.00 Backup/Restore: Support for EQ, Enabled, Shuffle Exclude, Start/Finish, Bookmark Time
+4.9.1.00 Backup/Restore: Choose what tags to be restored in to iTunes Library
+4.9.0.05 Crashed when trying to delete URL tracks that do not exist in HDD
+4.9.0.04 iTSfv background worker crashed if track was playing while attempting to rename
+4.9.0.03 Validate last 100 tracks did not function if total number of tracks in library was less than 100
+4.9.0.02 Tracks are now filtered to Music files those are ready validate, before adding to Album Browser
+4.9.0.01 iTSfv crashed if iTunes Music Library contained URL tracks
+4.9.0.00 Automatically fill missing Genre if the genre is detected by subsequent tracks
+4.8.0.01 Validated 101 tracks instead of 100 tracks during Quick Validation and when Validation was somtimes Resumed
+4.8.0.00 Set Track EQ based on Genre during Validation
+4.7.4.00 Modified status bar text to ensure all tracks in HDD are in iTunes after Finding new tracks in HDD
+4.7.3.00 Relocated necessary GUI controls to be accessible by all tabs
+4.7.2.00 Added secondary progress bar to show progress for track validation
+4.7.1.00 Validate selected album in the Album Browser
+4.7.0.00 Support offsetting Track Number by -100 to +100 in Selected Tracks
+4.6.2.00 Customizable weighting system for ratings tracks (Options.Ratings/Played Count)
+4.6.1.00 Added button Adjust the Rating according to Play pattern in tab Ratings/Played Count
+4.6.0.00 Adjust Rating according to Play pattern of songs played at least once
+4.5.3.10 Track Name will not append Decompilation Artist if Track Artist is already the Decompilation Artist
+
+Version 4.05 - 20070218
+
+4.5.03.9 Only validated 99 instead of 100 tracks during Quick Validation
+4.5.03.8 Track Name of Tracks with no Artist were overwritten with tag pattern during Decompilation
+4.5.03.7 Decompilation did not proceed if one of the selected tracks did not exist
+4.5.03.6 iTSfv did not delete non-existant tracks from Library 
+4.5.03.5 Non existant tracks were loadede into Album Browser
+4.5.03.4 Incorrect iTS compliance rate when validated last 100 tracks
+4.5.03.3 Tag less Albums in iTunes Library could have crashed iTSfv
+4.5.03.2 iTSfv only linked to beta versions of iTSfv during Check for Updates
+4.5.03.1 Fixed bug in adding files to iTunes where IITOperationStatus could not be determined
+4.5.03.0 AlbumArtist will always be updated to match Artist tag while Compilations will always have Various Artists as the AlbumArtist
+4.5.02.0 iTSfv will not support adding tracks outside from Music folder
+4.5.01.1 Fixed possible chance where Track Count will be overwritten with incorrect values if task if validation was cancelledn when loading albums 
+4.5.01.0 iTSfv will delete tracks from Library prior to validation
+4.5.00.0 Delete tracks which are not in Music Folder
+4.4.03.0 Decompiled Artist name now auto completes
+4.4.02.0 Removed exact match requirement in Google Search for Album
+4.4.01.0 Artist after decompilcation is now remembered
+4.4.00.3 Only newly added tracks will be validated; not the whole library 
+4.4.00.2 Replace tags did not work if Replace text was empty
+4.4.00.1 Reviewed Fill Track Count etc function for bugs
+4.4.00.0 Quickly validate last 100 Tracks from Context Menu or pressing F5
+4.3.01.2 Control buttons were not disabled while iTSfv busy in Seleted Tracks operations
+4.3.01.1 Fixed bug with Progress Bar increment when validating tracks
+4.3.01.0 Resume from last track will go 100 tracks further back
+4.3.00.1 Fixed timer bug that caused inaccurate tracks/second value
+4.3.00.0 Decompile track as %Name% - %Artist% with new Artist for Selected Tracks
+4.2.01.0 Improved behavior of tracks getting added to Tracks listBox in Explorer tab
+4.2.00.0 Automatically validate newly added tracks including Track Count, Disc Count and Disc Number (based on new tracks available)
+4.1.01.0 Fill missing tags button in Album Browser now performs complete Validation 
+4.1.00.4 Artwork was only added to first Artwork missing track of the album from version 4.0.0.0 
+4.1.00.3 Log files were updated with date last validated even if there was no tracks to write in log
+4.1.00.2 Albums were incorrectly sorted for Compilation albums with AlbumArtist not set to "Various Artists"
+4.1.00.1 AlbumArtist was not updated to "Various Artists" if AlbumArtist was already filled with Artist tag
+4.1.00.0 Automatically Fill Track Count, Disc Number and Disc Count as part of Validation
+4.0.13.1 File System Monitor did not detect new directories added to Music Folder
+4.0.13.0 Status Bar will display how many tracks were updated using Album Browser
+4.0.12.3 Track Number was always updated for feature: Reorder Track Numbers if Track Number is not starting from 1 on second disk and onwards for multiple disk albums
+4.0.12.2 Complete albums were detected as Incomplete albums
+4.0.12.1 Final versions were crashed on error instead of BETA versions
+4.0.12.0 Number of stored Artwork File Name Patterns in Options are not limited 5 anymore
+4.0.11.0 Number of stored Artwork File Names in Options are not limited 5 anymore
+4.0.10.0 Check for Updates will now direct to Beta versions as well when they are available
+4.0.09.2 Bug in Check Update caused incorrect URL redirection
+
+Version 4.00 - 20070127
+
+4.0.9.1 Albums with Consecutive track numbers but missing first track was regarded as a complete album
+4.0.9.0 Reorder Track Numbers if Track Number is not starting from 1 on second disk and onwards for multiple disk albums
+4.0.8.0 Update Track Count if album is complete and track count is not equal to number of tracks in album
+4.0.7.0 Versions of iTSfv other than final version will now crash on error for accurate debugging
+4.0.6.0 Dragged and dropped new files from HDD will now be shown in tracks ListBox in Explorer tab as well
+4.0.5.1 Prevented possible addition of duplicate entries to tracks ListBox in Explorer tab
+4.0.5.0 New Music Activity log files will be created on a daily basis rather than hourly
+4.0.4.0 Clear Tracks ListBox if pressed No to Add New Files? MessageBox
+4.0.3.0 iTSfv will start validating from most recently added track to first added track
+4.0.2.0 Generated log files are not overwritten anymore but appended
+4.0.1.2 iTSfv is back to Single instance application behavior
+4.0.1.1 Track Count was updated for tracks in partial albums due to resuming from last album
+4.0.1.0 Replace Fill missing Tags checkBox and Load Albums button with Fill Missing Tags button in Album Browser
+4.0.0.0 Core change to Load Albums and validate by album making up to 1.5 times faster validation
+3.9.1.0 Number validated Tracks/Seconds is now displayed under Statistics
+3.9.0.2 Artwork was re-imported to all tracks that already had Artwork in build 3.9.0.0
+3.9.0.1 Error log will now include Stack Trace for easier debugging 
+3.9.0.0 Support to import Artwork from a custom file name e.g. cover.jpg from each Album Folder
+3.8.0.0 Support to export Artwork with custom file name for each Album folder
+3.7.1.0 Open Music Folder path from Context Menu
+3.7.0.0 Support to export Artwork to a folder with a specified file pattern
+3.6.1.4 Assembly version is now fixed and set to 1.0.0.0 so that multiple config files will not be created
+3.6.1.3 Status Bar icon will not get squashed due to long Status Bar text
+3.6.1.2 iTSfv About context menu item will now show the Assembly Version as well as the File Version 
+3.6.1.1 Tracks were not removed from the ListBox in Explorer tab after they are added to the library
+3.6.1.0 Automatically add newly found tracks to tracks list in Explorer tab
+3.6.0.0 Added support to monitor changes done to the Music Folder while iTSfv is running
+3.5.1.3 Progress percentage will now be shown in 0.00% format
+3.5.1.2 Number of minutes remaining was not reported accurately
+3.5.1.1 Fixed bug in function checking for Read-Only files
+3.5.1.0 Overwrite Folder.jpg and Artwork.jpg with Artwork if they are less than a specified size
+3.5.0.0 Support to add Artwork from a folder of artwork files with a file name pattern
+3.4.4.1 iTSfv is no longer AlwaysOnTop during the task of adding new tracks to Library
+3.4.4.0 Settings are saved/restored to/from app.config rather than Registry
+3.4.3.0 Seperate Options Form to support future customizations and features
+3.4.2.0 New log file was Tracks that Artwork was added is created
+3.4.1.2 Number of tracks Artwork was added was counted twice for tracks that Artwork was only found in iTunes Artwork Database
+3.4.1.1 Status bar did not say Checking for Updates 
+
+Version 3.04 - 20070109
+
+3.4.1.0 Option to show minutes remaining instead of EToC 
+3.4.0.1 Warning message in log file for inconsecutive tracks was displayed even with Resume from last checked track checkBox was unchecked
+3.4.0.0 Add Artwork to the file if Artwork is only found in iTunes Artwork Database
+3.3.2.0 Enhanced code to more accurately find Albums with inconsecutive Track Numbers
+3.3.1.0 Unchecking Resume from checked tracks checkBox will now check Check for iTunes standard checkBox
+3.3.0.1 Cancelling task Find new tracks in HDD still continued to show tracks in HDD
+3.3.0.0 Added ability to rename file to match the proper case of Track Name
+3.2.0.2 Possible incompletion of iTSfv Tracks Report if user accessed Get Info in iTunes
+3.2.0.1 iTSfv printed the Artist instead of AlbumArtist for Compilations in the Google for Artwork heading of the track report 
+
+Version 3.02 - 20070107
+
+3.2.00.0 Show Estimated Time of Completion (EToC) in the Application Title
+3.1.01.0 Changed download URL from wmwiki.com/mcored/downloads/itsfv to wmwiki.com/downloads/itsfv
+3.1.00.0 Tracks that are not iTS compliant, will information on what tags are missing 
+3.0.22.1 Total Number of Tracks meet iTunes Store Standard count was wrong if validation terminated unexpectedly
+3.0.21.0 Number of tracks validated is now shown in the report
+3.0.20.3 Resume from last checked track checkBox is now disabled during validation
+3.0.20.2 Check for iTS standard checkBox is now disabled during validation
+3.0.20.1 iTunes Store standard compliance was shown as 100% if Check for iTS was checked
+3.0.20.0 Added Check for updates in Context Menu
+3.0.19.0 Automatically validate newly added track via iTSfv via Drag n Drop or Explorer tab
+3.0.18.0 Automatically validate track while Album Browser loads albums (enhancement to 3.00.6.0)
+3.0.17.0 New validate(track) function to perform Copy Folder.jpg, Add missing Artwork, Copy AlbumArtist and Make Read-Only
+3.0.16.3 Fixed possible bug where iTSfv will stop adding anymore new files after the first
+3.0.16.2 Did not show iTS compliance if the compliance was 100%
+3.0.16.1 Resume from last checked track was broken since Version 2
+3.0.16.0 Option to include/exclude video files for validation
+3.0.15.0 Option to include/exclude Podcasts for validation
+3.0.14.0 iTSfv will no longer include network audio streams for validation
+3.0.13.1 Prevented possible arithmetic overflow in progress bar
+3.0.13.0 User confirmation before adding new files to library
+3.0.12.0 Replace missing tracks with existing identical tracks but in different kind and restore rating
+3.0.11.0 Enhanced code in Replace missing tracks with existing identical tracks but in different kind and restore play count
+3.0.10.1 iTSfv could not captilize first word of Read-Only tracks
+3.0.10.0 Enhanced Add New Files to Library function
+3.00.9.0 Add File checkBox is now enabled by default
+3.00.8.0 Tracks report name will now follow tracks-yyyyMMddTHH-report.html format
+3.00.7.0 Open last created track report (will not be limited to only be able to open today's report)
+3.00.6.1 iTSfv performed very slow if Album Browser was used after Explorer tab operation
+3.00.6.0 Fill Album Artist after loading albums in Album Browser
+3.00.5.0 Add Artwork to Track from Artwork.jpg will look for Folder.jpg if Artwork.jpg does not exist
+3.00.4.1 Copy Folder.jpg to Album folders checkBox renamed to Save Artwork to Album folder as Folder.jpg
+3.00.4.0 Application is Always On Top while tasks are running
+3.00.3.0 iTSfv will not open the Track Report XHTML if task was Stopped manually
+3.00.2.1 Pressing NO in the Stop button will still disable the button
+3.00.2.0 Percentage of Progress is now in the start of Applicaion Title for every task
+3.00.1.0 Incomplete Albums list will include warning if Load only new Albums if resume from last Track checkBox is checked 
+3.00.0.1 Track Count did not update if more tracks with a higher track count were added to the same album 
+3.00.0.0 Redesigned core functionality to be taken care by a single background worker
+2.25.0.0 Add new files found in Explorer tab if Add checkBox is checked
+2.24.1.0 Load only new Albums if resume from last Track checkBox is checked (warning: partially completed albums from previous session would count as an incomplete album)
+2.24.0.1 Incorrect Track Count was written if the last track was missing in an Album with inconsecutive tracks
+2.24.0.0 List iTS standard non-compliant tracks to Report based on specified iTS standard non-compliant rate
+2.23.0.0 Support for iTunes Libraries with music located not in Music Folder
+2.22.4.0 Added Options tab to facilitate future customizations
+2.22.3.0 Faster album load during the scan for new tracks not in library
+2.22.2.0 Enhancements in the code related to Status Bar
+2.22.1.0 New heading in the report called Statistics
+2.22.0.1 Artwork was not added to files if Copy Folder.jpg to Music folders was unchecked
+2.22.0.0 Check for tracks without Lyrics
+2.21.2.0 Add Artwork from Artwork.jpg is now enabled by default
+2.21.1.0 Clicking on album in Album Browser will produce the Track List as a ToolTip
+2.21.0.3 Google search for missing Artwork was not printed in final report
+
+Version 2.21 - 20070101
+
+2.21.0.2 Album list was not cleared when Albums were loaded next time
+2.21.0.1 Some control buttons were not disabled during iTunes initialization
+2.21.0.0 Open non-iTS standard compliant tracks list in Context Menu
+2.20.0.0 Open incomplete Albums list in Context Menu
+2.19.0.0 Open Tracks edited by Album Browser in Context Menu
+2.18.7.0 Multiple Disks will be listed seperately in Album Browser
+2.18.6.2 Incorrect Track Count was written to Albums with Multiple Disks
+2.18.6.1 Incorrect Track Count was written if a track from the middle was missing in an Album with inconsecutive tracks
+2.18.6.0 Open Warnings in Context Menu
+2.18.5.1 Did not autofill missing Track Count, Disc Number and Disc Count for Read-Only files
+2.18.5.0 Rearranged Context Menu to facilitate opening log files
+2.18.4.0 Write non iTunes Store standard track locations to nonITS-yyyyMMdd-tracks.txt
+2.18.3.0 Double clicking the album in Album Browser will play the first track of the album
+2.18.2.0 Faster album load upon validation of all tracks
+2.18.1.1 Recovery of tags will be much faster now
+
+Version 2.18 - 20061231
+
+2.18.1.0 Lists of tracks in Report will not be sorted alphabetically
+2.18.0.0 Backup/Restore Ratings, PlayedCount and PlayedDate
+2.17.0.0 Added support to autofill missing Track Count, Disc Number and Disc Count after loading albums in Album Browser
+2.16.0.0 Check for iTunes Store standard (check ten mandatory tags)
+2.15.1.0 Browse for the new tracks in HDD double clicking the ListBox items
+2.15.0.0 Report tracks in warning.txt that iTunes Music Library.xml is corrupt for 
+2.14.0.0 Replace missing tracks with existing identical tracks but in different kind and restore play count
+2.13.0.0 List Tracks which iTunes did not add from Explorer
+2.12.1.0 iTSfv will now always report tracks that are missing (it will not delete them unless specified)
+2.12.0.0 Recover Tag information from a previous iTunes Music Library XML file
+
+Version 2.11 - 20061226
+
+2.11.0.0 Set Tag complete tracks Read-Only
+2.10.1.0 Reports are now seperated by Artist - Album
+2.10.0.0 Add Artwork to tracks without Artwork from Artwork.jpg
+2.09.0.1 Missing track number wasn't checked if Check Artwork checkBox was unchecked
+2.09.0.0 Replace text in Track Title, Album or Artist
+2.08.0.0 Check for missing Track Number (best to create new iTunes Library before checking)
+2.07.0.1 Crashing while attempting to open non-existant tracks report
+2.07.0.0 Add new music from Music Folder to iTunes Library
+2.06.0.0 Delete missing tracks from iTunes Library
+2.05.0.2 Folder.jpg and Artwork.jpg of missing tracks were copied to SystemRoot
+2.05.0.1 Checked Tracks count on iTSfv was always the total number of tracks in iTunes
+2.05.0.0 Capitalize first letter in each word of Artist, Album or Name
+2.04.0.0 Stop button to stop file validation in progress
+2.03.1.0 Display currently checked Album in Status bar
+2.03.0.0 Resume from last checked track (useful for large iTunes Libraries)
+2.02.0.2 Missing track location was null in tracks_report so changed to track info
+2.02.0.1 iTSfv would not error out copying AlbumArtist in files which don't exist
+2.02.0.0 Drag and drop folders or files from Music Folder to add music to iTunes
+2.01.2.4 Reinforced iTSfv to finalize .xhtml file during a crash
+2.01.2.3 Could not Validate again until iTSfv was reloaded if iTunes was busy
+2.01.2.2 Removed "amazon" keyword which was used to narrow search results
+2.01.2.1 Showed incorrect number of Tracks without Artwork
+2.01.2.0 iTSfv will now re-iniitalize iTunes Library each time Validate button is pressed
+2.01.1.0 Copy Folder.jpg and Copy AlbumArtist options are now enabled by default
+2.01.0.3 Fixed possible invalid google result for albums with multiple artists
+2.01.0.2 Copying Artwork.jpg (as part of Folder.jpg) did sometimes crash iTSfv
+2.01.0.1 Removed Single Instance Application behavior due to Firewall behavior
+
+Version 2.01 - 20061117
+
+2.1.0.0 Copy Folder.jpg to Music folders from tracks
+2.0.2.0 Tracks report name will now follow tracks-yyyyMMdd-report.html format
+2.0.1.0 Version History is now Embedded and accessible via the Context Menu
+2.0.0.0 Rewrote code so that Tracks Report is now in XHTML 1.1 with hyperlinks for albums with missing artwork
+1.1.0.1 Error log was not actually updated if an error occured
+1.1.0.0 Context menu to open Tracks Report and Error Log
+1.0.0.2 Percentage of Progress is now in the start of Applicaion Title
+1.0.0.1 Progress Bar was incorrect when Validate button was pressed for the second time and onwards
+
+Version 1.00 - 20060915
+
+1.0.0.0 iTSfv will not iterate through the iTunes library multiple times, saving time
+0.9.1.0 The tracks_report.txt will now contain files that had missing Album Artist
+0.9.0.0 Remove tracks from library that do not exist in the hard disk
+0.8.0.1 Set accept button as Validate
+0.8.0.0 Single instance application
+0.7.0.1 Removed code that handled App title change when minimized
+0.7.0.0 Added iTunes 7 icon
+0.6.1.0 Log any errors to error_log.txt
+0.6.0.0 Fill Album Artists using Artist and Compilations data
+0.5.0.1 Assembly name changed to iTunes Store File Validator
+0.5.0.0 Redesigned GUI
+0.4.0.0 Auto opens tracks_report.txt once application is closed
+0.3.0.0 Added Progress Bar
+0.2.1.0 Autoclose application once completed
+0.2.0.0 GUI now visible
+0.1.2.0 Removed MessageBox showing tracks without artwork
+0.1.1.0 Tracks without Artwork are logged to tracks_report.txt
+0.1.0.0 Initial Release

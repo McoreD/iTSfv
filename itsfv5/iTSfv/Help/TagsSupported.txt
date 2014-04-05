@@ -1,0 +1,16 @@
+Syntax Supported: 
+
+Album ---------------- %Album%
+Album Artist --------- %AlbumArtist%
+Track Artist --------- %Artist%
+Composer ------------- %Composer%
+Disc Count ----------- %DiscCount%
+Disc Number ---------- %DiscNumber%
+File Name ------------ %FileName%
+Genre ---------------- %Genre%
+Track Name ----------- %Name%
+Played Count --------- %PlayedCount%
+Rating --------------- %Rating%
+Track Count ---------- %TrackCount%
+Track Number --------- %TrackNumber% 
+Year ----------------- %Year%

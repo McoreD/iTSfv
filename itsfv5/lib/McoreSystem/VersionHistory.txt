@@ -1,0 +1,66 @@
+Version History
+
+1.14.0.0 New UpdateChecker class for GoogleCode {Jaex}
+1.13.2.1 New Versions were mistakenly announced as Beta Versions
+1.13.2.0 Multiple application update check locations are now supported
+1.13.1.0 Multiple application download directory locations are now supported
+1.13.0.0 New Version History Window
+
+1.12.1.1 Only download release notes if the remote application is a later version
+1.12.1.0 Release Notes will be read from a seperate release notes text file
+1.12.0.3 Beta versions with the same major build number as the final version did not get downloaded
+1.12.0.2 Did not return SoftwareCycle tag for GetApplication(productName, productVersion)
+1.12.0.1 Got rid of unreachable code while checking for updates
+1.12.0.0 Support for adding Release notes
+
+1.11.1.0 Check for updates multiple times because of server timeouts
+1.11.0.2 Repetitive Check for Update would give false update notification
+1.11.0.1 Update URL for updated version was wrong
+1.11.0.0 Added Check Update function
+
+1.10.5.0 Extended GetLocalVersion function
+1.10.4.0 Extended support for ALPHA, BETA and FINAL tags
+1.10.3.0 Added support for various styles of Check Update MessageBoxes
+1.10.2.0 Included supported BETA tag
+1.10.1.0 Added RegistryValueKind to Registry SetValue
+1.10.0.2 Fixed UpdateManager Bug
+1.10.0.1 Fixed Default Shell Icon was not in the proper Registry address
+1.10.0.0 Added FolderOperations.vb to McoreSystem.Management.dll
+
+1.09.0.0 Added FileExtensionManager.vb to McoreSystem.Management.dll
+1.08.0.0 Added ServiceAdmin.vb to McoreSystem.Management.dll
+1.07.0.0 Added SingleProgramInstance.cs to McoreSystem.dll
+1.06.0.0 Added ServiceAdmin.cs to McoreSystem.dll
+
+1.5.5.1 Renamed Application.cs to AppInfo.cs
+1.5.5.0 Moved Application Settings Management via Reg to AppSettings.RegConfig
+1.5.4.0 Moved Application Settings Management via XML to AppSettings.XmlConfig
+1.5.3.1 IO.cs renamed to ResourceExtracter
+1.5.3.0 Added Application Settings Management via XML
+1.5.2.0 Added isUpdate for checking Program Updates
+1.5.1.0 Added Application(ProductName, ProductVersion) constructor
+1.5.0.2 Rename McoreMove to Move and McoreCopy to Copy
+1.5.0.1 Wrap McoreMove and McoreCopy in McoreSystem
+1.5.0.0 Added Registry.vb class for Advanced Registry Management
+
+1.4.1.0 Merged Registry.cs with Application.cs
+1.4.0.0 Added Net Class
+
+1.3.3.0 Added Enumeration for GetApplicationTitle 
+1.3.2.0 Added GetApplicationTitle
+1.3.1.1 Instances class renamed to Application class
+1.3.1.0 GetModifiedDate(string FileName)
+1.3.0.0 Added FileOperations Module for Move/Copy File/Folder operations
+
+1.2.0.0 Added Registry Class
+
+1.1.2.3 Reorganized Classes in McoreSystem.Management namespace
+1.1.2.2 Confirmed all functions in McoreManagement.dll work
+1.1.2.1 Management Class as VB.NET moved to McoreSystem.Management.dll
+1.1.2.0 Windows Controller renamed to Management 
+1.1.1.2 Using Windows Controller in original VB.NET
+1.1.1.1 Restart Options errors using C# code
+1.1.1.0 Windows Controller VB.NET Class (Converted to C#)
+1.1.0.0 Added Instances Class
+
+1.0.0.0 Added Operating System Class

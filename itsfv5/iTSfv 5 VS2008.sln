@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "iTSfv", "iTSfv\iTSfv.vbproj", "{CD90D7DC-1141-49CD-A96F-5062EF12E601}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F7EEDE10-D3BB-4AE3-84BA-F791B93AFB61} = {F7EEDE10-D3BB-4AE3-84BA-F791B93AFB61}
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Graphing", "lib\Graphing.V3\Graphing.vbproj", "{F7EEDE10-D3BB-4AE3-84BA-F791B93AFB61}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CommandLineParser", "lib\CommandLineParser\CommandLineParser.vbproj", "{0750FD5C-105A-474E-AB36-CA98DC1FA2E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "McoreSystem", "lib\McoreSystem\McoreSystem.csproj", "{31F006C6-E007-4954-816F-0F83EFC7484D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZSS.UploadersLib", "..\..\..\ZScreen\trunk\ZSS.UploadersLib\ZSS.UploadersLib.csproj", "{E1C94415-3424-4517-A2A1-B2FDD1F59C67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD90D7DC-1141-49CD-A96F-5062EF12E601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD90D7DC-1141-49CD-A96F-5062EF12E601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD90D7DC-1141-49CD-A96F-5062EF12E601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD90D7DC-1141-49CD-A96F-5062EF12E601}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7EEDE10-D3BB-4AE3-84BA-F791B93AFB61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7EEDE10-D3BB-4AE3-84BA-F791B93AFB61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7EEDE10-D3BB-4AE3-84BA-F791B93AFB61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7EEDE10-D3BB-4AE3-84BA-F791B93AFB61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0750FD5C-105A-474E-AB36-CA98DC1FA2E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0750FD5C-105A-474E-AB36-CA98DC1FA2E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0750FD5C-105A-474E-AB36-CA98DC1FA2E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0750FD5C-105A-474E-AB36-CA98DC1FA2E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31F006C6-E007-4954-816F-0F83EFC7484D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31F006C6-E007-4954-816F-0F83EFC7484D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31F006C6-E007-4954-816F-0F83EFC7484D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31F006C6-E007-4954-816F-0F83EFC7484D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1C94415-3424-4517-A2A1-B2FDD1F59C67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1C94415-3424-4517-A2A1-B2FDD1F59C67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1C94415-3424-4517-A2A1-B2FDD1F59C67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1C94415-3424-4517-A2A1-B2FDD1F59C67}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

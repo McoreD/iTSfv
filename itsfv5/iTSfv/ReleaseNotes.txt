@@ -1,0 +1,8 @@
+//**************************
+//* iTSfv-x.x.x.x-src+setup
+//**************************
+
+To successfully compile the source: 
+1. Remove the unreferences DLLs
+2. Remove the unreferences Projects
+3. Browse for new DLLs found in the ..\src folder

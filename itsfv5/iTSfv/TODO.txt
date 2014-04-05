@@ -1,0 +1,53 @@
+spawn seperate thread for getting genre from last.fm while adding music
+Lyricsfly close matches via closest-matches.txt e.g. a,,,,ã,,,,â
+import artwork using iTunes Store Artwork
+stats for file size in OneTouch
+command line to sync last.fm playedcount
+
+selected tracks > set info window to edit Episode Number etc
+lyrics viewer to have ontop option
+ability to re-order priority in artwork sources
+
+command line can overwrite albumartist tag to various artists if multiple albums were added in music folder
+cAddFolder class, cAddMediaFiles, cAddNonMediaFiles
+backup tag info from dead files, restore to newly added files
+
+Loading Disc should go to Tracks Progress
+Discourage use of cArtworksource artworkPath
+
+Use ArtworkSource.Image to do everything, save only when necessary
+Taglib# Image instead of SaveArtwork to file on temporarry, try to avoid cache, cXmlTrack.Image
+
+sQueueFilesToAdd
+Alarm Clock for iTunes 
+Video Tag Editor
+
+iTunes Playlist with different ID3 versions
+
+Dragging directories with sub-directories will treat each sub-directory as an album
+Revamped Add New Files procedure that supports multiple files
+
+Capitalize first letter of each line in lyrics
+
+Add delete checkBoxes to WMPfv
+MusicBridege functionality in Schedule
+cXmlTrack should have all the non-meta-data tags as Properties
+
+fAtLeastOneEditTrack to a generic method
+
+WriteToFile should take cXmlTrack instead of File Path
+
+Eventually move all IITFileOrCDTrack to cXmlTrack
+Implement IITFileOrCDTrack as a class and use that to prevent crashes due to Track is deleted errors
+
+Seperate all validate methods to a validator class
+Check why cXmlTrack index sometimes does not match Track Index
+
+Have seperate bwApp job for validating last 100
+
+Check for Soundtracks with empty Composer tags [Jose]
+
+Option to save a copy of TIFF artwork if found [Jojo]
+
+Rewrite iTSfv as v6.0 using C# after 2009-07
+Change debug to listBox

@@ -1,0 +1,8 @@
+In iTunes, select the album and convert to AAC. 
+
+Go to Windows Explorer and delete the old MP3 files. 
+
+In iTunes, delete the AAC files but keep the files in HDD. 
+
+Open iTSfv and check Update to identical but different kind files 
+and press the button find missing tracks in iTunes Library. 

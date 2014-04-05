@@ -1,0 +1,14 @@
+Checks for: 
+
+	Track Number
+	Name
+	Artist
+	Album
+	Genre
+	Artwork 
+	Track Count
+	Disc Number
+	Disc Count
+	Year
+	
+If all these tags are complete, iTSfv will treat it as iTunes Store standard compliant

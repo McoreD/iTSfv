@@ -1,0 +1,9 @@
+Replace selected tracks
+
+Stats
+
+Average song length
+Average album length = total number of track length / total number of albums 
+Average album size = total number of file size / total number of albums
+Top five genres in a pie graph - done
+Top five artists in a pie graph - done

@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTSfvGUI", "iTSfvGUI\iTSfvGUI.csproj", "{FCF3E10D-5724-4F70-ABEF-90D119B035C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTSfvLib", "iTSfvLib\iTSfvLib.csproj", "{C1D1A1ED-B33E-471F-91FA-4A65C4ADAA75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTSfvCLI", "iTSfvCLI\iTSfvCLI.csproj", "{2ACC1072-25A0-4AF9-8F0B-3ED54DECB168}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpersLib", "..\..\ShareX\HelpersLib\HelpersLib.csproj", "{327750E1-9FB7-4CC3-8AEA-9BC42180CAD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UploadersLib", "..\..\ShareX\UploadersLib\UploadersLib.csproj", "{E1C94415-3424-4517-A2A1-B2FDD1F59C67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCF3E10D-5724-4F70-ABEF-90D119B035C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCF3E10D-5724-4F70-ABEF-90D119B035C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCF3E10D-5724-4F70-ABEF-90D119B035C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCF3E10D-5724-4F70-ABEF-90D119B035C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1D1A1ED-B33E-471F-91FA-4A65C4ADAA75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1D1A1ED-B33E-471F-91FA-4A65C4ADAA75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1D1A1ED-B33E-471F-91FA-4A65C4ADAA75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1D1A1ED-B33E-471F-91FA-4A65C4ADAA75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2ACC1072-25A0-4AF9-8F0B-3ED54DECB168}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ACC1072-25A0-4AF9-8F0B-3ED54DECB168}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ACC1072-25A0-4AF9-8F0B-3ED54DECB168}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ACC1072-25A0-4AF9-8F0B-3ED54DECB168}.Release|Any CPU.Build.0 = Release|Any CPU
+		{327750E1-9FB7-4CC3-8AEA-9BC42180CAD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{327750E1-9FB7-4CC3-8AEA-9BC42180CAD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{327750E1-9FB7-4CC3-8AEA-9BC42180CAD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{327750E1-9FB7-4CC3-8AEA-9BC42180CAD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1C94415-3424-4517-A2A1-B2FDD1F59C67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1C94415-3424-4517-A2A1-B2FDD1F59C67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1C94415-3424-4517-A2A1-B2FDD1F59C67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1C94415-3424-4517-A2A1-B2FDD1F59C67}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+EndGlobal
