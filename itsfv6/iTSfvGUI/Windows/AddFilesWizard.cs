@@ -1,13 +1,12 @@
-﻿using System;
+﻿using iTSfvLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using iTSfvLib;
 
 namespace iTSfvGUI
 {
@@ -58,7 +57,6 @@ namespace iTSfvGUI
                 tvBands.SelectedNode = tvBands.Nodes[0].Nodes[0];
             else if (tvBands.Nodes.Count > 0)
                 tvBands.SelectedNode = tvBands.Nodes[0];
-
         }
 
         private void AddDirToNode(string dirPath, TreeNodeCollection tnc)

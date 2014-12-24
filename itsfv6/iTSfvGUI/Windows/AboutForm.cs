@@ -56,20 +56,20 @@ namespace iTSfvGUI
                 }
             }
 
-            CheckUpdate();
+            uclUpdate.CheckUpdate(CheckUpdate);
         }
 
-        public UpdateChecker CheckUpdate()
+        public static UpdateChecker CheckUpdate()
         {
-            UpdateChecker updateChecker = new GitHubUpdateChecker("ShareX", "ShareX");
+            UpdateChecker updateChecker = new GitHubUpdateChecker("McoreD", "iTSfv");
             updateChecker.CurrentVersion = Program.AssemblyVersion;
             updateChecker.Proxy = ProxyInfo.Current.GetWebProxy();
             updateChecker.CheckUpdate();
 
             // Fallback if GitHub API fails
-            if (updateChecker.Status == null || updateChecker.Status == UpdateStatus.UpdateCheckFailed)
+            if (updateChecker.Status == UpdateStatus.None || updateChecker.Status == UpdateStatus.UpdateCheckFailed)
             {
-                updateChecker = new XMLUpdateChecker("http://getsharex.com/Update.xml", "ShareX");
+                updateChecker = new XMLUpdateChecker(Program.URL_UPDATE, "iTSfv");
                 updateChecker.CurrentVersion = Program.AssemblyVersion;
                 updateChecker.Proxy = ProxyInfo.Current.GetWebProxy();
                 updateChecker.CheckUpdate();

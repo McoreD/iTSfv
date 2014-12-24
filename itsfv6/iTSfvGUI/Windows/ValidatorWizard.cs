@@ -1,4 +1,5 @@
-﻿using iTSfvLib;
+﻿using iTSfvGUI.Properties;
+using iTSfvLib;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using ShareX.HelpersLib;
 using System;
@@ -35,6 +36,8 @@ namespace iTSfvGUI
 
         public void SettingsReader_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            AutoCheckUpdate();
+
             Dictionary<string, CheckBox> dicCheckBoxes = GetDictionaryCheckBoxes();
 
             PropertyInfo[] properties = typeof(UserConfig).GetProperties();
@@ -101,6 +104,35 @@ namespace iTSfvGUI
         private void ValidatorWizard_Shown(object sender, EventArgs e)
         {
             TaskbarHelper.Init(this);
+        }
+
+        private void AutoCheckUpdate()
+        {
+            if (Program.Config.AutoCheckUpdate)
+            {
+                Thread updateThread = new Thread(() =>
+                {
+                    UpdateChecker updateChecker = AboutForm.CheckUpdate();
+
+                    if (updateChecker != null && updateChecker.Status == ShareX.HelpersLib.UpdateStatus.UpdateAvailable &&
+                        MessageBox.Show(Resources.MainWindow_CheckUpdate_,
+                            string.Format("{0} {1} is available", Application.ProductName, updateChecker.LatestVersion),
+                            MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                    {
+                        using (DownloaderForm updaterForm = new DownloaderForm(updateChecker))
+                        {
+                            updaterForm.ShowDialog();
+
+                            if (updaterForm.Status == DownloaderFormStatus.InstallStarted)
+                            {
+                                Application.Exit();
+                            }
+                        }
+                    }
+                });
+                updateThread.IsBackground = true;
+                updateThread.Start();
+            }
         }
 
         private void ValidatorWizard_Move(object sender, EventArgs e)

@@ -36,9 +36,9 @@ namespace iTSfvGUI
         private static readonly string PortablePersonalPath = Path.Combine(Application.StartupPath, ApplicationName);
         internal static readonly string ConfigCoreFileName = ApplicationName + "Settings.json";
 
-        public const string URL_WEBSITE = "http://code.google.com/p/itsfv";
-        public const string URL_ISSUES = "http://code.google.com/p/itsfv/issues/entry";
-        public const string URL_UPDATE = "http://itsfv.googlecode.com/svn/trunk/Update.xml";
+        public const string URL_WEBSITE = "https://github.com/McoreD/iTSfv";
+        public const string URL_ISSUES = "https://github.com/McoreD/iTSfv/issues";
+        public const string URL_UPDATE = "https://raw.githubusercontent.com/McoreD/iTSfv/master/Update.xml";
 
         public static List<string> LibNames = new List<string>();
 

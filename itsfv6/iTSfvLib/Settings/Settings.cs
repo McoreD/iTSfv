@@ -59,5 +59,8 @@ namespace iTSfvLib
 
             return settings;
         }
+
+        [Category(MyStrings.App), DefaultValue(true), Description("Automatically check updates at startup.")]
+        public bool AutoCheckUpdate { get; set; }
     }
 }
