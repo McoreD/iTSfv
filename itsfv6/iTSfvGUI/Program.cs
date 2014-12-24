@@ -1,5 +1,5 @@
-﻿using HelpersLib;
-using iTSfvLib;
+﻿using iTSfvLib;
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,10 +20,12 @@ namespace iTSfvGUI
         private static readonly string ApplicationName = Application.ProductName; // keep this top most
         public static readonly Version AssemblyVersion = Assembly.GetExecutingAssembly().GetName().Version;
         private static readonly string LogFileName = ApplicationName + "Log-{0}.log";
+
+        public static CLIManager CLI { get; private set; }
         public static bool IsPortable { get; private set; }
 
         public static BackgroundWorker SettingsReader = new BackgroundWorker();
-        public static XMLSettings Config = null;
+        public static Settings Config = null;
 
         // Windows
         public static ValidatorWizard MainForm = null;
@@ -102,7 +104,10 @@ namespace iTSfvGUI
 
             try
             {
-                IsPortable = CLIHelper.CheckArgs(args, "p", "portable");
+                CLI = new CLIManager(args);
+                CLI.ParseCommands();
+
+                IsPortable = CLI.IsCommandExist("p", "portable");
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
@@ -116,7 +121,7 @@ namespace iTSfvGUI
                 SettingsReader.RunWorkerAsync();
 
                 Application.Run(MainForm);
-                Program.Config.Write(ConfigCoreFilePath);
+                Program.Config.Save(ConfigCoreFilePath);
             }
             finally
             {
@@ -135,17 +140,17 @@ namespace iTSfvGUI
 
         private static void OnError(Exception e)
         {
-            new ErrorForm(Application.ProductName, e, DebugHelper.Logger, LogFilePath, Links.URL_ISSUES).ShowDialog();
+            new ErrorForm(Application.ProductName, DebugHelper.Logger.ToString(), LogFilePath, Links.URL_ISSUES).ShowDialog();
         }
 
         private static void SettingsReader_DoWork(object sender, DoWorkEventArgs e)
         {
-            Program.Config = XMLSettings.Read(ConfigCoreFilePath);
+            Program.Config = Settings.Read(ConfigCoreFilePath);
         }
 
         private static void CurrentDomain_AssemblyLoad(object sender, AssemblyLoadEventArgs args)
         {
-            LibNames.Add(string.Format("{0} - {1}", args.LoadedAssembly.FullName, args.LoadedAssembly.Location));
+            LibNames.Add(args.LoadedAssembly.FullName);
         }
     }
 }

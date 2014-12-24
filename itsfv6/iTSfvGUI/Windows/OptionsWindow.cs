@@ -12,7 +12,7 @@ namespace iTSfvGUI
 {
     public partial class OptionsWindow : Form
     {
-        public OptionsWindow(XMLSettings settings)
+        public OptionsWindow(Settings settings)
         {
             InitializeComponent();
             pgOptions.SelectedObject = settings;

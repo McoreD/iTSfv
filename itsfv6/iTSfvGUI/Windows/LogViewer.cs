@@ -1,6 +1,6 @@
-﻿using HelpersLib;
-using iTSfvLib;
+﻿using iTSfvLib;
 using Microsoft.WindowsAPICodePack.Taskbar;
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

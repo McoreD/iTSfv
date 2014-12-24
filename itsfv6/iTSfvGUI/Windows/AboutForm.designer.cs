@@ -1,5 +1,6 @@
-﻿using HelpersLib;
+﻿using ShareX.HelpersLib;
 using iTSfvGUI.Properties;
+using ShareX.HelpersLib;
 namespace iTSfvGUI
 {
     partial class AboutForm

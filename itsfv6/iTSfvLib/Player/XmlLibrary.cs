@@ -1,4 +1,4 @@
-﻿using HelpersLib;
+﻿using ShareX.HelpersLib;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -23,11 +23,11 @@ namespace iTSfvLib
         public List<XmlDisc> Discs { get; private set; }    // provides a faster way to iterate through discs
         public List<XmlTrack> Tracks { get; private set; }    // provides a faster way to iterate through tracks
 
-        private XMLSettings Config = null;
+        private Settings Config = null;
 
         public double TrackProgress = 0;
 
-        public XmlLibrary(XMLSettings config)
+        public XmlLibrary(Settings config)
         {
             Report = new ReportWriter();
             AlbumArtists = new List<XmlAlbumArtist>();
@@ -146,7 +146,7 @@ namespace iTSfvLib
             Worker.RunWorkerAsync();
         }
 
-        void Worker_DoWork(object sender, DoWorkEventArgs e)
+        private void Worker_DoWork(object sender, DoWorkEventArgs e)
         {
             Validate();
             e.Result = this.Report;

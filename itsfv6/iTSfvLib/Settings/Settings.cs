@@ -1,17 +1,16 @@
-﻿using System;
+﻿using ShareX.HelpersLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing.Design;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
-using HelpersLib;
-using System.Drawing.Design;
 
 namespace iTSfvLib
 {
-    [XmlRoot("Settings")]
-    public class XMLSettings : SettingsBase<XMLSettings>
+    public class Settings : SettingsBase<Settings>
     {
         [Editor("System.Windows.Forms.Design.StringCollectionEditor, System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))]
         [TypeConverter(typeof(CsvConverter)), Category(MyStrings.App)]
@@ -46,34 +45,19 @@ namespace iTSfvLib
 
         public UserConfig UI = new UserConfig();
 
-        public XMLSettings()
+        public Settings()
         {
-            ApplyDefaultValues(this);
+            this.ApplyDefaultPropertyValues();
         }
 
-        public static void ApplyDefaultValues(object self)
+        public static Settings Read(string filePath)
         {
-            foreach (PropertyDescriptor prop in TypeDescriptor.GetProperties(self))
-            {
-                DefaultValueAttribute attr = prop.Attributes[typeof(DefaultValueAttribute)] as DefaultValueAttribute;
-                if (attr == null) continue;
-                prop.SetValue(self, attr.Value);
-            }
-        }
-
-        public static XMLSettings Read(string filePath)
-        {
-            XMLSettings settings = SettingsHelper.Load<XMLSettings>(filePath, SerializationType.Xml);
+            Settings settings = Settings.Load(filePath);
 
             if (settings.SupportedFileTypes == null || settings.SupportedFileTypes.Count == 0)
                 settings.SupportedFileTypes = new List<string>() { "mp3", "m4a", "flac" };
 
             return settings;
-        }
-
-        public bool Write(string filePath)
-        {
-            return SettingsHelper.Save(this, filePath, SerializationType.Xml);
         }
     }
 }

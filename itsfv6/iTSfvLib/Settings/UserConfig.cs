@@ -1,19 +1,19 @@
-﻿using System;
+﻿using ShareX.HelpersLib;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using HelpersLib;
-using System.ComponentModel;
 
 namespace iTSfvLib
 {
-    public class UserConfig
+    public class UserConfig : SettingsBase<UserConfig>
     {
         [Category(MyStrings.App), DefaultValue(true), Description("Check for missing tags")]
         public bool Checks_MissingTags { get; set; }
 
-       [Category(MyStrings.App), DefaultValue(false), Description("Check for tracks with low resolution artwork")]
+        [Category(MyStrings.App), DefaultValue(false), Description("Check for tracks with low resolution artwork")]
         public bool Checks_ArtworkLowRes { get; set; }
 
         [Category(MyStrings.App), DefaultValue(false), Description("Check for missing tags")]
@@ -33,17 +33,7 @@ namespace iTSfvLib
 
         public UserConfig()
         {
-            ApplyDefaultValues(this);
-        }
-
-        public static void ApplyDefaultValues(object self)
-        {
-            foreach (PropertyDescriptor prop in TypeDescriptor.GetProperties(self))
-            {
-                DefaultValueAttribute attr = prop.Attributes[typeof(DefaultValueAttribute)] as DefaultValueAttribute;
-                if (attr == null) continue;
-                prop.SetValue(self, attr.Value);
-            }
+            this.ApplyDefaultPropertyValues();
         }
 
         public static bool IsConfigured(UserConfig self)

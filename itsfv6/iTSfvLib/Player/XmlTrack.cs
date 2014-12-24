@@ -1,4 +1,4 @@
-﻿using HelpersLib;
+﻿using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -15,7 +15,6 @@ namespace iTSfvLib
     public class XmlTrack
     {
         #region "Read/Write Properties"
-
 
         public string AlbumArtist
         {
@@ -282,7 +281,6 @@ namespace iTSfvLib
             return sb.ToString();
         }
 
-
         public void Play()
         {
             try
@@ -301,7 +299,7 @@ namespace iTSfvLib
             {
                 using (TagLib.File f = TagLib.File.Create(Location))
                 {
-                    f.RemoveTags(f.TagTypes & ~f.TagTypesOnDisk); // read tags and their versions as is from file   
+                    f.RemoveTags(f.TagTypes & ~f.TagTypesOnDisk); // read tags and their versions as is from file
                     this.Size = (decimal)f.InvariantEndPosition;
                     this.Tags = f.Tag;
                     this.Properties = f.Properties;
@@ -501,7 +499,7 @@ namespace iTSfvLib
             }
         }
 
-        internal bool ExportArtwork(XMLSettings config)
+        internal bool ExportArtwork(Settings config)
         {
             if (this.Tags.Pictures.Length > 0)
             {
@@ -533,7 +531,7 @@ namespace iTSfvLib
             return false;
         }
 
-        internal void EmbedArtwork(XMLSettings xMLSettings, ReportWriter reportWriter)
+        internal void EmbedArtwork(Settings xMLSettings, ReportWriter reportWriter)
         {
             if (this.Tags.Pictures.Length == 0)
             {
@@ -546,7 +544,7 @@ namespace iTSfvLib
             }
         }
 
-        internal void CheckLowResArtwork(XMLSettings xMLSettings, ReportWriter reportWriter)
+        internal void CheckLowResArtwork(Settings xMLSettings, ReportWriter reportWriter)
         {
             List<string> artwork_low = new List<string>();
 

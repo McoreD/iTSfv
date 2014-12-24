@@ -1,23 +1,23 @@
-﻿using System;
+﻿using iTSfvLib;
+using Microsoft.WindowsAPICodePack.Dialogs;
+using ShareX.HelpersLib;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using iTSfvLib;
-using Microsoft.WindowsAPICodePack.Dialogs;
-using System.Collections;
-using System.Threading;
 using System.Reflection;
-using HelpersLib;
+using System.Text;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace iTSfvGUI
 {
     public partial class ValidatorWizard : Form
     {
-        BackgroundWorker AddFilesWorker = new BackgroundWorker() { WorkerReportsProgress = true };
+        private BackgroundWorker AddFilesWorker = new BackgroundWorker() { WorkerReportsProgress = true };
 
         public ValidatorWizard()
         {
@@ -164,12 +164,12 @@ namespace iTSfvGUI
             UpdateAlbumArtistTree();
         }
 
-        void AddFilesWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void AddFilesWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             UpdateAlbumArtistTree();
         }
 
-        void UpdateAlbumArtistTree()
+        private void UpdateAlbumArtistTree()
         {
             tvLibrary.Nodes.Clear();
 
@@ -194,7 +194,7 @@ namespace iTSfvGUI
                 RunTasks();
         }
 
-        void AddFilesWorker_DoWork(object sender, DoWorkEventArgs e)
+        private void AddFilesWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             AddFilesWorker.ReportProgress(0);
             Program.Library.AddFilesOrFolders(e.Argument as string[]);
@@ -343,7 +343,7 @@ namespace iTSfvGUI
 
         private void tsmiFoldersLogs_Click(object sender, EventArgs e)
         {
-            HelpersLib.Helpers.OpenFolder(Program.LogsFolderPath);
+            ShareX.HelpersLib.Helpers.OpenFolder(Program.LogsFolderPath);
         }
 
         private void tvLibrary_DragDrop(object sender, DragEventArgs e)
@@ -371,7 +371,7 @@ namespace iTSfvGUI
             if (lbDiscs.SelectedIndex > -1)
             {
                 XmlDisc disc = lbDiscs.SelectedItem as XmlDisc;
-                Helpers.LoadBrowserAsync(disc.GoogleSearchURL);
+                URLHelpers.OpenURL(disc.GoogleSearchURL);
             }
         }
 
@@ -398,7 +398,5 @@ namespace iTSfvGUI
             Program.LogViewer.Show();
             Program.LogViewer.Focus();
         }
-
-
     }
 }

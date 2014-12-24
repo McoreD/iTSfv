@@ -23,14 +23,14 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
+using ShareX.UploadersLib;
 using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
-using UploadersLib;
 
 namespace iTSfvGUI
 {
@@ -67,7 +67,7 @@ namespace iTSfvGUI
             updateChecker.CheckUpdate();
 
             // Fallback if GitHub API fails
-            if (updateChecker.UpdateInfo == null || updateChecker.UpdateInfo.Status == UpdateStatus.UpdateCheckFailed)
+            if (updateChecker.Status == null || updateChecker.Status == UpdateStatus.UpdateCheckFailed)
             {
                 updateChecker = new XMLUpdateChecker("http://getsharex.com/Update.xml", "ShareX");
                 updateChecker.CurrentVersion = Program.AssemblyVersion;
@@ -111,22 +111,22 @@ namespace iTSfvGUI
 
         private void lblWebsite_Click(object sender, EventArgs e)
         {
-            Helpers.LoadBrowserAsync(Program.URL_WEBSITE);
+            URLHelpers.OpenURL(Program.URL_WEBSITE);
         }
 
         private void lblBugs_Click(object sender, EventArgs e)
         {
-            Helpers.LoadBrowserAsync(Program.URL_ISSUES);
+            URLHelpers.OpenURL(Program.URL_ISSUES);
         }
 
         private void pbBerkURL_Click(object sender, EventArgs e)
         {
-            Helpers.LoadBrowserAsync(Links.URL_BERK);
+            URLHelpers.OpenURL(Links.URL_BERK);
         }
 
         private void pbMikeURL_Click(object sender, EventArgs e)
         {
-            Helpers.LoadBrowserAsync(Links.URL_MIKE);
+            URLHelpers.OpenURL(Links.URL_MIKE);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
