@@ -1,9 +1,12 @@
 #define MyAppName "iTSfv"
 #define MyAppFile "iTSfvGUI.exe"
-#define MyAppPath "itsfv6\iTSfvGUI\bin\Release\iTSfvGUI.exe"
-#define MyAppVersion GetStringFileInfo(MyAppPath, "Assembly Version")
-#define MyAppPublisher "iTSfv Developers"
-#define MyAppURL "http://code.google.com/p/itsfv"
+#define MyAppParentDir "itsfv6\iTSfvGUI\bin\Release"
+#define MyAppPath MyAppParentDir + "\iTSfvGUI.exe"
+#dim Version[4]
+#expr ParseVersion(MyAppPath, Version[0], Version[1], Version[2], Version[3])
+#define MyAppVersion Str(Version[0]) + "." + Str(Version[1]) + "." + Str(Version[2])
+#define MyAppPublisher "ShareX Developers"
+#define MyAppURL "https://github.com/McoreD/iTSfv/"
 
 [Setup]
 AllowNoIcons=true

@@ -82,14 +82,10 @@ namespace iTSfvGUI
                 kvp = (KeyValuePair<string, CheckBox>)e.Current;
                 CheckBox chk = kvp.Value as CheckBox;
                 PropertyInfo[] properties = typeof(UserConfig).GetProperties();
-                foreach (PropertyInfo pi in properties)
+                foreach (PropertyInfo pi in from pi in properties let propName = chk.Name.Remove(0, 3) where pi.PropertyType == typeof(Boolean) && pi.Name.Equals(propName) select pi)
                 {
-                    string propName = chk.Name.Remove(0, 3);
-                    if (pi.PropertyType == typeof(Boolean) && pi.Name.Equals(propName))
-                    {
-                        pi.SetValue(userConfig, chk.Checked, null);
-                        break;
-                    }
+                    pi.SetValue(userConfig, chk.Checked, null);
+                    break;
                 }
             }
 

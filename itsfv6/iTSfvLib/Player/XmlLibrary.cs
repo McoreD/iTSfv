@@ -48,13 +48,7 @@ namespace iTSfvLib
             {
                 if (Directory.Exists(pfd))
                 {
-                    foreach (string ext in Config.SupportedFileTypes)
-                    {
-                        foreach (string fp in Directory.GetFiles(pfd, string.Format("*.{0}", ext), SearchOption.AllDirectories))
-                        {
-                            tracks.Add(new XmlTrack(fp));
-                        }
-                    }
+                    tracks.AddRange(from ext in Config.SupportedFileTypes from fp in Directory.GetFiles(pfd, string.Format("*.{0}", ext), SearchOption.AllDirectories) select new XmlTrack(fp));
                 }
                 else if (File.Exists(pfd))
                 {
