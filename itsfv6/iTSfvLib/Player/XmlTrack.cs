@@ -531,11 +531,11 @@ namespace iTSfvLib
             return false;
         }
 
-        internal void EmbedArtwork(Settings xMLSettings, ReportWriter reportWriter)
+        internal void EmbedArtwork(Settings settings, ReportWriter reportWriter)
         {
             if (this.Tags.Pictures.Length == 0)
             {
-                foreach (string fileName in xMLSettings.ArtworkLookupFileNames)
+                foreach (string fileName in settings.ArtworkLookupFileNames)
                 {
                     string fp = Path.Combine(Path.GetDirectoryName(this.Location), fileName);
                     if (AddArtwork(fp))
@@ -544,16 +544,16 @@ namespace iTSfvLib
             }
         }
 
-        internal void CheckLowResArtwork(Settings xMLSettings, ReportWriter reportWriter)
+        internal void CheckLowResArtwork(Settings settings, ReportWriter reportWriter)
         {
             List<string> artwork_low = new List<string>();
 
-            if (this.Artwork.Width > 0 && this.Artwork.Width < xMLSettings.LowResArtworkSize)
+            if (this.Artwork.Width > 0 && this.Artwork.Width < settings.LowResArtworkSize)
             {
                 artwork_low.Add(this.Artwork.Width.ToString());
             }
 
-            if (this.Artwork.Height > 0 && this.Artwork.Height < xMLSettings.LowResArtworkSize)
+            if (this.Artwork.Height > 0 && this.Artwork.Height < settings.LowResArtworkSize)
             {
                 artwork_low.Add(this.Artwork.Height.ToString());
             }
@@ -572,9 +572,11 @@ namespace iTSfvLib
         {
             if (tag.Pictures.Length > 0)
             {
-                Image img = Image.FromStream(new MemoryStream(tag.Pictures[0].Data.Data));
-                this.Width = img.Width;
-                this.Height = img.Height;
+                using (Image img = Image.FromStream(new MemoryStream(tag.Pictures[0].Data.Data)))
+                {
+                    Width = img.Width;
+                    Height = img.Height;
+                }
             }
         }
     }

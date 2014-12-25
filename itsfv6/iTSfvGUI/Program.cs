@@ -122,6 +122,7 @@ namespace iTSfvGUI
 
                 Application.Run(MainForm);
                 Program.Config.Save(ConfigCoreFilePath);
+                DebugHelper.Logger.SaveLog(LogFilePath);
             }
             finally
             {

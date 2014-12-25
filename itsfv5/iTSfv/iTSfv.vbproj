@@ -24,7 +24,7 @@
     <ManifestCertificateThumbprint>4C9F3CB5FCA3115F4A619914C91ACEB7F8E54650</ManifestCertificateThumbprint>
     <ManifestKeyFile>iTSfv_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <PublishUrl>ftp://ftp.powweb.com/htdocs/mcored/research/itsfv/</PublishUrl>
     <Install>true</Install>
