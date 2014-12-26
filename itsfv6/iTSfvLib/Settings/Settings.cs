@@ -43,6 +43,10 @@ namespace iTSfvLib
         [Category(MyStrings.App), DefaultValue(false), Description("Automatically validate tracks after adding files/folders")]
         public bool ValidateAfterAddingTracks { get; set; }
 
+        [EditorAttribute(typeof(ExeFileNameEditor), typeof(UITypeEditor))]
+        [Category(MyStrings.App), Description("Album Artwork Downloader XUI (aad.exe) path")]
+        public string AlbumArtworkDownloaderPath { get; set; }
+
         public UserConfig UI = new UserConfig();
 
         public Settings()

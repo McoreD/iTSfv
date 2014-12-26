@@ -211,7 +211,7 @@ namespace iTSfvGUI
                 while (i.MoveNext())
                 {
                     kvpAlbum = (KeyValuePair<string, XmlAlbum>)i.Current;
-                    tnAlbumArtist.Nodes.Add(new TreeNode(kvpAlbum.Value.GetAlbumName()) { Tag = kvpAlbum.Value });
+                    tnAlbumArtist.Nodes.Add(new TreeNode(kvpAlbum.Value.Name) { Tag = kvpAlbum.Value });
                 }
 
                 tvLibrary.Nodes.Add(tnAlbumArtist);

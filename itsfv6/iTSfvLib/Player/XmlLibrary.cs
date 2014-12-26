@@ -198,20 +198,27 @@ namespace iTSfvLib
 
         public void ValidateAlbum(XmlAlbum album)
         {
+            if (Config.UI.Tracks_SaveArtworkUsingAAD)
+            {
+                string pathArtwork = Path.Combine(album.Location, Config.ArtworkFileNameWithoutExtension) + ".jpg";
+                if (!File.Exists(pathArtwork))
+                {
+                    DebugHelper.WriteLine("Searching for artwork --> " + album.Name);
+                    album.SaveArtworkUsingAAD(Config.AlbumArtworkDownloaderPath, pathArtwork, Config.LowResArtworkSize);
+                }
+            }
+
             IEnumerator e = album.Discs.GetEnumerator();
             while (e.MoveNext())
             {
                 ValidateDisc(((KeyValuePair<string, XmlDisc>)e.Current).Value);
             }
 
-            if (this.Config.UI.FileSystem_ArtworkJpgExport)
+            if (Config.UI.FileSystem_ArtworkJpgExport)
             {
-                foreach (XmlTrack track in album.GetTracks())
+                foreach (XmlTrack track in album.GetTracks().Where(track => track.ExportArtwork(Config)))
                 {
-                    if (track.ExportArtwork(Config))
-                    {
-                        break;
-                    }
+                    break;
                 }
             }
         }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -40,16 +42,16 @@ namespace iTSfvLib
                 Discs.Remove(o.Key);
         }
 
-        public string GetAlbumName()
+        public string Name
         {
-            foreach (XmlTrack track in GetTracks())
+            get
             {
-                if (!string.IsNullOrEmpty(track.Album))
+                foreach (XmlTrack track in GetTracks().Where(track => !string.IsNullOrEmpty(track.Album)))
                 {
                     return track.Album;
                 }
+                return ConstantStrings.UnknownAlbum;
             }
-            return ConstantStrings.UnknownAlbum;
         }
 
         public List<XmlTrack> GetTracks()
@@ -86,6 +88,31 @@ namespace iTSfvLib
 
                 return ConstantStrings.UnknownArtist;
             }
+        }
+
+        public string Location
+        {
+            get
+            {
+                List<XmlTrack> tracks = GetTracks();
+                if (tracks.Count > 0)
+                {
+                    return Path.GetDirectoryName(tracks[0].Location);
+                }
+                return string.Empty;
+            }
+        }
+
+        internal void SaveArtworkUsingAAD(string exe, string pathArtwork, int minArtworkWidth)
+        {
+            Process p = new Process();
+            ProcessStartInfo psi = new ProcessStartInfo(exe);
+            psi.WindowStyle = ProcessWindowStyle.Minimized;
+
+            psi.Arguments = string.Format("/artist \"{0}\" /album \"{1}\" /minSize {2} /minAspect {3} /path \"{4}\"", AlbumArtist, Name, minArtworkWidth, 0.9, pathArtwork);
+            p.StartInfo = psi;
+            p.Start();
+            p.WaitForExit();
         }
     }
 }
