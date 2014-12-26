@@ -86,7 +86,9 @@ namespace iTSfvGUI
         {
             get
             {
-                string title = string.Format("{0} {1}.{2}", ApplicationName, AssemblyVersion.Major, AssemblyVersion.Minor);
+                Version version = Version.Parse(Application.ProductVersion);
+                string title = string.Format(ApplicationName + " {0}.{1}", version.Major, version.Minor);
+                if (version.Build > 0) title += "." + version.Build;
                 if (IsPortable) title += " Portable";
                 return title;
             }

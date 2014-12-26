@@ -74,7 +74,6 @@ Public Module mAdapter
 
         CheckUpdates(manual:=False)
 
-
     End Sub
 
     Private Sub CheckUpdates(ByVal manual As Boolean)
@@ -171,7 +170,6 @@ Public Module mAdapter
         Return Double.Parse((100 * num / total).ToString("00.0"))
     End Function
 
-
     Public Function mfGetText(ByVal strName As String) As String
 
         Try
@@ -207,10 +205,9 @@ Public Module mAdapter
 
     End Function
 
-
     Public Function mfGetAddableFilesList(ByVal filePath As String, Optional ByVal lExt() As String = Nothing) As List(Of String)
 
-        ' files from outside of music folder gets added 
+        ' files from outside of music folder gets added
         ' but it doesnt matter because a seperate check is done before adding to listbox
 
         Dim listAddableFiles As New List(Of String)
@@ -409,12 +406,12 @@ Public Module mAdapter
     Sub sWriteTableToFile(ByVal addresses As Hashtable, ByVal filePath As String)
 
         ' Create a hashtable of values that will eventually be serialized.
-        ' To serialize the hashtable (and its key/value pairs), 
+        ' To serialize the hashtable (and its key/value pairs),
         ' you must first open a stream for writing.
         ' Use a file stream here.
         Dim fs As New FileStream(filePath, FileMode.Create)
 
-        ' Construct a SoapFormatter and use it 
+        ' Construct a SoapFormatter and use it
         ' to serialize the data to the stream.
         Dim formatter As New SoapFormatter
         Try
@@ -451,7 +448,7 @@ Public Module mAdapter
         Try
             Dim formatter As New SoapFormatter
 
-            ' Deserialize the hashtable from the file and 
+            ' Deserialize the hashtable from the file and
             ' assign the reference to the local variable.
             addresses = DirectCast(formatter.Deserialize(fs), Hashtable)
         Catch e As SerializationException
@@ -460,7 +457,7 @@ Public Module mAdapter
             fs.Close()
         End Try
 
-        ' To prove that the table deserialized correctly, 
+        ' To prove that the table deserialized correctly,
         ' display the key/value pairs to the console.
         'Dim de As DictionaryEntry
         'For Each de In addresses
@@ -542,7 +539,7 @@ Public Module mAdapter
     Public Function mfGetFileNameFromPattern(ByVal pattern As String, ByVal location As String) As String
 
         ''************************************************************
-        ''* 5.26.4.0 Support creating sub-directories for patterns 
+        ''* 5.26.4.0 Support creating sub-directories for patterns
         ''* e.g. %AlbumArtist%\(%Year%) %Album%\%TrackNumber% - %Name%
         ''************************************************************
 
@@ -596,11 +593,11 @@ Public Module mAdapter
         'If we found the Typed Text in the list then Autocomplete
         If iFoundIndex >= 0 Then
 
-            'Get the Item from the list (Return Type depends if Datasource was bound 
+            'Get the Item from the list (Return Type depends if Datasource was bound
             ' or List Created)
             oFoundItem = cbo.Items(iFoundIndex)
 
-            'Use the ListControl.GetItemText to resolve the Name in case the Combo 
+            'Use the ListControl.GetItemText to resolve the Name in case the Combo
             ' was Data bound
             sFoundText = cbo.GetItemText(oFoundItem)
 
@@ -713,7 +710,7 @@ Public Module mAdapter
                 Else
 
                     sb.Append(word) '' without any modification
-                  
+
                 End If
 
                 sb.Append(" ")
@@ -791,7 +788,7 @@ Public Module mAdapter
         If Not iDetect Is Nothing Then
             success = iDetect.IsiTunesAvailable
         Else
-            ' we our registry check 
+            ' we our registry check
             Dim regKey As Microsoft.Win32.RegistryKey = _
                  Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\Apple Computer, Inc.\iTunes", False)
 
@@ -807,8 +804,6 @@ Public Module mAdapter
     Public ReadOnly Property mpRestartOptions() As McoreSystem.WindowsController.RestartOptions
 
         Get
-
-
 
             Select Case My.Settings.PowerOption
                 Case 0
@@ -828,7 +823,6 @@ Public Module mAdapter
     End Property
 
 End Module
-
 
 #Region "Enumerations"
 

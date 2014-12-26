@@ -3,12 +3,11 @@
     'TODO: This form can easily be set as the splash screen for the application by going to the "Application" tab
     '  of the Project Designer ("Properties" under the "Project" menu).
 
-
     Private Sub frmSplash_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        'Set up the dialog text at runtime according to the application's assembly information.  
+        'Set up the dialog text at runtime according to the application's assembly information.
 
-        'TODO: Customize the application's assembly information in the "Application" pane of the project 
+        'TODO: Customize the application's assembly information in the "Application" pane of the project
         '  properties dialog (under the "Project" menu).
 
         'Application title
@@ -31,7 +30,7 @@
 
         'Format the version information using the text set into the Version control at design time as the
         '  formatting string.  This allows for effective localization if desired.
-        '  Build and revision information could be included by using the following code and changing the 
+        '  Build and revision information could be included by using the following code and changing the
         '  Version control's designtime text to "Version {0}.{1:00}.{2}.{3}" or something similar.  See
         '  String.Format() in Help for more information.
         '
@@ -73,7 +72,6 @@
 
     End Sub
 
-
     Private Sub BackgroundWorker1_DoWork(ByVal sender As System.Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles bwSplash.DoWork
 
         ''*************************
@@ -103,17 +101,14 @@
 
     Private Sub bwSplash_ProgressChanged(ByVal sender As Object, ByVal e As System.ComponentModel.ProgressChangedEventArgs) Handles bwSplash.ProgressChanged
 
-
-
     End Sub
 
     Private Sub bwSplash_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles bwSplash.RunWorkerCompleted
 
-
-        '' If File Validator is requested then show File Validator 
-        '' Else 
-        '' If iTunes is present and requested iTSfv then show iTSfv 
-        '' If Vista Media Center is present or WMPfv is requested then show WMPfv 
+        '' If File Validator is requested then show File Validator
+        '' Else
+        '' If iTunes is present and requested iTSfv then show iTSfv
+        '' If Vista Media Center is present or WMPfv is requested then show WMPfv
         '' In all other circumstances show File Validator
 
         If mpAppMode = eAppMode.AFV Then
@@ -136,11 +131,10 @@
         If Application.OpenForms.Count > 1 Then
             Me.Close()
         Else
-            ' SOMETHING IS BLOODY BUGGY WITH .NET 
-            ' WHEN IT FORM IS LOADED TO TRAY IT THINKS THE NUMBER OF OPEN FORMS IS 1    
+            ' SOMETHING IS BLOODY BUGGY WITH .NET
+            ' WHEN IT FORM IS LOADED TO TRAY IT THINKS THE NUMBER OF OPEN FORMS IS 1
             Me.Hide()
         End If
-
 
     End Sub
 End Class
