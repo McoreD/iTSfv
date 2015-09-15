@@ -198,7 +198,7 @@ namespace iTSfvLib
 
         public void ValidateAlbum(XmlAlbum album)
         {
-            if (Config.UI.Tracks_SaveArtworkUsingAAD)
+            if (Config.UI.FileSystem_SearchArtworkUsingAAD)
             {
                 string pathArtwork = Path.Combine(album.Location, Config.ArtworkFileNameWithoutExtension) + ".jpg";
                 if (!File.Exists(pathArtwork))

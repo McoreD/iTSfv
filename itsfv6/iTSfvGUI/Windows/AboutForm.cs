@@ -63,7 +63,7 @@ namespace iTSfvGUI
         {
             UpdateChecker updateChecker = new GitHubUpdateChecker("McoreD", "iTSfv");
             updateChecker.CurrentVersion = Program.AssemblyVersion;
-            updateChecker.Proxy = ProxyInfo.Current.GetWebProxy();
+            updateChecker.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
             updateChecker.CheckUpdate();
 
             // Fallback if GitHub API fails
@@ -71,7 +71,7 @@ namespace iTSfvGUI
             {
                 updateChecker = new XMLUpdateChecker(Program.URL_UPDATE, "iTSfv");
                 updateChecker.CurrentVersion = Program.AssemblyVersion;
-                updateChecker.Proxy = ProxyInfo.Current.GetWebProxy();
+                updateChecker.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
                 updateChecker.CheckUpdate();
             }
 

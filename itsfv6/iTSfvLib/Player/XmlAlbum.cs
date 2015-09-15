@@ -103,10 +103,12 @@ namespace iTSfvLib
             }
         }
 
-        internal void SaveArtworkUsingAAD(string exe, string pathArtwork, int minArtworkWidth)
+        internal void SaveArtworkUsingAAD(string exePath, string pathArtwork, int minArtworkWidth)
         {
+            if (!File.Exists(exePath)) return;
+
             Process p = new Process();
-            ProcessStartInfo psi = new ProcessStartInfo(exe);
+            ProcessStartInfo psi = new ProcessStartInfo(exePath);
             psi.WindowStyle = ProcessWindowStyle.Minimized;
 
             psi.Arguments = string.Format("/artist \"{0}\" /album \"{1}\" /minSize {2} /minAspect {3} /path \"{4}\"", AlbumArtist, Name, minArtworkWidth, 0.9, pathArtwork);

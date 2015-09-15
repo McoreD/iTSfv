@@ -37,6 +37,7 @@
             this.chkChecks_ArtworkLowRes = new System.Windows.Forms.CheckBox();
             this.tpTracks = new System.Windows.Forms.TabPage();
             this.flpTracks = new System.Windows.Forms.FlowLayoutPanel();
+            this.chkFileSystem_SearchArtworkUsingAAD = new System.Windows.Forms.CheckBox();
             this.chkTracks_ArtworkFill = new System.Windows.Forms.CheckBox();
             this.chkTracks_GenreFill = new System.Windows.Forms.CheckBox();
             this.chkTracks_AlbumArtistFill = new System.Windows.Forms.CheckBox();
@@ -65,7 +66,6 @@
             this.tsmiSearchInGoogle = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShowInExplorer = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.chkTracks_SaveArtworkUsingAAD = new System.Windows.Forms.CheckBox();
             this.tcValidator.SuspendLayout();
             this.tpChecks.SuspendLayout();
             this.flpChecks.SuspendLayout();
@@ -95,7 +95,7 @@
             this.tpChecks.Controls.Add(this.flpChecks);
             this.tpChecks.Location = new System.Drawing.Point(4, 22);
             this.tpChecks.Name = "tpChecks";
-            this.tpChecks.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpChecks.Padding = new System.Windows.Forms.Padding(3);
             this.tpChecks.Size = new System.Drawing.Size(346, 302);
             this.tpChecks.TabIndex = 1;
             this.tpChecks.Text = "Checks";
@@ -137,7 +137,7 @@
             this.tpTracks.Controls.Add(this.flpTracks);
             this.tpTracks.Location = new System.Drawing.Point(4, 22);
             this.tpTracks.Name = "tpTracks";
-            this.tpTracks.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpTracks.Padding = new System.Windows.Forms.Padding(3);
             this.tpTracks.Size = new System.Drawing.Size(346, 302);
             this.tpTracks.TabIndex = 2;
             this.tpTracks.Text = "Tracks";
@@ -145,7 +145,7 @@
             // 
             // flpTracks
             // 
-            this.flpTracks.Controls.Add(this.chkTracks_SaveArtworkUsingAAD);
+            this.flpFileSystem.Controls.Add(this.chkFileSystem_SearchArtworkUsingAAD);
             this.flpTracks.Controls.Add(this.chkTracks_ArtworkFill);
             this.flpTracks.Controls.Add(this.chkTracks_GenreFill);
             this.flpTracks.Controls.Add(this.chkTracks_AlbumArtistFill);
@@ -156,6 +156,16 @@
             this.flpTracks.Name = "flpTracks";
             this.flpTracks.Size = new System.Drawing.Size(340, 296);
             this.flpTracks.TabIndex = 2;
+            // 
+            // chkFileSystem_SearchArtworkUsingAAD
+            // 
+            this.chkFileSystem_SearchArtworkUsingAAD.AutoSize = true;
+            this.chkFileSystem_SearchArtworkUsingAAD.Location = new System.Drawing.Point(3, 3);
+            this.chkFileSystem_SearchArtworkUsingAAD.Name = "chkFileSystem_SearchArtworkUsingAAD";
+            this.chkFileSystem_SearchArtworkUsingAAD.Size = new System.Drawing.Size(270, 17);
+            this.chkFileSystem_SearchArtworkUsingAAD.TabIndex = 4;
+            this.chkFileSystem_SearchArtworkUsingAAD.Text = "Search for artwork using Album Art Downloader XUI";
+            this.chkFileSystem_SearchArtworkUsingAAD.UseVisualStyleBackColor = true;
             // 
             // chkTracks_ArtworkFill
             // 
@@ -403,16 +413,6 @@
             this.tsmiShowInExplorer.Text = "Open containing folder...";
             this.tsmiShowInExplorer.Click += new System.EventHandler(this.tsmiShowInExplorer_Click);
             // 
-            // chkTracks_SaveArtworkUsingAAD
-            // 
-            this.chkTracks_SaveArtworkUsingAAD.AutoSize = true;
-            this.chkTracks_SaveArtworkUsingAAD.Location = new System.Drawing.Point(3, 3);
-            this.chkTracks_SaveArtworkUsingAAD.Name = "chkTracks_SaveArtworkUsingAAD";
-            this.chkTracks_SaveArtworkUsingAAD.Size = new System.Drawing.Size(246, 17);
-            this.chkTracks_SaveArtworkUsingAAD.TabIndex = 4;
-            this.chkTracks_SaveArtworkUsingAAD.Text = "Save artwork using Album Art Downloader XUI";
-            this.chkTracks_SaveArtworkUsingAAD.UseVisualStyleBackColor = true;
-            // 
             // ValidatorWizard
             // 
             this.AllowDrop = true;
@@ -488,7 +488,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiAbout;
         private System.Windows.Forms.ToolStripMenuItem tsmiHelpLogViewer;
         private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.CheckBox chkTracks_SaveArtworkUsingAAD;
+        private System.Windows.Forms.CheckBox chkFileSystem_SearchArtworkUsingAAD;
     }
 }
 

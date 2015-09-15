@@ -28,8 +28,8 @@ namespace iTSfvLib
         [Category(MyStrings.App), DefaultValue(true), Description("Fill missing Genre")]
         public bool Tracks_GenreFill { get; set; }
 
-        [Category(MyStrings.App), DefaultValue(false), Description("Save artwork using Album Art Downloader XUI")]
-        public bool Tracks_SaveArtworkUsingAAD { get; set; }
+        [Category(MyStrings.App), DefaultValue(false), Description("Search for artwork using Album Art Downloader XUI")]
+        public bool FileSystem_SearchArtworkUsingAAD { get; set; }
 
         [Category(MyStrings.App), DefaultValue(true), Description("Export embedded artwork to folder")]
         public bool FileSystem_ArtworkJpgExport { get; set; }
