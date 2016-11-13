@@ -115,6 +115,7 @@ namespace iTSfvGUI
                 Application.SetCompatibleTextRenderingDefault(false);
                 if (Environment.OSVersion.Version.Major >= 6) SetProcessDPIAware();
 
+                DebugHelper.Init(LogFilePath);
                 LogViewer = new LogViewer();
 
                 MainForm = new ValidatorWizard();
@@ -124,7 +125,6 @@ namespace iTSfvGUI
 
                 Application.Run(MainForm);
                 Program.Config.Save(ConfigCoreFilePath);
-                DebugHelper.Logger.SaveLog(LogFilePath);
             }
             finally
             {

@@ -56,7 +56,8 @@ namespace iTSfvGUI
                 }
             }
 
-            uclUpdate.CheckUpdate(CheckUpdate);
+            UpdateChecker updateChecker = UpdateManager.CreateUpdateChecker();
+            uclUpdate.CheckUpdate(updateChecker);
         }
 
         public static UpdateChecker CheckUpdate()

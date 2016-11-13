@@ -45,6 +45,7 @@
             this.flpFileSystem = new System.Windows.Forms.FlowLayoutPanel();
             this.chkFileSystem_SearchArtworkUsingAAD = new System.Windows.Forms.CheckBox();
             this.chkFileSystem_ArtworkJpgExport = new System.Windows.Forms.CheckBox();
+            this.chkFileSystem_RenameFiles = new System.Windows.Forms.CheckBox();
             this.lbDiscs = new System.Windows.Forms.ListBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,7 +67,6 @@
             this.tsmiSearchInGoogle = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShowInExplorer = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.chkFileSystem_RenameFiles = new System.Windows.Forms.CheckBox();
             this.tcValidator.SuspendLayout();
             this.tpChecks.SuspendLayout();
             this.flpChecks.SuspendLayout();
@@ -89,7 +89,7 @@
             this.tcValidator.Name = "tcValidator";
             this.tcValidator.SelectedIndex = 0;
             this.tcValidator.Size = new System.Drawing.Size(354, 328);
-            this.tcValidator.TabIndex = 1;
+            this.tcValidator.TabIndex = 0;
             // 
             // tpChecks
             // 
@@ -111,7 +111,7 @@
             this.flpChecks.Location = new System.Drawing.Point(3, 3);
             this.flpChecks.Name = "flpChecks";
             this.flpChecks.Size = new System.Drawing.Size(340, 296);
-            this.flpChecks.TabIndex = 1;
+            this.flpChecks.TabIndex = 0;
             // 
             // chkChecks_MissingTags
             // 
@@ -155,7 +155,7 @@
             this.flpTracks.Location = new System.Drawing.Point(3, 3);
             this.flpTracks.Name = "flpTracks";
             this.flpTracks.Size = new System.Drawing.Size(340, 296);
-            this.flpTracks.TabIndex = 2;
+            this.flpTracks.TabIndex = 0;
             // 
             // chkTracks_ArtworkFill
             // 
@@ -163,7 +163,7 @@
             this.chkTracks_ArtworkFill.Location = new System.Drawing.Point(3, 3);
             this.chkTracks_ArtworkFill.Name = "chkTracks_ArtworkFill";
             this.chkTracks_ArtworkFill.Size = new System.Drawing.Size(149, 17);
-            this.chkTracks_ArtworkFill.TabIndex = 3;
+            this.chkTracks_ArtworkFill.TabIndex = 0;
             this.chkTracks_ArtworkFill.Text = "Embed artwork from folder";
             this.chkTracks_ArtworkFill.UseVisualStyleBackColor = true;
             // 
@@ -173,7 +173,7 @@
             this.chkTracks_GenreFill.Location = new System.Drawing.Point(3, 26);
             this.chkTracks_GenreFill.Name = "chkTracks_GenreFill";
             this.chkTracks_GenreFill.Size = new System.Drawing.Size(189, 17);
-            this.chkTracks_GenreFill.TabIndex = 0;
+            this.chkTracks_GenreFill.TabIndex = 1;
             this.chkTracks_GenreFill.Text = "Fill missing Genre using best guess";
             this.chkTracks_GenreFill.UseVisualStyleBackColor = true;
             // 
@@ -183,7 +183,7 @@
             this.chkTracks_AlbumArtistFill.Location = new System.Drawing.Point(3, 49);
             this.chkTracks_AlbumArtistFill.Name = "chkTracks_AlbumArtistFill";
             this.chkTracks_AlbumArtistFill.Size = new System.Drawing.Size(215, 17);
-            this.chkTracks_AlbumArtistFill.TabIndex = 1;
+            this.chkTracks_AlbumArtistFill.TabIndex = 2;
             this.chkTracks_AlbumArtistFill.Text = "Fill missing Album Artist using best guess";
             this.chkTracks_AlbumArtistFill.UseVisualStyleBackColor = true;
             // 
@@ -193,7 +193,7 @@
             this.chkTracks_TrackCountFill.Location = new System.Drawing.Point(3, 72);
             this.chkTracks_TrackCountFill.Name = "chkTracks_TrackCountFill";
             this.chkTracks_TrackCountFill.Size = new System.Drawing.Size(280, 17);
-            this.chkTracks_TrackCountFill.TabIndex = 2;
+            this.chkTracks_TrackCountFill.TabIndex = 3;
             this.chkTracks_TrackCountFill.Text = "Fill missing Track Count, Disc Number and Disc Count";
             this.chkTracks_TrackCountFill.UseVisualStyleBackColor = true;
             // 
@@ -217,7 +217,7 @@
             this.flpFileSystem.Location = new System.Drawing.Point(0, 0);
             this.flpFileSystem.Name = "flpFileSystem";
             this.flpFileSystem.Size = new System.Drawing.Size(346, 302);
-            this.flpFileSystem.TabIndex = 1;
+            this.flpFileSystem.TabIndex = 0;
             // 
             // chkFileSystem_SearchArtworkUsingAAD
             // 
@@ -225,7 +225,7 @@
             this.chkFileSystem_SearchArtworkUsingAAD.Location = new System.Drawing.Point(3, 3);
             this.chkFileSystem_SearchArtworkUsingAAD.Name = "chkFileSystem_SearchArtworkUsingAAD";
             this.chkFileSystem_SearchArtworkUsingAAD.Size = new System.Drawing.Size(270, 17);
-            this.chkFileSystem_SearchArtworkUsingAAD.TabIndex = 4;
+            this.chkFileSystem_SearchArtworkUsingAAD.TabIndex = 0;
             this.chkFileSystem_SearchArtworkUsingAAD.Text = "Search for artwork using Album Art Downloader XUI";
             this.chkFileSystem_SearchArtworkUsingAAD.UseVisualStyleBackColor = true;
             // 
@@ -235,9 +235,20 @@
             this.chkFileSystem_ArtworkJpgExport.Location = new System.Drawing.Point(3, 26);
             this.chkFileSystem_ArtworkJpgExport.Name = "chkFileSystem_ArtworkJpgExport";
             this.chkFileSystem_ArtworkJpgExport.Size = new System.Drawing.Size(231, 17);
-            this.chkFileSystem_ArtworkJpgExport.TabIndex = 0;
+            this.chkFileSystem_ArtworkJpgExport.TabIndex = 1;
             this.chkFileSystem_ArtworkJpgExport.Text = "Export Artwork to Album folder as Folder.jpg";
             this.chkFileSystem_ArtworkJpgExport.UseVisualStyleBackColor = true;
+            // 
+            // chkFileSystem_RenameFiles
+            // 
+            this.chkFileSystem_RenameFiles.AutoSize = true;
+            this.chkFileSystem_RenameFiles.Location = new System.Drawing.Point(3, 49);
+            this.chkFileSystem_RenameFiles.Name = "chkFileSystem_RenameFiles";
+            this.chkFileSystem_RenameFiles.Size = new System.Drawing.Size(280, 17);
+            this.chkFileSystem_RenameFiles.TabIndex = 2;
+            this.chkFileSystem_RenameFiles.Text = "Rename files to the recommended naming convention";
+            this.chkFileSystem_RenameFiles.UseVisualStyleBackColor = true;
+            this.chkFileSystem_RenameFiles.Visible = false;
             // 
             // lbDiscs
             // 
@@ -248,7 +259,7 @@
             this.lbDiscs.Name = "lbDiscs";
             this.lbDiscs.Size = new System.Drawing.Size(264, 328);
             this.lbDiscs.Sorted = true;
-            this.lbDiscs.TabIndex = 0;
+            this.lbDiscs.TabIndex = 2;
             this.lbDiscs.SelectedIndexChanged += new System.EventHandler(this.lbDiscs_SelectedIndexChanged);
             this.lbDiscs.DragDrop += new System.Windows.Forms.DragEventHandler(this.lbDiscs_DragDrop);
             this.lbDiscs.DragEnter += new System.Windows.Forms.DragEventHandler(this.lbDiscs_DragEnter);
@@ -306,7 +317,7 @@
             // 
             this.tsmiTasksValidate.Name = "tsmiTasksValidate";
             this.tsmiTasksValidate.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.tsmiTasksValidate.Size = new System.Drawing.Size(152, 22);
+            this.tsmiTasksValidate.Size = new System.Drawing.Size(134, 22);
             this.tsmiTasksValidate.Text = "&Validate";
             this.tsmiTasksValidate.Click += new System.EventHandler(this.tsmiTasksValidate_Click);
             // 
@@ -321,7 +332,7 @@
             // tsmiOptions
             // 
             this.tsmiOptions.Name = "tsmiOptions";
-            this.tsmiOptions.Size = new System.Drawing.Size(152, 22);
+            this.tsmiOptions.Size = new System.Drawing.Size(125, 22);
             this.tsmiOptions.Text = "&Options...";
             this.tsmiOptions.Click += new System.EventHandler(this.tsmiOptions_Click);
             // 
@@ -336,7 +347,7 @@
             // tsmiFoldersLogs
             // 
             this.tsmiFoldersLogs.Name = "tsmiFoldersLogs";
-            this.tsmiFoldersLogs.Size = new System.Drawing.Size(152, 22);
+            this.tsmiFoldersLogs.Size = new System.Drawing.Size(108, 22);
             this.tsmiFoldersLogs.Text = "&Logs...";
             this.tsmiFoldersLogs.Click += new System.EventHandler(this.tsmiFoldersLogs_Click);
             // 
@@ -352,14 +363,14 @@
             // tsmiAbout
             // 
             this.tsmiAbout.Name = "tsmiAbout";
-            this.tsmiAbout.Size = new System.Drawing.Size(152, 22);
+            this.tsmiAbout.Size = new System.Drawing.Size(140, 22);
             this.tsmiAbout.Text = "&About...";
             this.tsmiAbout.Click += new System.EventHandler(this.tsmiAbout_Click);
             // 
             // tsmiHelpLogViewer
             // 
             this.tsmiHelpLogViewer.Name = "tsmiHelpLogViewer";
-            this.tsmiHelpLogViewer.Size = new System.Drawing.Size(152, 22);
+            this.tsmiHelpLogViewer.Size = new System.Drawing.Size(140, 22);
             this.tsmiHelpLogViewer.Text = "&Log viewer...";
             this.tsmiHelpLogViewer.Click += new System.EventHandler(this.tsmiHelpLogViewer_Click);
             // 
@@ -370,7 +381,7 @@
             this.tvLibrary.Location = new System.Drawing.Point(363, 3);
             this.tvLibrary.Name = "tvLibrary";
             this.tvLibrary.Size = new System.Drawing.Size(264, 328);
-            this.tvLibrary.TabIndex = 2;
+            this.tvLibrary.TabIndex = 1;
             this.tvLibrary.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvLibrary_NodeMouseClick);
             this.tvLibrary.Click += new System.EventHandler(this.tvLibrary_Click);
             this.tvLibrary.DragDrop += new System.Windows.Forms.DragEventHandler(this.tvLibrary_DragDrop);
@@ -391,7 +402,7 @@
             this.tlpApp.RowCount = 1;
             this.tlpApp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpApp.Size = new System.Drawing.Size(900, 334);
-            this.tlpApp.TabIndex = 3;
+            this.tlpApp.TabIndex = 1;
             // 
             // cmsDisc
             // 
@@ -414,16 +425,6 @@
             this.tsmiShowInExplorer.Size = new System.Drawing.Size(206, 22);
             this.tsmiShowInExplorer.Text = "Open containing folder...";
             this.tsmiShowInExplorer.Click += new System.EventHandler(this.tsmiShowInExplorer_Click);
-            // 
-            // chkFileSystem_RenameFiles
-            // 
-            this.chkFileSystem_RenameFiles.AutoSize = true;
-            this.chkFileSystem_RenameFiles.Location = new System.Drawing.Point(3, 49);
-            this.chkFileSystem_RenameFiles.Name = "chkFileSystem_RenameFiles";
-            this.chkFileSystem_RenameFiles.Size = new System.Drawing.Size(280, 17);
-            this.chkFileSystem_RenameFiles.TabIndex = 5;
-            this.chkFileSystem_RenameFiles.Text = "Rename files to the recommended naming convention";
-            this.chkFileSystem_RenameFiles.UseVisualStyleBackColor = true;
             // 
             // ValidatorWizard
             // 

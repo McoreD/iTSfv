@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace iTSfvLib
 {
@@ -155,7 +156,7 @@ namespace iTSfvLib
             {
                 foreach (XmlDisc disc in this.Discs)
                 {
-                    foreach (XmlTrack track in disc.Tracks)
+                    Parallel.ForEach(disc.Tracks, track =>
                     {
                         if (File.Exists(track.Location) && !track.Location.Contains(Config.MusicLibraryFolder))
                         {
@@ -168,7 +169,7 @@ namespace iTSfvLib
                             track.Location = fp;
                             Worker.ReportProgress(this.Progress, track);
                         }
-                    }
+                    });
                 }
 
                 TrackProgress = 0;
@@ -229,10 +230,11 @@ namespace iTSfvLib
 
             disc.Tracks.Sort(XmlTrackComparer.XmlTrackComparerMethods.CompareByTrackNumber);
 
-            foreach (XmlTrack track in disc.Tracks)
+            Parallel.ForEach(disc.Tracks, track =>
             {
                 ValidateTrack(track);
             }
+            );
         }
 
         public void ValidateTrack(XmlTrack track)

@@ -526,10 +526,11 @@
     <COMReference Include="iTunesLib">
       <Guid>{9E93C96F-CF0D-43F6-8BA8-B807A3370712}</Guid>
       <VersionMajor>1</VersionMajor>
-      <VersionMinor>12</VersionMinor>
+      <VersionMinor>13</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
     <COMReference Include="WMPLib">
       <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
