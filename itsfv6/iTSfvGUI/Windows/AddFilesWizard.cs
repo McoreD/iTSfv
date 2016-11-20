@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace iTSfvGUI
@@ -65,6 +66,7 @@ namespace iTSfvGUI
             tnc.Add(tn);
             tn.Tag = GetDiscFromFolder(dirPath);
 
+            // Parallel.ForEach does not work here
             foreach (string dp in Directory.GetDirectories(dirPath))
             {
                 if (Directory.Exists(dp))
@@ -77,18 +79,31 @@ namespace iTSfvGUI
         private XmlDisc GetDiscFromFolder(string dirPath)
         {
             List<XmlTrack> tracks = new List<XmlTrack>();
+
             foreach (string ext in Program.Config.SupportedFileTypes)
             {
                 Directory.GetFiles(dirPath, string.Format("*.{0}", ext),
-                    SearchOption.TopDirectoryOnly).ToList().ForEach(delegate(string fp)
-                {
-                    tracks.Add(new XmlTrack(fp));
-                });
+                    SearchOption.TopDirectoryOnly).ToList().ForEach(delegate (string fp)
+                    {
+                        tracks.Add(new XmlTrack(fp));
+                    });
             }
 
+            string dirName = Path.GetFileName(dirPath);
+            Regex r = new Regex(@"\d+");
+            Match discNumber = r.Match(dirName);
             XmlDisc tempDisc = new XmlDisc(tracks);
+            if (discNumber.Success)
+                tempDisc.DiscNumber = uint.Parse(discNumber.Value);
+
             Discs.Add(tempDisc);
-            this.Tracks.AddRange(tempDisc.Tracks.ToArray());
+            Tracks.AddRange(tempDisc.Tracks.ToArray());
+
+            if (tempDisc.DiscNumber > 0)
+                tracks.ToList().ForEach(x => x.DiscNumber = tempDisc.DiscNumber);
+
+            tracks.ToList().ForEach(x => x.AlbumArtist = tempDisc.AlbumArtist);
+
             return tempDisc;
         }
 
@@ -145,8 +160,8 @@ namespace iTSfvGUI
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            this.CopyMusicToLibrary = chkCopyMusicToLibrary.Checked;
-            this.DialogResult = System.Windows.Forms.DialogResult.OK;
+            CopyMusicToLibrary = chkCopyMusicToLibrary.Checked;
+            DialogResult = System.Windows.Forms.DialogResult.OK;
         }
     }
 }
