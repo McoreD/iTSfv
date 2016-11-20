@@ -1,0 +1,22 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:AlbumArtDownloader.Controls"
+    >
+
+	<controls:TooltipEnabledOnOverflowConverter x:Key="mTooltipEnabledOnOverflowConverter"/>
+	
+	<Style x:Key="OverflowTextBlock" TargetType="TextBlock">
+		<Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+		<Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=Text}"/>
+		<Setter Property="ToolTipService.IsEnabled">
+			<Setter.Value>
+				<MultiBinding Converter="{StaticResource mTooltipEnabledOnOverflowConverter}" Mode="OneWay">
+					<Binding RelativeSource="{RelativeSource Self}" Mode="OneWay"/>
+					<Binding Path="ActualWidth" RelativeSource="{RelativeSource Self}" Mode="OneWay"/>
+					<Binding Path="ToolTip" RelativeSource="{RelativeSource Self}" Mode="OneWay"/>
+				</MultiBinding>
+			</Setter.Value>
+		</Setter>
+	</Style>
+</ResourceDictionary>

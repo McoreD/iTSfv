@@ -1,0 +1,76 @@
+﻿<Window x:Class="AlbumArtDownloader.EditPresets"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:AlbumArtDownloader"
+	xmlns:properties="clr-namespace:AlbumArtDownloader.Properties"
+	xmlns:controls="clr-namespace:AlbumArtDownloader.Controls"
+
+    Title="Presets" 
+	Background="{x:Static SystemColors.ControlBrush}"
+	Icon="AlbumArtDownloader.ico"
+	Width="375" Height="330"
+	WindowStartupLocation="CenterOwner"
+	ResizeMode="CanResizeWithGrip"
+	
+	DataContext="{Binding RelativeSource={RelativeSource Self}}"
+		
+    properties:WindowSettings.Save="True"
+	>
+	<Window.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Controls/Xaml/Separator.generic.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+			<Style TargetType="Button">
+				<Setter Property="MinWidth" Value="75"/>
+				<Setter Property="MinHeight" Value="23"/>
+				<Setter Property="Padding" Value="4,0,4,0"/>
+				<Setter Property="Margin" Value="0,0,0,5"/>
+			</Style>
+		</ResourceDictionary>
+	</Window.Resources>
+    <DockPanel Margin="10">
+		<TextBlock DockPanel.Dock="Top" TextWrapping="Wrap" Margin="1,1,1,6">
+			Presets are substituted into the %preset% variable in the path to save to. The Name
+			of the Preset is displayed in the Save menu, and the Value is used in the path to save to.
+		</TextBlock>
+		
+		<StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
+			<Button Content="OK" IsDefault="True" Margin="0,0,5,3" Click="OnOKClicked"/>
+			<Button Content="Cancel" IsCancel="True" Margin="0,0,1,3"/>
+		</StackPanel>
+		
+		<Separator DockPanel.Dock="Bottom" Margin="0,10,0,10"/>
+
+		<StackPanel DockPanel.Dock="Right" Margin="10,0,0,0">
+			<Button Command="ApplicationCommands.New" Content="_Add"/>
+			<Button Command="ApplicationCommands.Delete" Content="_Delete"/>
+			<Button Command="{x:Static controls:EditableCell+Commands.Edit}" Content="_Edit"/>
+			<Separator Margin="2,0,1,5"/>
+			<Button Command="ComponentCommands.MoveUp" Content="Move _Up"/>
+			<Button Command="ComponentCommands.MoveDown" Content="Move _Down"/>
+		</StackPanel>
+		
+		<ListView x:Name="mPresetsList" ItemsSource="{Binding Presets}">
+			<ListView.View>
+				<GridView>
+					<GridViewColumn Header="Name" Width="120">
+						<GridViewColumn.CellTemplate>
+							<DataTemplate>
+								<controls:EditableCell Value="{Binding Name}"/>
+							</DataTemplate>
+						</GridViewColumn.CellTemplate>
+					</GridViewColumn>
+
+					<GridViewColumn Header="Value" Width="120">
+						<GridViewColumn.CellTemplate>
+							<DataTemplate>
+								<controls:EditableCell Value="{Binding Value}"/>
+							</DataTemplate>
+						</GridViewColumn.CellTemplate>
+					</GridViewColumn>
+				</GridView>
+			</ListView.View>
+		</ListView>
+	</DockPanel>
+</Window>

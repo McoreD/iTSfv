@@ -1,0 +1,43 @@
+﻿<Window x:Class="AlbumArtDownloader.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="clr-namespace:AlbumArtDownloader"
+		
+    Title="About Album Art Downloader"
+	WindowStyle="SingleBorderWindow"
+	ResizeMode="NoResize"
+	ShowInTaskbar="False" 
+	WindowStartupLocation="CenterOwner"
+	SizeToContent="WidthAndHeight"
+	Icon="AlbumArtDownloader.ico"
+	Background="WhiteSmoke"
+    >
+	<Grid Margin="10">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<local:Logo x:Name="mLogo"/>
+		<Border Grid.Row="1" Width="{Binding ElementName=mLogo, Path=ActualWidth, Mode=OneWay}" Margin="0,10,0,0">
+			<ScrollViewer MaxHeight="55" Margin="20,0,20,0">
+				<TextBlock TextWrapping="WrapWithOverflow">
+					<Bold>Thank you to:</Bold><LineBreak/>
+					Alex Vallat<LineBreak/>
+					daju<LineBreak/>
+					Marc Landis<LineBreak/>
+					david_dl<LineBreak/>
+					<LineBreak/>
+					<Bold>Libraries:</Bold><LineBreak/>
+					This software uses the Boo language from Codehaus<LineBreak/>
+					Audio file tag reading courtesy of TagLib#<LineBreak/>
+					<LineBreak/>
+					<Bold>License:</Bold><LineBreak/>
+					Licensed under the GPL. See website for more details.<LineBreak/>
+				</TextBlock>
+			</ScrollViewer>
+		</Border>
+		<Button Grid.Row="2" x:Name="mClose" Content="Close" HorizontalAlignment="Center" Width="75" Margin="0,10,0,0"
+				Command="ApplicationCommands.Close"/>
+	</Grid>
+</Window>

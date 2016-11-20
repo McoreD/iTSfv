@@ -1,0 +1,17 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    >
+
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary Source="/Controls/Xaml/SourcePanel.generic.xaml"/>
+		<ResourceDictionary Source="/Controls/Xaml/ArtPanel.generic.xaml"/>
+		<ResourceDictionary Source="/Controls/Xaml/ArtPanelList.generic.xaml"/>
+		<ResourceDictionary Source="/Controls/Xaml/ArtPanelListSortPicker.generic.xaml"/>
+		<ResourceDictionary Source="/Controls/Xaml/ArtPathPatternBox.generic.xaml"/>
+		<ResourceDictionary Source="/Controls/Xaml/LimitBox.generic.xaml"/>
+		<ResourceDictionary Source="/Controls/Xaml/EditableCell.generic.xaml"/>
+		<ResourceDictionary Source="/Controls/Xaml/SplitFadeButton.generic.xaml"/>
+	</ResourceDictionary.MergedDictionaries>
+    
+</ResourceDictionary>

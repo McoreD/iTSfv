@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{008B72F1-CA0A-4EC7-91A2-2BEEA2738246}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ATL</RootNamespace>
+    <AssemblyName>ATL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AudioDataReader.cs" />
+    <Compile Include="AudioFileReader.cs" />
+    <Compile Include="AudioReaderFactory.cs" />
+    <Compile Include="BinaryLogic\AACfile.cs" />
+    <Compile Include="BinaryLogic\AC3.cs" />
+    <Compile Include="BinaryLogic\APEtag.cs" />
+    <Compile Include="BinaryLogic\DTS.cs" />
+    <Compile Include="BinaryLogic\DummyReader.cs" />
+    <Compile Include="BinaryLogic\DummyTag.cs" />
+    <Compile Include="BinaryLogic\FLACfile.cs" />
+    <Compile Include="BinaryLogic\ID3v1.cs" />
+    <Compile Include="BinaryLogic\ID3v2.cs" />
+    <Compile Include="BinaryLogic\MIDI.cs" />
+    <Compile Include="BinaryLogic\Monkey.cs" />
+    <Compile Include="BinaryLogic\MPEGaudio.cs" />
+    <Compile Include="BinaryLogic\MPEGplus.cs" />
+    <Compile Include="BinaryLogic\OggVorbis.cs" />
+    <Compile Include="BinaryLogic\OptimFROG.cs" />
+    <Compile Include="BinaryLogic\PSF.cs" />
+    <Compile Include="BinaryLogic\SPC.cs" />
+    <Compile Include="BinaryLogic\TTA.cs" />
+    <Compile Include="BinaryLogic\TwinVQ.cs" />
+    <Compile Include="BinaryLogic\Utils.cs" />
+    <Compile Include="BinaryLogic\VorbisComment.cs" />
+    <Compile Include="BinaryLogic\WAVfile.cs" />
+    <Compile Include="BinaryLogic\WAVPackfile.cs" />
+    <Compile Include="BinaryLogic\WMAfile.cs" />
+    <Compile Include="Logging\Log.cs" />
+    <Compile Include="Logging\LogDelegator.cs" />
+    <Compile Include="Logging\LogDevice.cs" />
+    <Compile Include="MetaDataReader.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

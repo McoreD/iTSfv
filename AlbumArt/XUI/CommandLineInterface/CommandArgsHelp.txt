@@ -1,0 +1,121 @@
+Usage: {0} [options]
+
+Option names may be preceded by a / or a -
+Options:
+
+ /artist      Artist to search for            (/artist "Artist Name")
+              May be abbreviated to /ar       (/ar "Artist Name")
+              Parameter name may be omitted
+              if this is the first parameter  ("Artist Name")
+
+ /album       Album to search for             (/album "Album Name")
+              May be abbreviated to /al       (/al "Album Name")
+              Parameter name may be omitted
+              if this is the second parameter ("Artist Name" "Album Name")
+
+ /path        Default path to save art as     (/path "\Art\Folder.jpg")
+              May be abbreviated to /p        (/p "\Art\Folder.jpg")
+              Parameter name may be omitted
+              if this is the third parameter
+
+              The following variables can be used in paths:
+               %artist%     Artist searched for
+               %album%      Album searched for
+               %name%       Name of the image found
+               %extension%  Default file extension for the image
+               %type%       Type of image (front, back, inside, etc.)
+               %source%     Name of the source where image was found
+               %size%       Dimensions of the image
+               %sequence%   A sequence number for the image, corresponding to
+                             the number passed to /sequence, or "1" by default
+
+ /sources     Specifies the sources to search,  (/sources "Amazon,Coveralia")
+              in the order to search them.
+              Separate sources with commas.
+              If omitted, or "all" is specified, (/sources all)
+              all available sources except those 
+              excluded by the /exclude option 
+              are searched.
+              May be abbreviated to /s          (/s "Amazon,Coveralia")
+
+ /exclude     Does not search the specified     (/exclude "Lala,Google")
+              sources. Separate sources with
+              commas.
+              May be abbreviated to /es         (/es "Lala,Google")
+
+ /minSize     Specifies the minimum size of         (/minSize 300)
+              image, in pixels, to use.
+              Both horizontal and vertical
+              dimensions must conform.
+              May be abbreviated to /mn             (/mn 300)
+              
+ /maxSize     Specifies the maximum size of         (/maxSize 1000)
+              image, in pixels, to use.
+              The smallest dimension of the
+              image must conform.
+              May be abbreviated to /mx             (/mx 1000)
+
+ /minAspect   Specifies the minimum aspect ratio    (/minAspect 0.9)
+              of the image to use. This is how
+              square the image must be, where a
+              value of 1 represents perfectly
+              square (600 x 600, for example). An
+              image of size 600 x 300 would only
+              be allowed if /minAspect were 0.5
+              or lower.
+              May be abbreviated to /ma             (/ma 0.9)
+
+ /coverType   Specifies the type(s) of cover  (/coverType front)
+              to find. Separate types with
+              commas. Available types are:    (/coverType front,unknown)
+              
+               Front
+               Back
+               Inside
+               CD
+               Booklet
+               Unknown
+              
+              As a shortcut to specifying all (/coverType any)
+              types, the special type Any may 
+              be used.
+              
+              Types may be abbreviated to     (/coverType f,b,i,c,k,u)
+              their first letter, or k for
+			  Booklet
+              
+              May be abbreviated to /t        (/t c,u)         
+ 
+ /orientation Specifies that the image must have    (/orientation landscape)
+              a specific orientation. Valid values
+              are "portrait" or "p" (meaning the 
+              height of the image must be larger
+              than its width) and "landscape" or
+              "l" (meaning the width of the image 
+              must be larger than its height).
+              May be abbreviated to /r              (/r l)
+              
+ /sequence    Specifies which result to use, if     (/sequence 2)
+              more than one are found. For
+              example, passing 2 as the value
+              here would ignore the first result
+              found, and use the second.
+              May be abbreviated to /seq            (/seq 2)
+
+ /fetchAll    Saves every results found as a file.  (/fetchAll)
+              To ensure unique filenames, use of the
+              %sequence% variable is recommended in
+              the path, otherwise the same file may
+              be overwritten multiple times.
+              May be abbreviated to /fa              (/fa)
+ 
+ /listSources Produces a list of all available      (/listSources)
+              sources to search.
+              May be abbreviated to /l              (/l)
+
+Exit errorlevel codes:
+
+ 0            Success
+ 1            No image found
+ -1           Error occured
+ 

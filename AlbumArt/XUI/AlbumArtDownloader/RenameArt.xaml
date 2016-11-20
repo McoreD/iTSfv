@@ -1,0 +1,73 @@
+﻿<Window x:Class="AlbumArtDownloader.RenameArt"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:AlbumArtDownloader"
+	xmlns:properties="clr-namespace:AlbumArtDownloader.Properties"
+	xmlns:controls="clr-namespace:AlbumArtDownloader.Controls"
+
+    Title="Rename Artwork File" 
+	Background="{x:Static SystemColors.ControlBrush}"
+	Icon="AlbumArtDownloader.ico"
+	Width="488" Height="210"
+	MinWidth="200" MinHeight="210" MaxHeight="210"
+	WindowStartupLocation="CenterOwner"
+	ResizeMode="CanResizeWithGrip"
+	
+	DataContext="{Binding RelativeSource={RelativeSource Self}}"
+		
+    properties:WindowSettings.Save="True">
+	<Window.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Controls/Xaml/Separator.generic.xaml"/>
+				<ResourceDictionary Source="/Controls/Xaml/OverflowTextBlock.generic.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+
+			<controls:FileNameConverter x:Key="mFileNameConverter"/>
+		</ResourceDictionary>
+	</Window.Resources>
+    <Grid Margin="10">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+		<Label Grid.Column="1" Grid.Row="0" Target="{Binding ElementName=mCurrentNameBox}">_Current Name:</Label>
+		<TextBox x:Name="mCurrentNameBox" Text="{Binding Path=CurrentFile, Mode=OneWay, Converter={StaticResource mFileNameConverter}}"
+				 Grid.Column="1" Grid.Row="1" IsReadOnly="True" Background="{x:Static SystemColors.ControlLightBrush}"
+				 ToolTip="{Binding Path=CurrentFile, Mode=OneWay}"/>
+
+		<Label Grid.Column="1" Grid.Row="2" Target="{Binding ElementName=mNewNameBox}">_New Name:</Label>
+		<TextBox x:Name="mNewNameBox" Grid.Column="1" Grid.Row="3"/>
+		<TextBlock x:Name="mFailureMessage" Foreground="Red" Grid.Column="1" Grid.Row="4" Visibility="Hidden"
+				   TextWrapping="NoWrap" Style="{StaticResource OverflowTextBlock}">
+		</TextBlock>
+
+		<Separator Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" Margin="0,0,0,10"/>
+		<StackPanel Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right">
+			<StackPanel.Resources>
+				<Style TargetType="Button">
+					<Setter Property="MinWidth" Value="75"/>
+					<Setter Property="MinHeight" Value="23"/>
+					<Setter Property="Padding" Value="4,0,4,0"/>
+				</Style>
+			</StackPanel.Resources>
+			<Button Content="OK" IsDefault="True" Margin="0,0,5,3" Click="OnOKClicked"/>
+			<Button Content="Cancel" IsCancel="True" Margin="0,0,1,3"/>
+		</StackPanel>
+		
+		
+		<Image x:Name="mPreview" Grid.RowSpan="6" Height="100" VerticalAlignment="Top" Margin="0,0,10,0"/>
+		
+	</Grid>
+</Window>

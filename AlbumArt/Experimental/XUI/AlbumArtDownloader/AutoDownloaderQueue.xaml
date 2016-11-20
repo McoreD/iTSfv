@@ -1,0 +1,156 @@
+﻿<controls:SortableListView 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="clr-namespace:AlbumArtDownloader"
+    xmlns:controls="clr-namespace:AlbumArtDownloader.Controls"
+
+    x:Class="AlbumArtDownloader.AutoDownloaderQueue"
+    
+    DataContext="{Binding RelativeSource={RelativeSource Self}}"
+
+    ColumnHeaderSortedAscendingTemplate="ColumnHeaderSortedAscendingTemplate"
+    ColumnHeaderSortedDescendingTemplate="ColumnHeaderSortedDescendingTemplate"
+    ColumnHeaderNotSortedTemplate="ColumnHeaderNotSortedTemplate">
+
+	<controls:SortableListView.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Controls/Xaml/HyperlinkButton.generic.xaml"/>
+				<ResourceDictionary Source="/Controls/Xaml/SortableColumnHeader.generic.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+
+			<controls:FileNameConverter x:Key="mFileNameConverter"/>
+			<controls:FileSizeConverter x:Key="mFileSizeConverter"/>
+			<controls:StringFormatterConverter x:Key="mStringFormatterConverter"/>
+			
+			<Style TargetType="GridViewColumnHeader">
+				<Setter Property="HorizontalContentAlignment" Value="Left"/>
+			</Style>
+
+			<Style x:Key="OnlyWithArtPresent" TargetType="TextBlock">
+				<Setter Property="Visibility" Value="Hidden"/>
+				<Style.Triggers>
+					<DataTrigger Binding="{Binding ArtFileStatus}" Value="Present">
+						<Setter Property="Visibility" Value="Visible"/>
+					</DataTrigger>
+				</Style.Triggers>
+			</Style>
+
+			<ContextMenu x:Key="mItemContextMenu">
+				<MenuItem Header="Search in New _Window" Command="{x:Static local:AutoDownloader+Commands.NewSearchWindow}"/>
+			</ContextMenu>
+
+		</ResourceDictionary>
+	</controls:SortableListView.Resources>
+
+	<controls:SortableListView.ItemContainerStyle>
+		<!-- Set row backgrounds for present or missing artwork -->
+		<Style TargetType="ListViewItem">
+			<Setter Property="ContextMenu" Value="{StaticResource mItemContextMenu}"/>
+			<Style.Triggers>
+				<DataTrigger Binding="{Binding ArtFileStatus}" Value="Present">
+					<Setter Property="Background" Value="#FFE5FFE5" />
+				</DataTrigger>
+				<DataTrigger Binding="{Binding ArtFileStatus}" Value="Missing">
+					<Setter Property="Background" Value="#FFFFE5E5" />
+				</DataTrigger>
+			</Style.Triggers>
+		</Style>
+	</controls:SortableListView.ItemContainerStyle>
+	<controls:SortableListView.View>
+		<GridView>
+			<controls:SortableGridViewColumn Header="Artist" SortPropertyName="Artist" DisplayMemberBinding="{Binding Artist}" Width="175"/>
+			<controls:SortableGridViewColumn Header="Album" SortPropertyName="Name" DisplayMemberBinding="{Binding Name}" Width="175"/>
+			<controls:SortableGridViewColumn Header="Artwork Status" SortPropertyName="ArtFileStatus" Width="122">
+				<controls:SortableGridViewColumn.CellTemplate>
+					<DataTemplate>
+						<StackPanel Orientation="Horizontal">
+							<Image Margin="0,0,2,0">
+								<Image.Style>
+									<Style TargetType="Image">
+										<Style.Triggers>
+											<DataTrigger Binding="{Binding ArtFileStatus}" Value="Searching">
+												<Setter Property="Source" Value="search.ico"/>
+											</DataTrigger>
+											<DataTrigger Binding="{Binding ArtFileStatus}" Value="Present">
+												<Setter Property="Source" Value="ArtPresent.png"/>
+											</DataTrigger>
+											<DataTrigger Binding="{Binding ArtFileStatus}" Value="Missing">
+												<Setter Property="Source" Value="ArtMissing.png"/>
+											</DataTrigger>
+										</Style.Triggers>
+									</Style>
+								</Image.Style>
+							</Image>
+							<TextBlock>
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ArtFileStatus}" Value="Searching">
+                                                <Setter Property="Text" Value="Searching..."/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding ArtFileStatus}" Value="Present">
+                                                <Setter Property="Text" Value="Found:"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding ArtFileStatus}" Value="Missing">
+                                                <Setter Property="Text" Value="Not Found"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+							<Button Margin="4,0,0,0"
+										Command="{x:Static local:AutoDownloaderQueue+Commands.ShowInResults}" CommandParameter="{Binding}"
+										Content="{Binding ArtFile, Converter={StaticResource mFileNameConverter}}" 
+										ToolTip="{Binding ArtFile}">
+								<Button.Style>
+									<Style TargetType="Button" BasedOn="{StaticResource HyperlinkButton}">
+										<Setter Property="Visibility" Value="Collapsed"/>
+										<Style.Triggers>
+											<DataTrigger Binding="{Binding ArtFileStatus}" Value="Present">
+												<Setter Property="Visibility" Value="Visible"/>
+											</DataTrigger>
+										</Style.Triggers>
+									</Style>
+								</Button.Style>
+								<Button.ContextMenu>
+									<ContextMenu>
+										<MenuItem FontWeight="Bold" Header="Show in _Results" Command="{x:Static local:AutoDownloaderQueue+Commands.ShowInResults}" CommandParameter="{Binding}"/>
+										<MenuItem Header="Show in _Explorer" Command="{x:Static local:CommonCommands.ShowInExplorer}" CommandParameter="{Binding ArtFile}"/>
+										<MenuItem Header="_Preview..." Command="{x:Static local:CommonCommands.Preview}" CommandParameter="{Binding}"/>
+										<MenuItem Header="_Rename..." Command="{x:Static local:CommonCommands.Rename}"  CommandParameter="{Binding}"/>
+										<MenuItem Header="_Delete" Command="{x:Static local:CommonCommands.Delete}" CommandParameter="{Binding}"/>
+										<Separator/>
+										<MenuItem Header="Search in New _Window" Command="{x:Static local:AutoDownloader+Commands.NewSearchWindow}"/>
+									</ContextMenu>
+								</Button.ContextMenu>
+							</Button>
+						</StackPanel>
+					</DataTemplate>
+				</controls:SortableGridViewColumn.CellTemplate>
+			</controls:SortableGridViewColumn>
+			<controls:SortableGridViewColumn Header="Dimensions" SortPropertyName="ArtFileWidth" Width="64">
+				<controls:SortableGridViewColumn.CellTemplate>
+					<DataTemplate>
+						<TextBlock Style="{StaticResource OnlyWithArtPresent}">
+							<TextBlock.Text>
+								<MultiBinding Converter="{StaticResource mStringFormatterConverter}" ConverterParameter="{}{0} x {1}" Mode="OneWay">
+									<Binding Path="ArtFileWidth" Mode="OneWay"/>
+									<Binding Path="ArtFileHeight" Mode="OneWay"/>
+								</MultiBinding>
+							</TextBlock.Text>
+						</TextBlock>
+					</DataTemplate>
+				</controls:SortableGridViewColumn.CellTemplate>
+			</controls:SortableGridViewColumn>
+			<controls:SortableGridViewColumn Header="Size" SortPropertyName="ArtFileSize" Width="40">
+				<controls:SortableGridViewColumn.CellTemplate>
+					<DataTemplate>
+						<TextBlock Text="{Binding Path=ArtFileSize, Converter={StaticResource mFileSizeConverter}}"
+								   Style="{StaticResource OnlyWithArtPresent}"/>
+					</DataTemplate>
+				</controls:SortableGridViewColumn.CellTemplate>
+			</controls:SortableGridViewColumn>
+		</GridView>
+	</controls:SortableListView.View>
+</controls:SortableListView>

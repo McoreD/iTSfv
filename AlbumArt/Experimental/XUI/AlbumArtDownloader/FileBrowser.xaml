@@ -1,0 +1,224 @@
+﻿<Window x:Class="AlbumArtDownloader.FileBrowser"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Win32="clr-namespace:Microsoft.Win32;assembly=presentationframework"
+	xmlns:System="clr-namespace:System;assembly=mscorlib"
+    
+	xmlns:local="clr-namespace:AlbumArtDownloader"
+	xmlns:properties="clr-namespace:AlbumArtDownloader.Properties"
+	xmlns:controls="clr-namespace:AlbumArtDownloader.Controls"
+
+	DataContext="{Binding RelativeSource={RelativeSource Self}}"
+		
+	Title="File Browser" Background="{x:Static SystemColors.ControlBrush}"
+	Icon="AlbumArtDownloader.ico"
+	Width="640" Height="400" ResizeMode="CanResizeWithGrip"
+	
+    properties:WindowSettings.Save="True"
+	>
+	<Window.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Controls/Xaml/HyperlinkButton.generic.xaml"/>
+				<ResourceDictionary Source="/Controls/Xaml/HyperlinkExpander.generic.xaml"/>
+				<ResourceDictionary Source="/Controls/Xaml/Statusbar.generic.xaml"/>
+				<ResourceDictionary Source="/Controls/Xaml/OverflowTextBlock.generic.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+
+			<controls:StringFormatterConverter x:Key="mStringFormatterConverter"/>
+			<controls:EqualityConverter x:Key="mEqualityConverter"/>
+			
+			<Win32:OpenFileDialog x:Key="mFilePathBrowser" Title="Specify folder to search for audio files" ValidateNames="False" CheckFileExists="False" CheckPathExists="True" Filter="Folders|."/>
+			<properties:Settings x:Key="mSettings"/>
+		</ResourceDictionary>
+	</Window.Resources>
+	<Grid Margin="5">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+		<local:Menu Margin="-5,-6,-5,5"/>
+
+		<Grid Grid.Row="1">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+			<Label Target="{Binding ElementName=mFilePathBox}" Padding="0,0,0,4">_Search for audio files in:</Label>
+			<TextBox Grid.Row="1" x:Name="mFilePathBox" Text="{Binding Source={StaticResource mSettings}, Path=Default.FileBrowseRoot, UpdateSourceTrigger=PropertyChanged}" />
+			<Button Grid.Row="1" x:Name="mBrowse" Grid.Column="1" Content="..." Padding="0,-2,0,-2" Margin="0" MinWidth="{x:Static SystemParameters.VerticalScrollBarWidth}"/>
+			<Button x:Name="mSearch" Padding="5,-5,5,-5" Margin="5,0,0,0" Grid.Column="2" Grid.RowSpan="2" Command="ApplicationCommands.Find" IsDefault="True" MinWidth="116">
+				<StackPanel Orientation="Horizontal">
+					<Image Source="search.ico" Margin="0,4,0,0"/>
+					<Label>_Search</Label>
+				</StackPanel>
+			</Button>
+		</Grid>
+		<Expander Padding="5,5,0,0" Grid.Row="2"
+				  Header="Options..." BorderBrush="{x:Static SystemColors.ControlDarkBrush}">
+			<Expander.Style>
+				<Style TargetType="Expander" BasedOn="{StaticResource HyperlinkExpander}">
+					<Setter Property="Margin" Value="0,2,0,0"/>
+					<Style.Triggers>
+						<Trigger Property="IsExpanded" Value="True">
+							<Setter Property="Margin" Value="0,2,0,5"/>
+						</Trigger>
+					</Style.Triggers>
+				</Style>
+			</Expander.Style>
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+				<CheckBox x:Name="mIncludeSubfolders" IsChecked="{Binding Source={StaticResource mSettings}, Path=Default.FileBrowseSubfolders}">Include subfolders when searching for audio files</CheckBox>
+				<GroupBox Grid.Row="1" Header="Album and Artist information" Margin="0,5,0,0">
+					<StackPanel>
+						<RadioButton Content="Use ID3 tags from files" Margin="4" GroupName="ungrouped-4">
+							<RadioButton.IsChecked>
+								<Binding Source="{StaticResource mSettings}" Path="Default.FileBrowseUsePathPattern" Converter="{StaticResource mEqualityConverter}">
+									<Binding.ConverterParameter>
+										<System:Boolean>False</System:Boolean>
+									</Binding.ConverterParameter>
+								</Binding>
+							</RadioButton.IsChecked>
+						</RadioButton>
+						<RadioButton x:Name="mUseFilePathPattern" Content="Use file path pattern matching:" Margin="4" GroupName="ungrouped-5">
+							<RadioButton.IsChecked>
+								<Binding Source="{StaticResource mSettings}" Path="Default.FileBrowseUsePathPattern" Converter="{StaticResource mEqualityConverter}">
+									<Binding.ConverterParameter>
+										<System:Boolean>True</System:Boolean>
+									</Binding.ConverterParameter>
+								</Binding>
+							</RadioButton.IsChecked>
+						</RadioButton>
+						<controls:ArtPathPatternBox x:Name="mFilePathPattern" Margin="20,0,0,0" PathPattern="{Binding Source={StaticResource mSettings}, Path=Default.FileBrowsePathPattern}"
+													IsEnabled="{Binding Source={StaticResource mSettings}, Path=Default.FileBrowseUsePathPattern}">
+							<controls:ArtPathPatternBox.AdditionalPlaceholders>
+								<controls:PatternPlaceholder MenuItemHeader="_Regular Expression" ToolTip="Include arbitrary regular expression matching between &quot; marks" Placeholder="&quot;  &quot;"/>
+								<controls:PatternPlaceholder MenuItemHeader="_Match Folder" ToolTip="Matches the preceeding pattern against folders, rather than files (only valid at the end of a pattern)" Placeholder="\."/>
+							</controls:ArtPathPatternBox.AdditionalPlaceholders>
+						</controls:ArtPathPatternBox>
+					</StackPanel>
+				</GroupBox>
+				<Label Target="{Binding ElementName=mImagePathPatternBox}" Padding="0,4,0,4" Grid.Row="2">Specify path to find _images:</Label>
+				<controls:ArtPathPatternBox x:Name="mImagePathPatternBox" Grid.Row="3" PathPattern="{Binding Source={StaticResource mSettings}, Path=Default.FileBrowseImagePath}">
+					<controls:ArtPathPatternBox.AdditionalPlaceholders>
+						<controls:PatternPlaceholder MenuItemHeader="_Subfolders" ToolTip="Matches subfolders recursively at this point in the path" Placeholder="\**\"/>
+						<controls:PatternPlaceholder MenuItemHeader="_Alternate" ToolTip="Separates alternative paths to match" Placeholder="|"/>
+					</controls:ArtPathPatternBox.AdditionalPlaceholders>
+					<controls:ArtPathPatternBox.BrowseDialog>
+						<Win32:OpenFileDialog Title="Path to find images" ValidateNames="False" CheckFileExists="False" CheckPathExists="False" Filter="All Files (*.*)|*.*"/>
+					</controls:ArtPathPatternBox.BrowseDialog>
+				</controls:ArtPathPatternBox>
+                <GroupBox Grid.Row="4" Header="Get artwork for multiple albums">
+                    <StackPanel>
+                        <RadioButton Margin="4" Content="Let me choose the best result for each album" GroupName="ungrouped-6">
+                            <RadioButton.IsChecked>
+                                <Binding Source="{StaticResource mSettings}" Path="Default.FileBrowseAutoDownload" Converter="{StaticResource mEqualityConverter}">
+                                    <Binding.ConverterParameter>
+                                        <System:Boolean>False</System:Boolean>
+                                    </Binding.ConverterParameter>
+                                </Binding>
+                            </RadioButton.IsChecked>
+                        </RadioButton>
+                        <RadioButton Margin="4" Content="Automatically download and save the first result that meets set criteria" GroupName="ungrouped-7">
+                            <RadioButton.IsChecked>
+                                <Binding Source="{StaticResource mSettings}" Path="Default.FileBrowseAutoDownload" Converter="{StaticResource mEqualityConverter}">
+                                    <Binding.ConverterParameter>
+                                        <System:Boolean>True</System:Boolean>
+                                    </Binding.ConverterParameter>
+                                </Binding>
+                            </RadioButton.IsChecked>
+                        </RadioButton>
+                    </StackPanel>
+                </GroupBox>
+			</Grid>
+		</Expander>
+        <local:BrowserResults Grid.Row="3" x:Name="mResults"
+                              AllowDrop="True"/>
+        <Grid Grid.Row="4" Margin="4,4,0,4">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+			<TextBlock Grid.Row="0" Margin="0,0,0,4">
+				<TextBlock.Text>
+					<MultiBinding Converter="{StaticResource mStringFormatterConverter}" ConverterParameter="{}{0} of {1} albums selected" Mode="OneWay">
+						<Binding ElementName="mResults" Path="SelectedItems.Count"/>
+						<Binding ElementName="mResults" Path="Items.Count"/>
+					</MultiBinding>
+				</TextBlock.Text>
+			</TextBlock>
+			<Button Grid.Row="1" VerticalAlignment="Top" Style="{StaticResource HyperlinkButton}"
+					Command="{x:Static local:BrowserResults+Commands.SelectMissing}" CommandTarget="{Binding ElementName=mResults}" Content="Select all albums with missing artwork"/>
+			<Button Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Padding="10,-4,10,-4"
+					Command="{x:Static local:BrowserResults+Commands.GetArtwork}" CommandTarget="{Binding ElementName=mResults}" Content="Get Artwork for Selection..."/>
+		</Grid>
+		<StatusBar Grid.Row="5" Margin="-5,0,-5,-5" Padding="5,2,5,2">
+			<StatusBarItem DockPanel.Dock="Right">
+				<Button Padding="10,-3,10,-1" Margin="0,-3,10,-5"
+						Command="ApplicationCommands.Stop" Content="Stop">
+					<Button.Style>
+						<Style TargetType="Button">
+							<Setter Property="Visibility" Value="Collapsed"/>
+							<Style.Triggers>
+								<DataTrigger Binding="{Binding State}" Value="FindingFiles">
+									<Setter Property="Visibility" Value="Visible"/>
+								</DataTrigger>
+								<DataTrigger Binding="{Binding State}" Value="FindingArt">
+									<Setter Property="Visibility" Value="Visible"/>
+								</DataTrigger>
+							</Style.Triggers>
+						</Style>
+					</Button.Style>
+				</Button>
+			</StatusBarItem>
+			<StatusBarItem>
+				<TextBlock>
+					<TextBlock.Style>
+						<Style TargetType="TextBlock" BasedOn="{StaticResource OverflowTextBlock}">
+							<Style.Triggers>
+								<DataTrigger Binding="{Binding State}" Value="Ready">
+									<Setter Property="Text" Value="Ready"/>
+								</DataTrigger>
+								<DataTrigger Binding="{Binding State}" Value="FindingFiles">
+									<Setter Property="Text" Value="{Binding ProgressText}"/>
+								</DataTrigger>
+								<DataTrigger Binding="{Binding State}" Value="FindingArt">
+									<Setter Property="Text" Value="{Binding ProgressText}"/>
+								</DataTrigger>
+								<DataTrigger Binding="{Binding State}" Value="Done">
+									<Setter Property="Text" Value="Done"/>
+								</DataTrigger>
+								<DataTrigger Binding="{Binding State}" Value="Stopped">
+									<Setter Property="Text" Value="Stopped"/>
+								</DataTrigger>
+								<DataTrigger Binding="{Binding State}" Value="Error">
+									<Setter Property="Text" Value="{Binding ErrorText}"/>
+								</DataTrigger>
+							</Style.Triggers>
+						</Style>
+					</TextBlock.Style>
+				</TextBlock>
+			</StatusBarItem>
+		</StatusBar>
+	</Grid>
+</Window>

@@ -1,0 +1,41 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:AlbumArtDownloader.Controls"
+    >
+	<Style TargetType="controls:ArtPathPatternBox">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="controls:ArtPathPatternBox">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="Auto"/>
+						</Grid.ColumnDefinitions>
+						<ComboBox x:Name="PART_PathEditorHistory" Margin="0"
+								  ItemsSource="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=History, Mode=OneWay}"
+								  IsEditable="True" Focusable="False"/>
+
+						<!-- There is a good reason to have the text box separate to the combo box, in that if you just use
+							an editable combo box, then whenever it gets focus, it selects the entire text. That sucks, and can't be changed-->
+						<TextBox x:Name="PART_PathEditor" BorderThickness="0" Margin="1"
+								 Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=PathPattern, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+						<ToggleButton x:Name="PART_MenuButton" Grid.Column="1" Content="4" FontFamily="Marlett" FontSize="18" Padding="-3,-5,-3,-5" Margin="0"
+								ContextMenuService.Placement="Bottom" IsChecked="{Binding RelativeSource={RelativeSource Self}, Path=ContextMenu.IsOpen, Mode=TwoWay}">
+							<ToggleButton.Resources>
+								<MenuItem x:Key="PART_BrowseMenuItem" Header="_Browse..." Command="{x:Static controls:ArtPathPatternBox+Commands.Browse}">
+									<MenuItem.Icon>
+										<Image Source="browse.png"/>
+									</MenuItem.Icon>
+								</MenuItem>
+							</ToggleButton.Resources>
+							<ToggleButton.ContextMenu>
+								<ContextMenu ItemsSource="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=PlaceholdersMenu, Mode=OneWay}"/>
+							</ToggleButton.ContextMenu>
+						</ToggleButton>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+</ResourceDictionary>

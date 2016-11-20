@@ -1,0 +1,225 @@
+>{0}
+
+Album Art Downloader XUI version {1}
+{2}
+Usage: {3} [options]
+
+Option names may be preceded by a / or a -
+Options:
+
+ /artist      Artist to search for            (/artist "Artist Name")
+              May be abbreviated to /ar       (/ar "Artist Name")
+              Parameter name may be omitted
+              if this is the first parameter  ("Artist Name")
+
+ /album       Album to search for             (/album "Album Name")
+              May be abbreviated to /al       (/al "Album Name")
+              Parameter name may be omitted
+              if this is the second parameter ("Artist Name" "Album Name")
+ 
+ /path        Default path to save art as     (/path "\Art\Folder.jpg")
+              May be abbreviated to /p        (/p "\Art\Folder.jpg")
+              Parameter name may be omitted
+              if this is the third parameter  ("Artist Name" "Album Name" "\Art\Folder.jpg")
+
+              The following variables can be used in paths:
+               %artist%     Artist searched for
+               %album%      Album searched for
+               %name%       Name of the image found
+               %extension%  Default file extension for the image
+               %type%       Type of image (front, back, inside, etc.)
+               %source%     Name of the source where image was found
+               %size%       Dimensions of the image
+               %preset%     A custom preset string, chosen from the save button menu
+
+ /f           Provided for backwards          (/p "\Art" /f "Folder.jpg")
+              compatibility only. When
+              specified, the value is
+              appended to the path.
+
+ /localImagesPath
+              Path to search for local image  (/localImagesPath "\Art\Unsorted\**\*.jpg")
+              files in. If not specified, the
+              path to save art in is used.
+              
+              The following variables can be used in paths:
+               %artist%     Artist searched for
+               %album%      Album searched for
+               *            Wildcard, matches any characters
+               \**\         Subfolder search. Any folders will match
+                             at this point in the path. For example
+                             "\Art\Unsorted\**\*.jpg" will match:
+                              \Art\Unsorted\image.jpg
+                              \Art\Unsorted\misc\image.jpg
+                              \Art\Unsorted\misc\old\image.jpg
+                             
+                             "\Art\Unsorted\*\*.jpg" will match only:
+                              \Art\Unsorted\misc\image.jpg
+
+ /autoclose   Closes the search window after  (/autoclose)
+              saving. To avoid closing, use
+              Save As.
+              May be abbreviated to /ac
+              
+              Append "off" to disable closing (/autoclose off)
+              the search window after saving,
+              if this option is on by default.
+              
+              Note that this option affects
+              only the window directly opened 
+              by the command line, not any
+              existing or subsequent ones.
+ 
+ /sources     Searches only the specified     (/sources "Album Art Exchange,Coveralia")
+              sources. Others are disabled.
+              Separate sources with commas.
+              
+              Sources may be prefixed with F: (/sources "Album Art Exchange,F:Coveralia")
+              to indicate it should have the 
+              Search First setting set for it.
+              Other sources will have Search
+              First unset.
+              
+              To search all available sources,
+              specify "all" here.             (/sources all)
+              
+              May be abbreviated to /s
+
+ /exclude     Does not search the specified   (/exclude "Local Files,GoogleImage")
+              sources. Separate sources with
+              commas.
+              May be abbreviated to /es
+              For backwards compatibilty, the
+              parameter "/ae off" can also be
+              used to exclude "Local Files".
+
+ /include     Searches the specified sources. (/include "Local Files,Album Art Exchange")
+              Does not disable sources that
+              are not specified. Separate 
+              sources with commas.
+              
+              Sources may be prefixed with F: (/include "F:Local Files,Album Art Exchange")
+              to indicate it should have the 
+              Search First setting set for it.
+              Other sources will have their
+              Search First setting remain unchanged.
+              
+              May be abbreviated to /i
+
+ /sort (name|size|area|source|type)[+|-]
+              Sets the sorting to use for the (/sort size-)
+              results.
+              May be abbreviated to /o        (/o size-)
+              
+              The first character may be - to
+              indicate descending search, or
+              + to indicate ascending. If it
+              is omitted, ascending is assumed.
+              
+              The field to sort by must be one
+              of:
+               name (may be abbreviated to n) (/o n+)
+               size (may be abbreviated to s)
+               area (may be abbreviated to a)
+               source (may be abbreviated to o)
+               type (may be abbreviated to t)
+ /group (none|local|source|type|size)
+              Sets the grouping to use for    (/group source)
+              the results.
+              May be abbreviated to /o        (/o source)
+              
+              The avaialable grouping options
+              are:
+               none (may be abbreviated to n) (/o n)
+               local (may be abbreviated to l)
+               source (may be abbreviated to o)
+               type (may be abbreviated to t)
+               size (may be abbreviated to s)
+
+ /minSize     Specifies the minimum size of   (/minSize 300)
+              image, in pixels, to filter the 
+              results by. Both horizontal and
+              vertical dimensions must be over
+              this value.
+              May be abbreviated to /mn       (/mn 300)
+              
+ /maxSize     Specifies the maximum size of   (/maxSize 1000)
+              image, in pixels, to filter the 
+              results by. Either horizontal or
+              vertical dimensions may be under
+              this value.
+              May be abbreviated to /mx       (/mx 1000)
+
+ /coverType   Specifies the type(s) of cover  (/coverType front)
+              to find. Separate types with
+              commas. Available types are:    (/coverType front,unknown)
+              
+               Front
+               Back
+               Inside
+               CD
+               Unknown
+              
+              As a shortcut to specifying all (/coverType any)
+              types, the special type Any may 
+              be used.
+              
+              Types may be abbreviated to     (/coverType f,b,u)
+              their first letter.
+              
+              May be abbreviated to /t        (/t c,u)
+
+ /fileBrowser                                 (/fileBrowser "\Music")
+              Opens a File Browser window. If
+              a path is specified, starts
+              searching that path immediately.
+              If no path is specified, the
+              browser window is just opened.  (/fileBrowser)
+              
+              If other parameters are not
+              specified, then a search window
+              will not be shown initially.
+
+ /foobarBrowser [search]                      (/foobarBrowser search)
+              Opens a Foobar Browser window. If
+              the search parameter is present,
+              starts searching the foobar media
+              library immediately. If the search
+              parameter is omitted, the browser
+              window is just opened.          (/foobarBrowser)
+              
+              If other parameters are not
+              specified, then a search window
+              will not be shown initially.
+
+ /update                                      (/update)
+              Checks for updates to scripts and
+              application.
+
+ /getScripts                                  (/getScripts)
+              Checks for other search source 
+              scripts which may be available for
+              download.
+
+ /minimized                                   (/minimized)
+              Opens the new window minimized.
+              Does not affect already opened
+              windows.
+
+ /new                                         (/new)
+              Ensures that a new window is 
+              opened for the search, rather
+              than reusing an existing window.
+
+ /config                                      (/config)
+              Opens the user settings xml file
+              in notepad, for editing. For
+              advanced use only.
+
+ /separateInstance                            (/separateInstance)
+              Starts a new instance as a new
+              process, which will neither re-use
+              nor be re-used by any other
+              instance of the application.
+              
+              (not recommended)

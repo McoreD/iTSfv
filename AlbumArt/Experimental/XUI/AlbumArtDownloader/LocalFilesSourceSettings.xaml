@@ -1,0 +1,27 @@
+<UserControl x:Class="AlbumArtDownloader.LocalFilesSourceSettings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:Win32="clr-namespace:Microsoft.Win32;assembly=presentationframework"
+	xmlns:controls="clr-namespace:AlbumArtDownloader.Controls"
+	>
+    <Grid x:Name="mGrid">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<Label Grid.Row="0" Target="{Binding ElementName=mSearchPathPatternBox}" Margin="0" Padding="0">_Path to find images:</Label>
+		<controls:ArtPathPatternBox x:Name="mSearchPathPatternBox" Margin="0,4,0,0" Grid.Row="1"
+									MaxWidth="{Binding ElementName=mGrid, Path=ActualWidth}" 
+									PathPattern="{Binding SearchPathPattern}" ToolTip="[please wait...]">
+			<controls:ArtPathPatternBox.AdditionalPlaceholders>
+				<controls:PatternPlaceholder MenuItemHeader="_Folder" ToolTip="The folder part of the path to save images to" Placeholder="%folder%"/>
+				<controls:PatternPlaceholder MenuItemHeader="File_name" ToolTip="The file part of the path to save images to" Placeholder="%file%"/>
+				<controls:PatternPlaceholder MenuItemHeader="_Subfolders" ToolTip="Matches subfolders recursively at this point in the path" Placeholder="\**\"/>
+				<controls:PatternPlaceholder MenuItemHeader="_Alternate" ToolTip="Separates alternative paths to match" Placeholder="|"/>
+			</controls:ArtPathPatternBox.AdditionalPlaceholders>
+			<controls:ArtPathPatternBox.BrowseDialog>
+				<Win32:OpenFileDialog Title="Path to find images" ValidateNames="False" CheckFileExists="False" CheckPathExists="False" Filter="All Files (*.*)|*.*"/>
+			</controls:ArtPathPatternBox.BrowseDialog>
+		</controls:ArtPathPatternBox>
+    </Grid>
+</UserControl>

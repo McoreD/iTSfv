@@ -1,0 +1,21 @@
+﻿<Window x:Class="AlbumArtDownloader.CommandArgsHelp"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Album Art Downloader Command Line Parameters"
+	Width="700" Height="500"
+	MinWidth="200" MinHeight="100"
+	Icon="AlbumArtDownloader.ico"
+	WindowStartupLocation="CenterScreen"
+    >
+	<Grid>
+		<TextBox x:Name="mTextDisplay" FontFamily="Courier New" IsReadOnly="True" Padding="5"
+				 VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+			<TextBox.ContextMenu>
+				<ContextMenu>
+					<MenuItem Command="ApplicationCommands.SelectAll"/>
+					<MenuItem Command="ApplicationCommands.Copy"/>
+				</ContextMenu>
+			</TextBox.ContextMenu>
+		</TextBox>
+    </Grid>
+</Window>

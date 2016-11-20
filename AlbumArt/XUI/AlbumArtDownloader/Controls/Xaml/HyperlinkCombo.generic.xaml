@@ -1,0 +1,75 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:System="clr-namespace:System;assembly=mscorlib"
+    >
+
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary Source="/Controls/Xaml/HyperlinkButton.generic.xaml"/>
+	</ResourceDictionary.MergedDictionaries>
+
+	<Style x:Key="HyperlinkCombo" TargetType="ComboBox">
+		<Setter Property="FocusVisualStyle">
+			<Setter.Value>
+				<Style>
+					<Setter Property="Control.Template">
+						<Setter.Value>
+							<ControlTemplate>
+								<Rectangle Stroke="Black" StrokeThickness="1" SnapsToDevicePixels="True">
+									<Rectangle.StrokeDashArray>
+										<DoubleCollection>
+											<System:Double>1</System:Double>
+											<System:Double>2</System:Double>
+										</DoubleCollection>
+									</Rectangle.StrokeDashArray>
+								</Rectangle>
+							</ControlTemplate>
+						</Setter.Value>
+					</Setter>
+				</Style>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="IsEditable" Value="False"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="ComboBox">
+					<Border x:Name="Border" BorderThickness="1,1,1,0" MinWidth="{Binding ElementName=DropDownBorder, Path=ActualWidth, Mode=OneWay}">
+						<Grid SnapsToDevicePixels="True">
+							<ToggleButton IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+								Focusable="False" ClickMode="Press" Style="{StaticResource HyperlinkButton}">
+								<ToggleButton.Template>
+									<ControlTemplate TargetType="ToggleButton">
+										<ContentPresenter/>
+									</ControlTemplate>
+								</ToggleButton.Template>
+								<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="{TemplateBinding Padding}" x:Name="ContentPresenter" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Content="{TemplateBinding SelectionBoxItem}" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"/>
+							</ToggleButton>
+							<Popup x:Name="PART_Popup" IsOpen="{TemplateBinding IsDropDownOpen}" Focusable="False" Placement="Bottom"
+									MinWidth="{TemplateBinding ActualWidth}" MaxHeight="{TemplateBinding MaxDropDownHeight}"
+									PlacementTarget="{Binding RelativeSource={RelativeSource TemplatedParent}}">
+								<Border Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" x:Name="DropDownBorder" BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" BorderThickness="1,0,1,1">
+									<ScrollViewer x:Name="ScrollViewer">
+										<ItemsPresenter x:Name="ItemsPresenter" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" KeyboardNavigation.DirectionalNavigation="Contained"/>
+									</ScrollViewer>
+								</Border>
+
+							</Popup>
+						</Grid>
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger Property="HasItems" Value="False">
+							<Setter Property="MinHeight" Value="95" TargetName="DropDownBorder"/>
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="False">
+							<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+						</Trigger>
+						<Trigger Property="IsDropDownOpen" Value="True">
+							<Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+</ResourceDictionary>

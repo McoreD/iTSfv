@@ -1,0 +1,39 @@
+;Source Name	Artist	Album
+;Album Art Exchange	Muse	The Resistance
+AllCdCover	Muse	The Resistance
+Amazon (.ca)	Muse	The Resistance
+Amazon (.co.uk)	Muse	The Resistance
+Amazon (.com)	Muse	The Resistance
+Amazon (.de)	Muse	The Resistance
+Amazon (.fr)	Muse	The Resistance
+Amazon (.jp)	Muse	Absolution
+ArkivMusik	Chopin	Four Ballades
+Buy.com	Muse	The Resistance
+CD Baby	Girlyman	Everything's Easy
+CD Universe	Muse	The Resistance
+Cover-Paradies	Muse	The Resistance
+Coveralia	Muse	The Resistance
+CoverIsland	Muse	The Resistance
+Darktown	Blink 182	Enema of The State
+Discogs	Muse	The Resistance
+Freecovers API	Muse	The Resistance
+GoogleImage	Muse	The Resistance
+hitparade.ch	Muse	The Resistance
+Juno Records	Muse	The Resistance
+LastFM Artist	Muse	The Resistance
+LastFM Cover	Muse	The Resistance
+maniadb	Muse	The Resistance
+Encyclopaedia Metallum	Onslaught	Power From Hell
+Metal Library	Onslaught	Power From Hell
+;MusicMight	Onslaught	Power From Hell
+Psyshop	Aquafur	Fuzzy Emotions
+RevHQ	Ultra Violence	Brick Rain
+Yes24	Muse	The Resistance
+YesAsia	Muse	The Resistance
+Archambault	Lady Gaga	The Fame Monster
+HMV Canada	<ignored>	Crazy Love
+Kalahari	Muse	The Resistance
+Take2	Muse	The Resistance
+VGMdb	Morrigan	Caldes
+VGMdb		Xenoblade Original Soundtrack
+;Lala	Muse	The Resistance

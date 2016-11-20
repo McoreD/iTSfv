@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9AA60D1F-2771-4C45-893A-BF3C685C9985}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AlbumArtDownloader.Scripts</RootNamespace>
+    <AssemblyName>AlbumArtDownloader.Scripts</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SourceAnalysisOverrideSettingsFile>C:\Dokumente und Einstellungen\Julius\Anwendungsdaten\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CoverType.cs" />
+    <Compile Include="ICategorised.cs" />
+    <Compile Include="IScript.cs" />
+    <Compile Include="IScriptResults.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaticScript.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+    <None Include="Scripts\allcdcover.boo" />
+    <None Include="Scripts\7digital.boo" />
+    <None Include="Scripts\amazon-common.boo" />
+    <None Include="Scripts\Archived\coverisland.boo" />
+    <None Include="Scripts\Archived\freecovers-api.boo" />
+    <None Include="Scripts\Archived\itunes-bing.boo" />
+    <None Include="Scripts\Archived\itunes-google.boo" />
+    <None Include="Scripts\chartstats.boo" />
+    <None Include="Scripts\amazon-it.boo" />
+    <None Include="Scripts\beatport.boo" />
+    <None Include="Scripts\audiopreservationfund.boo" />
+    <None Include="Scripts\45cat.boo" />
+    <None Include="Scripts\amazon-mp3-com.boo" />
+    <None Include="Scripts\amazon-audiobooks-com.boo" />
+    <None Include="Scripts\Archived\album-art-exchange-browser-launcher.boo" />
+    <None Include="Scripts\absolutepunk.boo" />
+    <None Include="Scripts\bandcamp.boo" />
+    <None Include="Scripts\Archived\file-drop-target.boo" />
+    <None Include="Scripts\45worlds-cdsingles.boo" />
+    <None Include="Scripts\google-play.boo" />
+    <None Include="Scripts\fanarttv.boo" />
+    <None Include="Scripts\bing.boo" />
+    <None Include="Scripts\juno-download.boo" />
+    <None Include="Scripts\musicbrainz.boo" />
+    <None Include="Scripts\trackitdown.boo" />
+    <None Include="Scripts\theclassicalshop.boo" />
+    <None Include="Scripts\theorchard.boo" />
+    <None Include="Scripts\soundstation.boo" />
+    <None Include="Scripts\deejay.boo" />
+    <None Include="Scripts\medianet.boo" />
+    <None Include="Scripts\esenshop.boo" />
+    <None Include="Scripts\eclassical.boo" />
+    <None Include="Scripts\deezer.boo" />
+    <None Include="Scripts\maniadb.boo" />
+    <None Include="Scripts\Archived\megamedia.boo" />
+    <None Include="Scripts\itunes.boo" />
+    <None Include="Scripts\djshop.boo" />
+    <None Include="Scripts\coverlandia-official.boo" />
+    <None Include="Scripts\nuclearblast.boo" />
+    <None Include="Scripts\Archived\miomusik.boo" />
+    <None Include="Scripts\Archived\sfr-music.boo" />
+    <None Include="Scripts\Archived\gigacrate.boo" />
+    <None Include="Scripts\qobuz.boo" />
+    <None Include="Scripts\emusic.boo" />
+    <None Include="Scripts\ebreggae.boo" />
+    <None Include="Scripts\coverlandia.boo" />
+    <None Include="Scripts\Archived\darktown.boo" />
+    <None Include="Scripts\Archived\cduniverse.boo" />
+    <None Include="Scripts\Archived\itunes.boo" />
+    <None Include="Scripts\revhq.boo" />
+    <None Include="Scripts\Archived\rateyourmusic.boo" />
+    <None Include="Scripts\cover-paradies.boo" />
+    <None Include="Scripts\coveralia.boo" />
+    <None Include="Scripts\discogs.boo" />
+    <None Include="Scripts\juno-records.boo" />
+    <None Include="Scripts\psyshop.boo" />
+    <None Include="Scripts\util.boo" />
+    <None Include="Scripts\wantitall.boo" />
+    <None Include="Scripts\Archived\yes24.boo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Third Party Assemblies\ICSharpCode.SharpZipLib.dll">
+      <Link>Scripts\Archived\ICSharpCode.SharpZipLib.dll</Link>
+    </None>
+    <None Include="Scripts\amazon-com.boo" />
+    <None Include="Scripts\amazon-co-uk.boo" />
+    <None Include="Scripts\amazon-ca.boo" />
+    <None Include="Scripts\amazon-fr.boo" />
+    <None Include="Scripts\amazon-jp.boo" />
+    <None Include="Scripts\amazon-de.boo" />
+    <None Include="Scripts\archambault.boo" />
+    <None Include="Scripts\buy-com.boo" />
+    <None Include="Scripts\arkivmusic.boo" />
+    <None Include="Scripts\cdbaby.boo" />
+    <None Include="Scripts\Archived\lala.boo" />
+    <None Include="Scripts\take2.boo" />
+    <None Include="Scripts\kalahari.boo" />
+    <None Include="Scripts\vgmdb.boo" />
+    <None Include="Scripts\hmv-canada.boo" />
+    <None Include="Scripts\Archived\musicmight.boo" />
+    <None Include="Scripts\yesasia.boo" />
+    <None Include="Scripts\hitparade.boo" />
+    <None Include="Scripts\metallibrary.boo" />
+    <None Include="Scripts\google.boo" />
+    <None Include="Scripts\lastfm-artist.boo" />
+    <None Include="Scripts\lastfm-cover.boo" />
+    <None Include="Scripts\metal-archives.boo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\Archived\Archived Scripts.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Scripts\iTunes Country Overrides\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbumArt", "AlbumArt\AlbumArt.csproj", "{715B89E7-119D-4B61-93E6-4E69E19D48AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATL", "ATL\ATL\ATL.csproj", "{008B72F1-CA0A-4EC7-91A2-2BEEA2738246}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{715B89E7-119D-4B61-93E6-4E69E19D48AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{715B89E7-119D-4B61-93E6-4E69E19D48AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{715B89E7-119D-4B61-93E6-4E69E19D48AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{715B89E7-119D-4B61-93E6-4E69E19D48AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{008B72F1-CA0A-4EC7-91A2-2BEEA2738246}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{008B72F1-CA0A-4EC7-91A2-2BEEA2738246}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{008B72F1-CA0A-4EC7-91A2-2BEEA2738246}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{008B72F1-CA0A-4EC7-91A2-2BEEA2738246}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

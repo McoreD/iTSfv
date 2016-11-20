@@ -1,0 +1,19 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    >
+
+	<!-- The default status bar is flat. I don't know why. Status bars are supposed to have a gradient. -->
+	<Style TargetType="StatusBar">
+		<Setter Property="Background">
+			<Setter.Value>
+				<LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+					<GradientStop Color="{x:Static SystemColors.ControlDarkColor}" Offset="0"/>
+					<GradientStop Color="{x:Static SystemColors.ControlColor}" Offset="0.2"/>
+					<GradientStop Color="{x:Static SystemColors.ControlColor}" Offset="0.8"/>
+					<GradientStop Color="{x:Static SystemColors.ControlLightColor}" Offset="1"/>
+				</LinearGradientBrush>
+			</Setter.Value>
+		</Setter>
+	</Style>
+</ResourceDictionary>

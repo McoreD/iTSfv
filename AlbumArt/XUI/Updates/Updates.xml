@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="Updates.xsl"?>
+<Updates BaseURI="http://album-art.sourceforge.net/scripts/">
+  <Application Version="1.0.2.0" Name="Album Art Downloader XUI v1.0.2" URI="https://sourceforge.net/project/platformdownload.php?group_id=187008" />
+  <Script Name="45cat" URI="45cat.boo" Version="0.7" Category="LP Vinyl" />
+  <Script Name="45world CD Singles" URI="45worlds-cdsingles.boo" Version="0.1" Category="Singles" />
+  <Script Name="7digital" URI="7digital.boo" Version="0.4" />
+  <Script Name="absolutepunk.net" URI="absolutepunk.boo" Version="0.2" Category="Punk, Metal, Rock" />
+  <Script Name="AllCdCover" URI="allcdcover.boo" Version="0.5" />
+  <Script Name="Amazon Audiobooks (.com)" URI="amazon-audiobooks-com.boo" Version="0.13s" Category="Audiobooks">
+    <Dependency>amazon-common.boo</Dependency>
+  </Script>
+  <Script Name="Amazon (.ca)" URI="amazon-ca.boo" Version="0.13s">
+    <Dependency>amazon-common.boo</Dependency>
+  </Script>
+  <Script Name="Amazon (.co.uk)" URI="amazon-co-uk.boo" Version="0.13s">
+    <Dependency>amazon-common.boo</Dependency>
+  </Script>
+  <Script Name="Amazon (.com)" URI="amazon-com.boo" Version="0.13s">
+    <Dependency>amazon-common.boo</Dependency>
+  </Script>
+  <Script Name="Amazon (.de)" URI="amazon-de.boo" Version="0.13s">
+    <Dependency>amazon-common.boo</Dependency>
+  </Script>
+  <Script Name="Amazon (.fr)" URI="amazon-fr.boo" Version="0.13s">
+    <Dependency>amazon-common.boo</Dependency>
+  </Script>
+  <Script Name="Amazon (.it)" URI="amazon-it.boo" Version="0.13s">
+    <Dependency>amazon-common.boo</Dependency>
+  </Script>
+  <Script Name="Amazon (.jp)" URI="amazon-jp.boo" Version="0.13s">
+    <Dependency>amazon-common.boo</Dependency>
+  </Script>
+  <Script Name="Amazon MP3 (.com)" URI="amazon-mp3-com.boo" Version="0.2">
+    <Dependency>amazon-common.boo</Dependency>
+  </Script>
+  <Script Name="Archambault" URI="archambault.boo" Version="0.6" />
+  <Script Name="ArkivMusik" URI="arkivmusic.boo" Version="0.8" Category="Classical" />
+  <Script Name="Audio Preservation Fund" URI="audiopreservationfund.boo" Version="0.1" Category="LP Vinyl" />
+  <Script Name="bandcamp" URI="bandcamp.boo" Version="0.2" Category="Independent" />
+  <Script Name="Beatport" URI="beatport.boo" Version="0.2" Category="Dance, Club, Electronic" />
+  <Script Name="Bing Images" URI="bing.boo" Version="0.1" />
+  <Script Name="Buy.com" URI="buy-com.boo" Version="0.8.5" />
+  <Script Name="CD Baby" URI="cdbaby.boo" Version="0.4" Category="Independent" />
+  <Script Name="Chartstats" URI="chartstats.boo" Version="0.2" />
+  <Script Name="CoverLib (Cover-Paradies)" URI="cover-paradies.boo" Version="0.19" />
+  <Script Name="Coveralia" URI="coveralia.boo" Version="0.11" />
+  <Script Name="Coverlandia (Official)" URI="coverlandia-official.boo" Version="0.2" />
+  <Script Name="Coverlandia" URI="coverlandia.boo" Version="0.2" Category="Fan-made covers" />
+  <Script Name="deejay.de" URI="deejay.boo" Version="0.5" />
+  <Script Name="Deezer" URI="deezer.boo" Version="0.6" />
+  <Script Name="Discogs" URI="discogs.boo" Version="0.16" />
+  <Script Name="DJshop" URI="djshop.boo" Version="0.4" />
+  <Script Name="EB Reggae" URI="ebreggae.boo" Version="0.2" Category="Reggae" />
+  <Script Name="eClassical" URI="eclassical.boo" Version="0.2" Category="Classical" />
+  <Script Name="eMusic" URI="emusic.boo" Version="0.5" />
+  <Script Name="esenshop" URI="esenshop.boo" Version="0.1" Category="Turkish" />
+  <Script Name="fanart.tv" URI="fanarttv.boo" Version="0.3" />
+  <Script Name="Google Play Music" URI="google-play.boo" Version="0.3" />
+  <Script Name="GoogleImage" URI="google.boo" Version="0.18" />
+  <Script Name="hitparade.ch" URI="hitparade.boo" Version="0.5" />
+  <Script Name="HMV Canada" URI="hmv-canada.boo" Version="0.3" Category="Canadian" />
+  <Script Name="iTunes" URI="itunes.boo" Version="0.5" />
+  <Script Name="Juno Download" URI="juno-download.boo" Version="0.1" Category="Dance, Club, Electronic" />
+  <Script Name="Juno Records" URI="juno-records.boo" Version="0.8" Category="Dance, Club, Electronic" />
+  <Script Name="Kalahari" URI="kalahari.boo" Version="0.7" Category="South African" />
+  <Script Name="LastFM Artist" URI="lastfm-artist.boo" Version="0.6" Category="Artist Images" />
+  <Script Name="LastFM Cover" URI="lastfm-cover.boo" Version="0.6" />
+  <Script Name="maniadb" URI="maniadb.boo" Version="0.3" />
+  <Script Name="medianet" URI="medianet.boo" Version="0.1" />
+  <Script Name="Encyclopaedia Metallum" URI="metal-archives.boo" Version="0.6" Category="Punk, Metal, Rock" />
+  <Script Name="Metal Library" URI="metallibrary.boo" Version="0.3" Category="Punk, Metal, Rock" />
+  <Script Name="MusicBrainz" URI="musicbrainz.boo" Version="0.9" />
+  <Script Name="Nuclear Blast" URI="nuclearblast.boo" Version="0.1" Category="Punk, Metal, Rock" />
+  <Script Name="Psyshop" URI="psyshop.boo" Version="0.7" Category="Dance, Club, Electronic" />
+  <Script Name="Qobuz" URI="qobuz.boo" Version="0.2" />
+  <Script Name="RevHQ" URI="revhq.boo" Version="0.6" Category="Independent" />
+  <Script Name="Sound Station" URI="soundstation.boo" Version="0.1" Category="LP Vinyl" />
+  <Script Name="Take2" URI="take2.boo" Version="0.5" Category="South African" />
+  <Script Name="The Classical Shop" URI="theclassicalshop.boo" Version="0.2" Category="Classical" />
+  <Script Name="The Orchard" URI="theorchard.boo" Version="0.2" Category="Independent" />
+  <Script Name="trackitdown" URI="trackitdown.boo" Version="0.1" Category="Dance, Club, Electronic" />
+  <Script Name="VGMdb" URI="vgmdb.boo" Version="0.6" Category="Video Game Music" />
+  <Script Name="WantItAll" URI="wantitall.boo" Version="0.1" Category="South African" />
+  <Script Name="YesAsia" URI="yesasia.boo" Version="0.5" Category="Eastern" />
+</Updates>

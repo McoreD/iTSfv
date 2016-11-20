@@ -1,0 +1,433 @@
+﻿<Window x:Class="AlbumArtDownloader.ArtSearchWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:Win32="clr-namespace:Microsoft.Win32;assembly=presentationframework" 
+	xmlns:local="clr-namespace:AlbumArtDownloader"
+	xmlns:properties="clr-namespace:AlbumArtDownloader.Properties"
+	xmlns:controls="clr-namespace:AlbumArtDownloader.Controls"
+	
+	Icon="AlbumArtDownloader.ico"
+	Title="Album Art Downloader" Background="{x:Static SystemColors.ControlBrush}"
+	Width="640" Height="400"
+	FocusManager.FocusedElement="{Binding ElementName=mArtist}"
+	
+	x:Name="this" 
+		
+    properties:WindowSettings.Save="True"
+	>
+	<Window.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Controls/Xaml/SimpleList.generic.xaml"/>
+                <ResourceDictionary Source="/Controls/Xaml/FadeButton.generic.xaml"/>
+                <ResourceDictionary Source="/Controls/Xaml/HyperlinkButton.generic.xaml"/>
+				<ResourceDictionary Source="/Controls/Xaml/HyperlinkExpander.generic.xaml"/>
+				<ResourceDictionary Source="/Controls/Xaml/HyperlinkCombo.generic.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+
+			<BooleanToVisibilityConverter x:Key="mBooleanToVisibilityConverter"/>
+			<controls:EqualityConverter x:Key="mEqualityConverter"/>
+			<controls:EnumIndexConverter x:Key="mEnumIndexConverter"/>
+
+			<Style TargetType="Label">
+				<Setter Property="Margin" Value="2"/>
+				<Setter Property="Padding" Value="3"/>
+			</Style>
+			<Style TargetType="TextBox">
+				<Setter Property="Margin" Value="2"/>
+				<Setter Property="Padding" Value="2"/>
+			</Style>
+			
+			<properties:Settings x:Key="mSettings"/>
+		</ResourceDictionary>
+	</Window.Resources>
+
+	<Grid Margin="5">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<!-- Spacer -->
+			<ColumnDefinition Width="4"/>
+			<!-- Auto width doesn't work with vertical scrollbar set to auto, for some reason -->
+			<ColumnDefinition Width="{Binding ElementName=mSourcesViewer, Path=ActualWidth}"/>
+		</Grid.ColumnDefinitions>
+
+		<local:Menu Margin="-5,-6,-5,5" Grid.ColumnSpan="3"/>
+
+		<Grid Grid.Row="1">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+			<Label Target="{Binding ElementName=mArtist}">A_rtist:</Label>
+			<TextBox x:Name="mArtist" Grid.Column="1" Text="{Binding ElementName=this, Path=Artist, UpdateSourceTrigger=PropertyChanged}"/>
+			<Label Grid.Row="1" Target="{Binding ElementName=mAlbum}">A_lbum:</Label>
+			<TextBox Grid.Row="1" x:Name="mAlbum" Grid.Column="1" Text="{Binding ElementName=this, Path=Album, UpdateSourceTrigger=PropertyChanged}"/>
+			<Button x:Name="mSearch" Margin="5" Padding="5,0,5,0" MinWidth="116" Grid.Column="2" Grid.RowSpan="2" Command="ApplicationCommands.Find" IsDefault="True">
+				<StackPanel Orientation="Horizontal">
+					<Image Margin="0,4,0,0">
+						<Image.Style>
+							<Style TargetType="Image">
+								<Setter Property="Source" Value="search.ico"/>
+								<Style.Triggers>
+									<DataTrigger Binding="{Binding ElementName=this, Path=ExtendSearch}" Value="True">
+										<Setter Property="Source" Value="extendsearch.ico"/>
+									</DataTrigger>
+								</Style.Triggers>
+							</Style>
+						</Image.Style>
+					</Image>
+					<Label>
+						<Label.Style>
+							<Style TargetType="Label">
+								<Setter Property="Content" Value="_Search"/>
+								<Style.Triggers>
+									<DataTrigger Binding="{Binding ElementName=this, Path=ExtendSearch}" Value="True">
+										<Setter Property="Content" Value="Extend _Search"/>
+									</DataTrigger>
+								</Style.Triggers>
+							</Style>
+						</Label.Style>
+					</Label>
+				</StackPanel>
+			</Button>
+		</Grid>
+		<Expander Style="{StaticResource HyperlinkExpander}" Padding="0" Margin="0" Grid.Row="2"
+				  Header="Options..." BorderBrush="{x:Static SystemColors.ControlDarkBrush}" 
+				  x:Name="mOptionsBox">
+			<DockPanel>
+
+				<Grid x:Name="mNormalSaveFolderControls" DockPanel.Dock="Bottom">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="*"/>
+					</Grid.ColumnDefinitions>
+					<Label Target="{Binding ElementName=mDefaultSaveFolder}">Sa_ve images to:</Label>
+					<controls:ArtPathPatternBox Grid.Column="1" x:Name="mDefaultSaveFolder"
+												Margin="2" Padding="2">
+						<controls:ArtPathPatternBox.AdditionalPlaceholders>
+							<controls:PatternPlaceholder MenuItemHeader="_Preset" ToolTip="A custom preset string, chosen from the save button menu" Placeholder="%preset%"/>
+							<controls:PatternPlaceholder MenuItemHeader="_Name" ToolTip="The name of the result found" Placeholder="%name%"/>
+							<controls:PatternPlaceholder MenuItemHeader="_Extension" ToolTip="The file extension of the result found" Placeholder="%extension%"/>
+							<controls:PatternPlaceholder MenuItemHeader="_Type" ToolTip="The type of the result found (front, back, inside, etc.)" Placeholder="%type%"/>
+							<controls:PatternPlaceholder MenuItemHeader="T_ype (Custom Label)" ToolTip="The type of the result found (front, back, inside, etc.), but with custom labels for them" Placeholder="%type(Unknown,Front,Back,Inside,CD,Booklet)%"/>
+							<controls:PatternPlaceholder MenuItemHeader="_Source" ToolTip="The source from which the result was found" Placeholder="%source%"/>
+							<controls:PatternPlaceholder MenuItemHeader="Si_ze" ToolTip="The dimensions, in pixels, of the result" Placeholder="%size%"/>
+						</controls:ArtPathPatternBox.AdditionalPlaceholders>
+						<controls:ArtPathPatternBox.BrowseDialog>
+							<Win32:SaveFileDialog Title="Save images to" ValidateNames="False" CheckPathExists="False" OverwritePrompt="False" Filter="All Files (*.*)|*.*"/>
+						</controls:ArtPathPatternBox.BrowseDialog>
+					</controls:ArtPathPatternBox>
+				</Grid>
+
+				<StackPanel x:Name="mReadOnlySaveFolderControls" Orientation="Vertical" DockPanel.Dock="Bottom"
+							Visibility="Collapsed">
+					<TextBlock>Images will be saved to:</TextBlock>
+					<TextBox IsReadOnly="True" Focusable="True" Background="{x:Static SystemColors.ControlBrush}"
+							 Text="{Binding ElementName=mDefaultSaveFolder, Path=PathPattern, Mode=OneWay}"
+							 ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=Text}"/>
+					<TextBlock TextWrapping="Wrap" FontStyle="Italic">(This path was set automatically from the browser. The location of images relative to album folders can be set in the options for that window.)</TextBlock>
+				</StackPanel>
+
+				<ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Auto">
+					<Grid>
+						<Grid.Resources>
+							<Style TargetType="CheckBox">
+								<Setter Property="Margin" Value="5,5,2,2"/>
+							</Style>
+						</Grid.Resources>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="Auto"/>
+						</Grid.ColumnDefinitions>
+
+						<CheckBox Grid.Row="0" IsChecked="{Binding Source={StaticResource mSettings}, Path=Default.OpenResultsInNewWindow}">Open search results in new _window</CheckBox>
+                        <CheckBox Grid.Row="1" IsChecked="{Binding ElementName=this, Path=AutoClose}">Automatically _close after saving</CheckBox>
+
+						<GroupBox Header="A_utomatically download full-size images" Grid.Row="2" Grid.RowSpan="2"
+							  RadioButton.Checked="OnAutoDownloadFullSizeImagesChanged">
+							<GroupBox.Resources>
+								<Style TargetType="RadioButton">
+									<Setter Property="Margin" Value="2"/>
+								</Style>
+							</GroupBox.Resources>
+							<StackPanel DataContext="{StaticResource mSettings}">
+								<RadioButton Content="Always" GroupName="ungrouped-1">
+									<RadioButton.IsChecked>
+										<Binding Path="Default.AutoDownloadFullSizeImages" Converter="{StaticResource mEqualityConverter}" ConverterParameter="{x:Static local:AutoDownloadFullSizeImages.Always}" />
+									</RadioButton.IsChecked>
+								</RadioButton>
+								<RadioButton Content="Only when size is unknown" GroupName="ungrouped-2">
+									<RadioButton.IsChecked>
+										<Binding Path="Default.AutoDownloadFullSizeImages" Converter="{StaticResource mEqualityConverter}" ConverterParameter="{x:Static local:AutoDownloadFullSizeImages.WhenSizeUnknown}" />
+									</RadioButton.IsChecked>
+								</RadioButton>
+								<RadioButton Content="Never" GroupName="ungrouped-3">
+									<RadioButton.IsChecked>
+										<Binding Path="Default.AutoDownloadFullSizeImages" Converter="{StaticResource mEqualityConverter}" ConverterParameter="{x:Static local:AutoDownloadFullSizeImages.Never}" />
+									</RadioButton.IsChecked>
+								</RadioButton>
+							</StackPanel>
+						</GroupBox>
+
+						<GroupBox Header="Filter by image si_ze" Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" Margin="4,0,0,0">
+							<GroupBox.Resources>
+								<Style TargetType="RadioButton">
+									<Setter Property="Margin" Value="2"/>
+								</Style>
+							</GroupBox.Resources>
+							<Grid>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="Auto"/>
+									<RowDefinition Height="Auto"/>
+								</Grid.RowDefinitions>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="*"/>
+									<ColumnDefinition Width="Auto"/>
+								</Grid.ColumnDefinitions>
+								<Grid.Resources>
+									<Style TargetType="TextBlock">
+										<Setter Property="Margin" Value="0,5,0,0"/>
+										<Setter Property="Grid.Column" Value="2"/>
+									</Style>
+								</Grid.Resources>
+								<controls:LimitBox Label="Minimum" Value="{Binding Source={StaticResource mSettings}, Path=Default.MinimumImageSize}" HasValue="{Binding Source={StaticResource mSettings}, Path=Default.UseMinimumImageSize}"/>
+								<TextBlock>px</TextBlock>
+								<controls:LimitBox Grid.Row="1" Label="Maximum" Value="{Binding Source={StaticResource mSettings}, Path=Default.MaximumImageSize}" HasValue="{Binding Source={StaticResource mSettings}, Path=Default.UseMaximumImageSize}"/>
+								<TextBlock Grid.Row="1">px</TextBlock>
+							</Grid>
+						</GroupBox>
+
+						<GroupBox Header="Filter by cover _types" Grid.Row="0"  Grid.Column="2" Grid.RowSpan="3" Margin="4,0,0,0">
+							<Grid>
+								<Grid.Resources>
+									<Style TargetType="controls:FlagCheckBoxAllowedCoverType">
+										<Setter Property="Margin" Value="2,2,5,2"/>
+										<Setter Property="Value" Value="{Binding Source={StaticResource mSettings}, Path=Default.AllowedCoverTypes}"/>
+										<Setter Property="Content" Value="{Binding RelativeSource={RelativeSource Self}, Path=Flag}"/>
+									</Style>
+								</Grid.Resources>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="Auto"/>
+									<RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+								</Grid.RowDefinitions>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="Auto"/>
+									<ColumnDefinition Width="Auto"/>
+								</Grid.ColumnDefinitions>
+                                <controls:FlagCheckBoxAllowedCoverType Flag="{x:Static local:AllowedCoverType.Any}" Content="Select All" FontStyle="Italic" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+                                <controls:FlagCheckBoxAllowedCoverType Flag="{x:Static local:AllowedCoverType.Front}" Grid.Row="1" Grid.Column="0"/>
+								<controls:FlagCheckBoxAllowedCoverType Flag="{x:Static local:AllowedCoverType.Inside}" Grid.Row="2" Grid.Column="0"/>
+								<controls:FlagCheckBoxAllowedCoverType Flag="{x:Static local:AllowedCoverType.Booklet}" Grid.Row="3" Grid.Column="0"/>
+								<controls:FlagCheckBoxAllowedCoverType Flag="{x:Static local:AllowedCoverType.Back}" Grid.Row="1" Grid.Column="1"/>
+                                <controls:FlagCheckBoxAllowedCoverType Flag="{x:Static local:AllowedCoverType.CD}" Grid.Row="2" Grid.Column="1"/>
+                                <controls:FlagCheckBoxAllowedCoverType Flag="{x:Static local:AllowedCoverType.Unknown}" Grid.Row="3" Grid.Column="1"/>
+							</Grid>
+						</GroupBox>
+                        
+                        <CheckBox Margin="10,2,2,2" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" 
+                                  IsChecked="{Binding Source={StaticResource mSettings}, Path=Default.NoAutoReSort}"
+                                  ToolTip="If checked, only new results being added will be sorted and filtered. They will not change position or be hidden after being added.">Do not move or filter _existing results</CheckBox>
+
+                        <StackPanel Grid.Row="4" Grid.ColumnSpan="3" Orientation="Horizontal">
+                            <Label Target="{Binding ElementName=mInvalidReplacementCharacter}">Replace _invalid characters for filenames with:</Label>
+                            <TextBox x:Name="mInvalidReplacementCharacter" MinWidth="20" MaxLength="1" Text="{Binding Source={StaticResource mSettings}, Path=Default.InvalidReplacementCharacter, UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+					</Grid>
+				</ScrollViewer>
+			</DockPanel>
+		</Expander>
+
+		<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+			<StackPanel.Style>
+				<Style TargetType="StackPanel">
+					<Setter Property="Grid.Row" Value="2"/>
+					<Style.Triggers>
+						<DataTrigger Binding="{Binding ElementName=mOptionsBox, Path=IsExpanded}" Value="True">
+							<Setter Property="Grid.Row" Value="3"/>
+						</DataTrigger >
+					</Style.Triggers>
+				</Style>
+			</StackPanel.Style>
+
+            <ToggleButton x:Name="mDisableFilters" Style="{StaticResource FadeButton}" VerticalAlignment="Bottom" Margin="2" IsChecked="{Binding Source={StaticResource mSettings}, Path=Default.DisableFilters}">
+                <Image Stretch="None">
+                    <Image.Style>
+                        <Style TargetType="Image">
+                            <Setter Property="Source" Value="FiltersEnabled.png" />
+                            <Setter Property="ToolTip" Value="Filters are enabled, click to disable." />
+
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=mDisableFilters, Path=IsChecked}" Value="True">
+                                    <Setter Property="Source" Value="FiltersDisabled.png" />
+                                    <Setter Property="ToolTip" Value="Filters are disabled, click to enable." />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+            </ToggleButton>
+            <TextBlock Margin="2" Padding="5,1,0,1" VerticalAlignment="Bottom">Group by:</TextBlock>
+			<ComboBox x:Name="mGroupingPicker" Style="{StaticResource HyperlinkCombo}" Padding="3" IsEditable="False" HorizontalContentAlignment="Right"
+					  SelectedIndex="{Binding Source={StaticResource mSettings}, Path=Default.ResultsGrouping, Converter={StaticResource mEnumIndexConverter}}">
+				<!-- Must match AlbumArtDownloader.Controls.Grouping enum 
+                     The UI names for these should be of approximately equal width, to avoid unpleasent resizing behaviour-->
+				<ComboBoxItem>None</ComboBoxItem>
+				<ComboBoxItem>Local</ComboBoxItem>
+				<ComboBoxItem>Source</ComboBoxItem>
+				<ComboBoxItem>Category</ComboBoxItem>
+				<ComboBoxItem>Type</ComboBoxItem>
+                <ComboBoxItem>Size</ComboBoxItem>
+                <ComboBoxItem>Page</ComboBoxItem>
+			</ComboBox>
+
+			<controls:ArtPanelListSortPicker x:Name="mSortPicker" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+										 SortDescription="{Binding Source={StaticResource mSettings}, Path=Default.ResultsSorting}"
+										 />
+		</StackPanel>
+
+
+		<controls:ArtPanelList  Grid.Row="4" x:Name="mResultsViewer"
+								PanelWidthSnapping="7"
+								DataContext="{StaticResource mSettings}"
+								SortDescription="{Binding Default.ResultsSorting, Mode=OneWay}"
+								Grouping="{Binding Default.ResultsGrouping, Mode=OneWay}"
+								ThumbSize="{Binding Default.ThumbSize}"
+								PanelWidth="{Binding Default.PanelWidth}"
+								UseMinimumImageSize="{Binding Default.UseMinimumImageSize, Mode=OneWay}"
+								MinimumImageSize="{Binding Default.MinimumImageSize, Mode=OneWay}"
+								UseMaximumImageSize="{Binding Default.UseMaximumImageSize, Mode=OneWay}"
+								MaximumImageSize="{Binding Default.MaximumImageSize, Mode=OneWay}"
+								AllowedCoverTypes="{Binding Default.AllowedCoverTypes, Mode=OneWay}"
+                                DisableFilters="{Binding Default.DisableFilters, Mode=OneWay}"
+                                NoAutoReSort="{Binding Default.NoAutoReSort, Mode=OneWay}"
+								InformationLocation="{Binding Default.InformationLocation}"
+								PresetsContextMenu="{Binding ElementName=this, Path=PresetsContextMenu, Mode=OneWay}"
+							   />
+		
+		<DockPanel Grid.Row="5" Margin="0,2,0,0">
+			<DockPanel.Style>
+				<Style TargetType="DockPanel">
+					<Style.Triggers>
+						<DataTrigger Binding="{Binding ElementName=this, Path=AutoDownloadingProgressMaximum, Mode=OneWay}" Value="0">
+							<Setter Property="Visibility" Value="Collapsed"/>
+						</DataTrigger>
+					</Style.Triggers>
+				</Style>
+			</DockPanel.Style>
+			<TextBlock DockPanel.Dock="Left" Margin="0,0,2,0">Downloading full size images...</TextBlock>
+			<ProgressBar Margin="5,2,3,1"
+						 Value="{Binding ElementName=this, Path=AutoDownloadingProgressValue, Mode=OneWay}"
+						 Maximum="{Binding ElementName=this, Path=AutoDownloadingProgressMaximum, Mode=OneWay}" />
+		</DockPanel>
+		
+		<Grid Grid.Column="3" Grid.Row="1" Grid.RowSpan="5">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+			<Label Padding="0" Grid.ColumnSpan="2" Target="{Binding ElementName=mSourcesViewer}">S_ources:</Label>
+			<CheckBox x:Name="mSelectAll" Margin="4,0,0,3" Grid.Row="1" HorizontalAlignment="Left">Select _All</CheckBox>
+			<Button Margin="0,0,8,0" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" Style="{StaticResource HyperlinkButton}"
+					Command="ApplicationCommands.Stop" Visibility="{Binding RelativeSource={RelativeSource Self}, Path=IsEnabled, Converter={StaticResource mBooleanToVisibilityConverter}}"
+					Content="Stop All"/>
+			<ItemsControl Grid.Row="3" Grid.ColumnSpan="2" x:Name="mSourcesViewer" Style="{StaticResource SimpleList}"
+						  ScrollViewer.VerticalScrollBarVisibility="Auto" MinWidth="180">
+                <ItemsControl.GroupStyle>
+                    <GroupStyle>
+                        <GroupStyle.ContainerStyle>
+                            <Style TargetType="GroupItem">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="GroupItem">
+                                            <HeaderedContentControl>
+                                                <HeaderedContentControl.Header>
+                                                    <StackPanel>
+                                                        <StackPanel.Style>
+                                                            <Style TargetType="StackPanel">
+                                                                <Style.Triggers>
+                                                                    <DataTrigger Binding="{Binding Path=Name}" Value="{x:Null}">
+                                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                                    </DataTrigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </StackPanel.Style>
+                                                        <TextBlock FontWeight="Bold" Text="{Binding Path=Name}" Margin="10 14 0 2" />
+                                                        <Line X1="1" Stretch="Fill" Margin="0 0 0 3">
+                                                            <Line.Stroke>
+                                                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                                    <GradientStop Color="#FF3D95FF" Offset="0"/>
+                                                                    <GradientStop Color="#00FFFFFF" Offset="0.8"/>
+                                                                </LinearGradientBrush>
+                                                            </Line.Stroke>
+                                                        </Line>
+                                                    </StackPanel>
+                                                </HeaderedContentControl.Header>
+                                                <HeaderedContentControl.Content>
+                                                    <ItemsPresenter />
+                                                </HeaderedContentControl.Content>
+                                            </HeaderedContentControl>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </GroupStyle.ContainerStyle>
+                    </GroupStyle>
+                </ItemsControl.GroupStyle>
+
+                <ItemsControl.ItemTemplate>
+					<DataTemplate>
+						<controls:SourcePanel Source="{Binding}"/>
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ItemsControl>
+			<Button Grid.Row="4" Grid.ColumnSpan="2" Style="{StaticResource HyperlinkButton}"
+					Margin="4,0,0,0"
+					Command="{x:Static local:ArtSearchWindow+Commands.GetMoreScripts}"
+					Visibility="{Binding RelativeSource={RelativeSource Self}, Path=IsEnabled, Converter={StaticResource mBooleanToVisibilityConverter}}"
+					Content="Get more scripts..."/>
+			<Border Grid.Row="4" Grid.ColumnSpan="2" 
+					Visibility="{Binding ElementName=this, Path=AutoDownloadedScriptsPresent, Converter={StaticResource mBooleanToVisibilityConverter}}"
+					Margin="0 3 0 0"
+					BorderThickness="0,0,1,1" BorderBrush="{x:Static SystemColors.ControlDarkBrush}" 
+					Background="{x:Static SystemColors.InfoBrush}"
+					SnapsToDevicePixels="True">
+
+				<Button Style="{StaticResource HyperlinkButton}"
+					Margin="4,2,2,2"
+					Command="{x:Static local:ArtSearchWindow+Commands.ShowAutoDownloadedScripts}"
+					Content="New scripts downloaded..."/>
+			</Border>
+		</Grid>
+	</Grid>
+</Window>

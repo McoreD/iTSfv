@@ -1,0 +1,83 @@
+﻿<Window x:Class="AlbumArtDownloader.AutoDownloadedScriptsViewer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:properties="clr-namespace:AlbumArtDownloader.Properties"		
+	xmlns:controls="clr-namespace:AlbumArtDownloader.Controls"
+	Icon="AlbumArtDownloader.ico"
+	Title="New Scripts Downloaded" Background="{x:Static SystemColors.ControlBrush}"
+	
+	WindowStartupLocation="CenterOwner"
+	ResizeMode="CanResizeWithGrip"
+	Height="300" Width="520"
+    	
+	properties:WindowSettings.Save="True"
+	>
+	<Window.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Controls/Xaml/SimpleList.generic.xaml"/>
+				<ResourceDictionary Source="/Controls/Xaml/OverflowTextBlock.generic.xaml"/>
+				<ResourceDictionary Source="/Controls/Xaml/HyperlinkButton.generic.xaml"/>
+				<ResourceDictionary Source="/Controls/Xaml/Separator.generic.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+
+			<Style TargetType="Button">
+				<Setter Property="MinWidth" Value="75"/>
+				<Setter Property="MinHeight" Value="23"/>
+				<Setter Property="Padding" Value="4,0,4,0"/>
+				<Setter Property="Margin" Value="0,0,0,5"/>
+			</Style>
+
+			<controls:StringFormatterConverter x:Key="mStringFormatterConverter"/>
+
+			<properties:Settings x:Key="mSettings"/>
+			
+		</ResourceDictionary>
+	</Window.Resources>
+
+	<DockPanel Margin="10">
+
+		<TextBlock x:Name="mLabel" DockPanel.Dock="Top" TextWrapping="Wrap" Margin="1,1,1,6">The following scripts have been automatically downloaded, and will be available once Album Art Downloader XUI has been restarted:</TextBlock>
+
+		<Grid DockPanel.Dock="Bottom">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+			<CheckBox VerticalAlignment="Center" IsChecked="{Binding Source={StaticResource mSettings}, Path=Default.AutoDownloadAllScripts}">Automatically download new scripts when available</CheckBox>
+			<Button Grid.Column="1" x:Name="mRestartButton" Content="Restart" IsDefault="True" Margin="0,0,5,3" Click="OnRestartButtonClicked"/>
+			<Button Grid.Column="2" Content="Close" IsCancel="True" Margin="0,0,1,3" Click="OnCloseButtonClicked"/>
+		</Grid>
+
+		<Separator DockPanel.Dock="Bottom" Margin="0,10,0,10"/>
+
+		<ItemsControl x:Name="mDownloadedScriptViewer" Style="{StaticResource SimpleList}"
+					  ScrollViewer.VerticalScrollBarVisibility="Auto">
+			<ItemsControl.ItemTemplate>
+				<DataTemplate>
+					<Border BorderThickness="0,0,0,1" BorderBrush="#FF7F9DB9">
+						<Grid Margin="4" KeyboardNavigation.DirectionalNavigation="None">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="Auto"/>
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*"/>
+							</Grid.ColumnDefinitions>
+							<TextBlock Text="{Binding Path=Name, Mode=OneWay}"/>
+
+							<TextBlock x:Name="versionInfo" Grid.Row="1" FontStyle="Italic" Foreground="Silver" Style="{StaticResource OverflowTextBlock}">
+								<TextBlock.Text>
+									<MultiBinding Converter="{StaticResource mStringFormatterConverter}" ConverterParameter="{}Version: v{0}" Mode="OneWay">
+										<Binding Path="NewVersion" Mode="OneWay"/>
+									</MultiBinding>
+								</TextBlock.Text>
+							</TextBlock>
+						</Grid>
+					</Border>
+				</DataTemplate>
+			</ItemsControl.ItemTemplate>
+		</ItemsControl>
+	</DockPanel>
+</Window>

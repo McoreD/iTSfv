@@ -1,0 +1,44 @@
+﻿<Border x:Class="AlbumArtDownloader.Menu"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="clr-namespace:AlbumArtDownloader"
+	xmlns:properties="clr-namespace:AlbumArtDownloader.Properties"
+	
+	BorderBrush="{x:Static SystemColors.ControlLightLightBrush}" BorderThickness="0,0,0,1"
+	>
+	<Border.Resources>
+		<properties:Settings x:Key="mSettings"/>
+	</Border.Resources>
+	<Border BorderBrush="{x:Static SystemColors.ControlDarkBrush}" BorderThickness="0,0,0,1">
+
+		<Menu>
+			<MenuItem Header="_File">
+				<MenuItem Header="_New">
+					<MenuItem Header="_Search Window..." Command="New"/>
+                    <MenuItem Header="_File Browser..." Command="{x:Static local:Menu+Commands.NewFileBrowser}"/>
+                    <MenuItem Header="F_oobar Browser..." Command="{x:Static local:Menu+Commands.NewFoobarBrowser}"/>
+				</MenuItem>
+				<MenuItem Command="ApplicationCommands.Close"/>
+				<Separator/>
+				<MenuItem Command="{x:Static local:Menu+Commands.Exit}"/>
+			</MenuItem>
+			<MenuItem Header="_Window" SubmenuOpened="OnWindowListOpened">
+				<MenuItem x:Name="mQueueManager" Header="_Queue Manager" Command="{x:Static local:Menu+Commands.ShowQueueManager}" IsCheckable="True"/>
+			</MenuItem>
+			<MenuItem Header="_Help">
+				<MenuItem Header="_Command Line Reference" Command="{x:Static local:Menu+Commands.CommandLineReference}"/>
+				<MenuItem Header="Album Art Downloader _Website" Command="GoToPage" CommandParameter="http://album-art.sourceforge.net"/>
+				<MenuItem Header="User _Forum" Command="GoToPage" CommandParameter="http://www.hydrogenaudio.org/forums/index.php?showtopic=57392"/>
+				<MenuItem Header="_Donations" Command="GoToPage" CommandParameter="http://www.byalexv.co.uk/foobar/AlbumArtDownloader/donate"
+						  Visibility="{Binding Source={StaticResource mSettings}, Path=Default.DonationsMenuItemVisibility, Mode=TwoWay}">
+					<MenuItem.CommandBindings>
+						<CommandBinding Command="ApplicationCommands.Delete" Executed="HideMenuItemExec"/>
+					</MenuItem.CommandBindings>
+				</MenuItem>
+				<Separator/>
+				<MenuItem Header="Check for Updates..." Command="{x:Static local:Menu+Commands.CheckForUpdates}"/>
+				<MenuItem Header="_About Album Art Downloader..." Command="{x:Static local:Menu+Commands.About}"/>
+			</MenuItem>
+		</Menu>
+	</Border>
+</Border>

@@ -1,0 +1,6 @@
+﻿These scripts no longer work, usually due to deliberate attempts by the
+website to prevent scripted access that would be too much effort to work
+around.
+
+They are maintained here in case they ever become useful again,
+but should not currently be used.

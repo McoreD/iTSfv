@@ -1,0 +1,26 @@
+<UserControl x:Class="AlbumArtDownloader.Logo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	DataContext="{Binding RelativeSource={RelativeSource Self}}"
+	>
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Controls/Xaml/HyperlinkButton.generic.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</UserControl.Resources>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<StackPanel Orientation="Horizontal" Margin="0,0,0,3">
+			<TextBlock Foreground="Black" FontSize="24">Album Art Downloader</TextBlock>
+			<TextBlock Foreground="Red" Margin="5,0,0,0" FontSize="12" VerticalAlignment="Top">XUI</TextBlock>
+		</StackPanel>
+		<Button Style="{StaticResource HyperlinkButton}" x:Name="mLink" Grid.Row="1" Content="http://album-art.sourceforge.net"
+				Command="GoToPage" CommandParameter="http://album-art.sourceforge.net"/>
+		<TextBlock Grid.Row="1" HorizontalAlignment="Right" Foreground="Black" Text="{Binding Version, Mode=OneTime}"/>
+		</Grid>
+</UserControl>

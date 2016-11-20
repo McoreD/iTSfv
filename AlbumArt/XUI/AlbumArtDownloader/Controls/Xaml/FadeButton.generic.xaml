@@ -1,0 +1,56 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:System="clr-namespace:System;assembly=mscorlib"
+    >
+
+	<Style x:Key="FadeButton" TargetType="ButtonBase">
+		<Setter Property="MinWidth" Value="0"/>
+		<Setter Property="MinHeight" Value="0"/>
+		<Setter Property="Cursor" Value="Hand"/>
+		<Setter Property="Opacity" Value="0.5"/>
+		<Setter Property="Background" Value="{x:Null}"/>
+        <Setter Property="BorderBrush" Value="{x:Null}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+
+        <Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="ButtonBase">
+					<Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+						<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="{TemplateBinding Padding}" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		
+		<Setter Property="FocusVisualStyle">
+			<Setter.Value>
+				<Style TargetType="Control">
+					<Setter Property="Control.Template">
+						<Setter.Value>
+							<ControlTemplate>
+								<Rectangle Stroke="Black" Margin="-1"  StrokeThickness="1" SnapsToDevicePixels="True">
+									<Rectangle.StrokeDashArray>
+										<DoubleCollection>
+											<System:Double>1</System:Double>
+											<System:Double>2</System:Double>
+										</DoubleCollection>
+									</Rectangle.StrokeDashArray>
+								</Rectangle>
+							</ControlTemplate>
+						</Setter.Value>
+					</Setter>
+				</Style>
+			</Setter.Value>
+		</Setter>
+
+		<Style.Triggers>
+			<Trigger Property="IsMouseOver" Value="True">
+				<Setter Property="Opacity" Value="1"/>
+			</Trigger>
+			<Trigger Property="IsFocused" Value="True">
+				<Setter Property="Opacity" Value="1"/>
+			</Trigger>
+		</Style.Triggers>
+	</Style>
+</ResourceDictionary>

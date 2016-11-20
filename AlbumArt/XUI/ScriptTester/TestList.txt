@@ -1,0 +1,68 @@
+﻿;Source Name	Artist	Album
+;Album Art Exchange	Muse	The Resistance
+AllCdCover	Muse	The Resistance
+Amazon (.ca)	Muse	The Resistance
+Amazon (.co.uk)	Muse	The Resistance
+Amazon (.com)	Muse	The Resistance
+Amazon (.de)	Muse	The Resistance
+Amazon (.fr)	Muse	The Resistance
+Amazon (.jp)	Muse	Absolution
+Amazon (.it)	Muse	Absolution
+Amazon MP3 (.com)	Muse	Absolution
+ArkivMusik	Chopin	Four Ballades
+Buy.com	Muse	The Resistance
+CD Baby	Girlyman	Everything's Easy
+;CD Universe	Muse	The Resistance
+eCover.to (Cover-Paradies)	Muse	The Resistance
+Coveralia	Muse	The Resistance
+;CoverIsland	Muse	The Resistance
+;Darktown	Blink 182	Enema of The State
+Discogs	Muse	The Resistance
+;Freecovers API	Muse	The Resistance
+GoogleImage	Muse	The Resistance
+hitparade.ch	Muse	The Resistance
+Juno Records	Broken Bells	After The Disco
+LastFM Artist	Muse	The Resistance
+LastFM Cover	Muse	The Resistance
+;maniadb	Muse	The Resistance
+Encyclopaedia Metallum	Onslaught	Power From Hell
+Metal Library	Onslaught	Power From Hell
+;MusicMight	Onslaught	Power From Hell
+Psyshop	Aquafur	Fuzzy Emotions
+RevHQ	Turnstile	Nonstop Feeling
+;Yes24	Muse	The Resistance
+YesAsia	Muse	The Resistance
+Archambault	Lady Gaga	The Fame Monster
+HMV Canada	Michael Buble	Crazy Love
+Kalahari	Muse	The Resistance
+Take2	Muse	The Resistance
+VGMdb	Morrigan	Caldes
+VGMdb		Xenoblade Original Soundtrack
+;Lala	Muse	The Resistance
+EB Reggae	Digable Planets	Blowout Comb
+eMusic	Muse	The Resistance
+Qobuz	Muse	The Resistance
+;GigaCrate	Muse	Starlight
+iTunes	Muse	The Resistance
+;MioMusik	Muse	The Resistance
+;SFR Music	Muse	The Resistance
+DJshop	Muse	The Resistance
+;Mega Media	Turin Brakes	Ether Song
+Deezer	Muse	The Resistance
+eClassical	Chopin	4 Ballades
+esenshop	Bedirhan Gökçe	Güle Yazdım
+45cat	Doris Day	Paper Planes
+;Chartstats?
+Sound Station	Unicorn	Uphill All The Way
+The Orchard	Menomena	Moms
+Amazon Audiobooks (.com)	Iain Banks	Stonemouth
+The Classical Shop	Brahms	Toccatas and Roses
+;Hyperion Records	Gabrieli	Sacred Symphonies
+MusicBrainz	Muse	Absolution
+deejay.de	Isolee	Allowance
+absolutepunk.net	Muse	Absolution
+bandcamp	Lake	No Wonder I
+45world CD Singles	Muse	Time is running out
+Google Play Music	Muse	The Resistance
+trackitdown	Culture Shock	Raindrops
+Juno Download	Lenny Fontana	Raise Your Hands

@@ -1,0 +1,484 @@
+1.02 Fixed bug where clicking on a source to highlight results might crash, if the sources results are
+	  filtered out.
+	 Fixed bug in the file browser where a path-too-long error might prevent further folders from being searched.
+	 Fixed scripts: 45cat, absolutepunk, Amazon (common), Archambault, buy.com, eCovers.to, deejay.de, HMV Canada,
+	  Qobuz, Take2
+
+1.01 Fixed bug where the Automatic Downloader might, in rare circumstances, associate the save a result to the
+	  location of a wrong album.
+	 Added new column to file and foobar browsers: "Modified", to show the last modified date of the image file
+	  (if one is found). This is hidden by default - right click on any column header to show the columns menu.
+	 Fixed scripts: YesAsia, Amazon MP3 (.com), Buy.com, Discogs, hitparade.ch, Juno, PsyShop, Kalahari, 45cat,
+	                The Orchard
+	 Removed scripts: MegaMedia, Hyperion Records
+
+1.00 Added a new "group by" option: Category. This groups results by the category of the source they are from.
+	 Fixed scripts: AllCDCovers, buy.com, eCover.to (formerly Cover-Paradies), DJShop, Hyperion Records, Psyshop,
+					Take2, The Classical Shop
+	 Removed scripts: SFR Music	
+
+0.46 Fixed crash when specific sorts of corrupted image file are encountered
+	 Added option to Local Files Source to automatically set the minimum image size filter equal to the 
+	  largest image found by this source (so if you only want to find images bigger than those you already have,
+	  enable this option in the Local Files Source settings)
+	 Added scripts: The Classical Shop, Hyperion Records, MusicBrainz
+	 Updated scripts: AllCDCover, hitparade.ch, deejay.de, Amazon (common), Amazon Audiobooks (now uses common),
+	                  ArkivMusic, Kalahari, 45cat
+
+0.45 Source categories now listed in alphabetical order in the sources list
+	 File size of images is now shown next to the pixel size in the Image Size field. This is only available once
+	  the full sized image has been downloaded.
+	 Clicking on a source in the source list will now	briefly highlight the results that came from that source
+	 Updated scripts: 45cat, Cover-Paradies, eMusic, Google Images, CD Baby, Psyshop, EB Reggae, eClassical
+	 Added scripts: Amazon Audiobooks, Amazon MP3, The Orchard (was IODA), SoundStation
+	 Removed scripts: CD Universe, GigaCrate, Yes24 (sorry, can't understand Korean(?) to fix it)
+
+0.44 Added support for setting the replacement character for invalid filename characters. The default is changed
+	  from _ to - for compatibility with foobar2000 album art display component.
+	 Foobar browser now also checks for embedded images within files (but only for the first file in each album)
+	 Several scripts updated: Archambault, CDBaby, DJShop, eMusic, Kalahari, Last FM Artist, Take2
+	 Darktown and MioMusic scripts removed, as no longer operational
+	 
+0.43 Added support for Windows 7 taskbar features: jumplists and progress indicators
+	 Added 45cat and Audio Preservation Fund scripts, restored ManiaDB script.
+	 Fixed Discogs script
+
+0.42.1
+	 Fixed bug where, with certain combinations of filters and sorting, a crash would occur when automatically
+	  downloading full sized images
+0.42
+	 Improved re-sorting behaviour of results list to reduce unnecessary re-sorting. Results should now only move
+	  in the list if they are actually being sorted or grouped on a field whose value changes
+	 Added checkbox in Options to allow the auto re-sorting behaviour to be disabled, so once an result is added
+	  to the list, it won't be filtered or sorted if it changes
+	 Added eClassical script
+	 Updated Amazon scripts to include customer images
+
+0.41.1
+	 Added capability for scripts to report suggested filename extension for full sized images
+	 Replaced iTunes/Google with iTunes script using native iTunes search API.
+	 Split Coverlandia into Official and Fan Made scripts
+	 Added DJshop, Beatport and Mega Media scripts, improved Amazon scripts, and fixed Discogs and CD Universe scripts
+
+0.41 Improved single-instance code to be even more robust to simultaneous multiple launches (now even less likely
+	  to fall back on separate instances)
+	 Added visible categorisation to scripts in script list and script notification window
+	 Fixed preview behaviour with images with non-standard DPI settings
+	 Added iTunes/Google, Nuclear Blast, MioMusic and SFR Music scripts
+
+0.40.1
+	 Fixed bug where preset menu items would be disabled in the Preview window
+	 Fixed crash where multiple copies of AAD were launched simultaneously and scripts needed recompiling
+
+0.40
+	 Added "Booklet" as one of the standard types. Currently, Cover-Paradies is the only source that uses it.
+	 Added ability to sort and group by the URL associated with results (generally the page the result was found on).
+	 Added the file size and dimensions of the existing file to the Overwrite confirmation dialog.
+	 Added "Options" link to the Overwrite confirmation dialog, to allow cof the automatically
+	  suggested filename.
+	 Added button to easily toggle all filters (size and cover type) on and off
+	 When using a preset to save a result, the default path pattern to save to is now always used (rather than
+	  any specific filename already assigned to that result)
+	 Fixed performance/memory issue when running the File Browser over very large collections (during the post-scan
+	  various artists detection stage)
+	 Added EB Reggae, eMusic, Qobuz and GigaCrate scripts.
+
+0.39.1
+	 Fixed undesirable overwriting behaviour when attempting to save multiple results to the same file before
+	  the first has finished saving.
+
+0.39
+	 Fixed bug where, if a search window was reused for a new search while a full-sized image was being
+	  downloaded for saving, that image would be saved with the filename for the new search, not the old one.
+	 Fixed bug with non-blank default preset values
+	 Improved dialog for confirming whether to overwrite an existing file or not when saving artwork
+
+0.38.3
+	 Fixed bug introduced with 0.38 where the preview for some results would show as a thin column
+
+0.38.2
+	 Now saves jpeg images as ".jpg" again, rather than ".jpeg" (as introduced by 0.38)
+	 Improved behaviour with auto-download of new scripts enabled, when both new and updated scripts are available
+	 Fixed several scripts, and removed some that can no longer be made functional
+	 Changed installer to have specialist scripts unchecked by default
+
+0.38.1
+	 Fixed bug dealing with invalid image data
+
+0.38.0
+	 Removed dependency on GDI+ (all image handling is now done using WPF/WIC)
+	 Fixed bug in File Browser with Various Artists and embedded images
+	 Added Chartstats and 7digital scripts
+	 Fixes to various scripts that needed updating
+
+0.37.1
+     Fixed bug introduced in 0.37 which stopped the Foobar browser working under x64.
+
+0.37 Added scripts for Take2 and Kalahari, South African sites.
+     Fixed Kalahari, Archambault, ArkivMusic, Amazon, Discogs and Juno scripts,
+	  including performance issues with Discogs and Amazon
+     Added /minimized parameter to specify that the window should open initially minimized
+     Added /new parameter to prevent reuse of an existing search window
+     Added configuration file option (UseSystemCodepageForID3Tags) to attempt compatibility with 
+      tags that have been incorrectly encoded using non-unicode, non-latin1 encodings. False by
+      default.
+     Added /config parameter, for easy access to the user settings configuration file.
+
+0.36 Added script for VGMdb, a Video Game Music site
+     Fixed Discogs, Juno, Metal Library and Encyclopaedia Metallum scripts
+     Added /fetchAll parameter to command line version (aad.exe)
+     Command line version now only hides the cursor during script compilation
+     Added read-only support for tag-embedded artwork to the file browser and local files source
+     Added support for Alternates (separated by |) to local files source path pattern
+     Allowed the cover type of a result to be manually corrected by clicking on it
+
+0.35 Interaction between context menu and auto select all in artist and album search boxes fixed
+     Stop All during Search First bug fixed
+     Removed Lala and MusicMight scripts, as the services are no longer availble
+     Updated scripts: ArkivMusic, Cover-Paradies, Coveralia, Juno-Records, Yes24
+
+0.34.1
+     Fixed bug where %artist% and %album% placeholders were not replaced in Automatic Downloader
+     
+0.34 Added Lala script
+     Fixed CoverIsland, Encyclopaedie Metallum and Archambault scripts
+     File and Foobar existing image file searching now applies more restrictive
+      pattern matching rules for %extension%, %size% and %type% placeholders
+     Fixed bug with Various Artists detection for multi-folder albums
+     
+0.33 Fixed LastFM Artist search script
+     Added support for filtering by cover type to both UI and command line
+      (/coverType from the command line)
+     Removed AlbumArtExchange.com script (at request of site owner)
+     Fixed bug where Delete command would not work under a 64bit OS
+     Fixed bug with radiobuttons not properly updating
+     Added Automatic Download and Save feature (for batch downloading)
+
+0.32 Tweaked Medium size group to be 520-700 instead of 540-700
+     Removed debug code from Cover-Paradies script that would produce a cover-paradies.log file.
+     Added option to sort by Area (similar to size, but sorts by width x height)
+     Added command line support for sorting by type and area, and for grouping
+     Add "Remove" command to the results context menu. This allows for manually removing results
+      from the list.
+     Experimental zoom support for popup preview (use the scroll wheel while it's visible)
+     Added "Show Pixels" button to Preview window toolbar. This is an option to use Nearest
+      Neighbour (Box) scaling when zoomed in. It does not affect the display at 100% or below.
+     Installer now points to "Program Files" rather than "Program Files (x86)" on 64 bit systems.
+     UI Fixes for Windows 7
+     Added Archambault and HMV Canada scripts
+     All scripts now strip the characters: &.;:?!'" from artist and album field. (this is under review)
+     Improved Amazon script handling of character entities in titles
+     Fixed bug with Cover-Paradies script
+     Updated to latest version of Boo (0.9.2)
+
+0.32.1 Fixed minor bug with Various Artists detection
+       Added description of F: prefix to command line documentation
+
+0.31 Added "Always download full size" option to source options. When checked for a source,
+      thumbnails will be ignored and full size images downloaded immediately instead.
+     Added a new "group by" option: Size. This groups results into broad size ranges.
+     Search button now reads "Extend Search" if pressing it would result in adding new
+      results to the existing search, rather than starting a new one.
+     The /include and /sources parameter now accept source names prefixed with F:, to indicate
+      that the source should have the Search First setting set for it.
+     Added CDBaby script
+
+0.30 Added context menu options for image file links in file and foobar browsers
+      Options: Open in Explorer, Preview, Rename, Delete
+     Added MusicMight and YesAsia scripts
+     Updated CDUniverse and Yes24 scripts (fixes for site changes)
+     Removed CDCoverHideout script (site has gone down)
+     Changed Amazon scripts to use html scraping instead of API (as Amazon have blocked
+      public access to their API)
+     In the installer, organised scripts by general genre categories
+     Added a "Search first" option to sources. If any sources have this option checked, sources
+      without the option checked will only be searched if the first ones return no results, or
+      when the Search button is clicked a second time.
+
+0.29 Further pre-SP1 compatibility fixes.
+     Clicking the Save button now uses the Default (first) preset, if presets are used.
+     Added Presets dropdown to save button in Preview window
+     Fixed crash when /fileBrowser argument is used without path parameter
+     Renamed term "Inlay" to "Inside", as it applies more generically to any artwork from
+      the inside of the jewel case, not just the inlay.
+
+0.28.3 Fixed stupid Auto Download Images crash with 0.28.2
+
+0.28.2 Updated discogs script
+     Fixed crash when manually updating after automatically getting new scripts.
+     Fixed bug with command line parameters ending in \"
+     Improved reliability of queued windows showing behind existing ones
+     Restored compatibilty with pre-SP1 .net 3.5 when dequeing windows
+     Fixed potential CPU over-usage scenario when dequeing windows
+     Fixed memory leak introduced in 0.28
+
+0.28.1 Fixed serious bug with queued maximized windows
+
+0.28 Added custom labels option to %type% placeholder: %type(Unknown,Front,Back,Inlay,CD)%
+     Updated Amazon scripts to use UTF-8 encoding for artist and album name search parameters
+     Fixed bug where it was possible to resize the results thumbnails to be bigger than the results area
+     Remove "Similar Products in General" results from buy-com script
+     Dequeued windows from the Search Queue now open below all other search windows.
+     Fixed bug where /p parameter could be ignored if many search windows were already open
+     Added /include parameter, which causes the specified sources to be enabled without disabling
+      other sources (which /sources does)
+     If the Automatically Download New Scripts option is selected, a small notification will appear
+      below the sources list whenever new scripts have been downloaded.
+
+0.27.1 Restored compatibility with pre-SP1 .net 3.5
+     Added arkivmusic.boo script
+
+0.27 Updated to boo 0.91
+     Installer now removes iTunes.boo and rateyourmusic.boo, if present
+     Updated installer to NSIS 2.44
+     Removed MediaInfo library, replaced with TagLib#
+     Script updates now include dependency information (except util.boo, which all depend on)
+     "Get more scripts" functionality added to browse and install any available scripts
+      not yet installed, with the option to do so automatically when checking for updates.
+     Made Save Images To path in search window read-only when launched from the file or foobar
+      browsers, to avoid confusion.
+
+0.26.1 Fixed settings upgrade to 0.26 bug
+
+0.26 Added maniadb and Encyclopaedia Metallum scripts
+     Automatic online update checking for both script and application updates
+     Foobar browser grid columns settings are now persisted (as the file browser already did)
+     Added "Dimensions" column to file and foobar browser results grid
+     Added Various Artists detection to File Browser
+     Updated Juno Records, CDCoverHideout and Yes24 scripts
+     Removed Rate Your Music script
+
+0.25 Fixed bug where empty quoted command line paramters would cause a crash
+     Valid command line parameters for aad.exe that are not valid for AlbumArt.exe will now be
+      silently ignored rather than reported as errors.
+     Fixed bug where Stop All would appear after modifying a search that caused no further sources
+      to be searched.
+     Added /orientation parameter to aad.exe to require landscape or portrait results only.
+     Added "all" option to the /sources parameter to select all available sources (/sources all)
+     Added %type% placeholder, which is substituted by "Front", "Back", "Inlay", "CD" or "Unknown".
+     When sorting by image size, images now are sorted by height too, if they have the same width.
+     
+0.24 Added a progress bar to indicate the progress of the auto-downloading of full size images
+     If the full size image for a result has not yet been downloaded, then the size of that image
+      is displayed in grey, as it can't be confirmed as accurate (accuracy will depend on the source)
+     Images of Unknown size are now always included, regardless of size filtering settings.
+     Fixed a couple of problems with image size changes introduced by previous release.
+     Window size and position settings should no longer be lost on upgrade.
+     Sort arrow direction reversed, to match more common convention.
+     Increased the distance the mouse must be dragged in order to start a drag of a result, in
+      order to avoid accidental drags when trying to just preview the image
+     After showing a popup preview, if the image being previewed has scrolled out of view, it
+      is now automatically scrolled back into view.
+     Fixed bug where the information labels would re-appear when the thumbnail has been resized
+      such that they should not be visible.
+     Fixed bug where "Stop All" would not appear when adding or removing sources from a search
+     Fixed bug where, in rare circumstances, you may get one more result from a source than the
+      limit specified.
+     Added Compatibility Mode warning for pre-SP1 framework version, and fixed bug where list would
+      not refresh properly under pre-SP1. Updated all links to download the framework to point to
+      the SP1 version.
+     Fixed bug where Save As would not apply the default file extension correctly
+     Fixed bug where if the popup preview were too large to fit on the screen, the bottom of the
+      cover may be cropped off.
+     Added scripts for buy.com and CDCoverHideout
+     
+0.23.1
+     Fixed bad installer release
+     Fixed problem with launching explorer windows with commas in the path
+     Fixed warnings in script compilation
+     Fixed problem with command line version (aad.exe)
+     
+0.23 Added reporting of the Cover Type (Front, Back, CD, Inlay) for results.
+     Added drag and drop of results into explorer windows.
+     Fixed bug where file and foobar browsers would not refresh image status after searching for
+      artwork for a multiple selection.
+     Fixed bug where the order of columns in the file and foobar browsers would not be persisted
+      correctly.
+     Fixed bug where filtered out items aren't shown when the size becomes known
+     Updated to latest version of Boo (for scripts)
+     Replaced FreeCovers script with new version that uses the API
+     Added DarkTown, LastFM (covers), AllCdCover and Amazon MP3 (US) scripts
+     Added handy link to the command line reference from the Help menu
+
+0.22 Added Presets functionality (first cut for testing)
+     Merged AlbumArtDownloader.Controls.dll into AlbumArt.exe
+     Updated RateYourMusic
+     
+0.21 If the existing search window is re-used for a new search, it is now brought to the foreground.
+     When the thumbnail information is displayed below the thumbnail, the info button no longer
+      overlaps the button to toggle the information to display to the side.
+     Removed artists.trivialbeing script, and replaced it with LastFM Artist.
+     Fixed bug where if a search initiated from the file browser was queued, it would have the
+      wrong path to save images to popuplated.
+     
+0.20 Window size and position applying to new windows now matches other settings behaviour
+     Current settings (including window size and position) are now applied to queued search
+      windows as they are dequeued.
+     Context menu of file/foobar browser column headers now allows hiding and showing of columns
+     Added Folder column to File/Foobar browsers (hidden by default)
+     Fixed crash in command line version when album or artist was not supplied
+     Added Forum and Donations links to Help menu. If the donations item is aesthetically or
+      philosophically objectional to you, highlight it and click the Delete key to remove it.
+     AlbumArtExchange script updated to use XML API
+     Cover-Paradies script fixed
+     
+0.19 File and Foobar browsers now support Alternates (|) for image path searching
+     File path pattern matching can be made to match folders instead of files, by
+      ending the pattern with "\."
+     Improvements to the generation of the default filename to save to when launching
+      from file and Foobar browsers.
+     Search results grouping (by source, or by local / online results)
+     File path pattern matching box history list fixed
+     Delete key now removes items from history lists
+     Changed Local Files Source settings so that a path is always set, but added new
+      %folder% and %filename% placeholders to it, which produce the folder and
+      filename of the specified default path to save images.
+     Some keyboard accessibility bugs fixed
+      
+0.18 Added extra information link to results (where provided by the script)
+     Added installer option to add a "Browse for Album Art" to the context
+      menu for folders in Explorer.
+     Installer bug fixes
+     
+0.17 Fixed memory leak when closing search windows
+     Various performance improvements
+     Added /minAspect parameter to command line interface
+     Fixed GoogleImage and Coveralia scripts
+     Upgraded to MediaInfo version 0.7.6.3
+     
+0.16 Better handling of file path errors when searching for files
+     Fixed strange MakeSafeForPath crash
+     Added detection for missing .net 3.5 framework at application startup
+     Added Album Art Exchange script
+     
+0.15 Fixed bug with images whose formats can not be determined
+     Artist and Album text boxes now select their contents when tabbed to
+     Added Copy command to context menu for album art results
+     Better reporting of MediaInfo x86/x64 compatibility issues
+     Upgraded to MediaInfo version 0.7.6.1
+
+0.14.1
+     Fixed bug where closing foobar browser without com automation server installed
+      would cause a crash.
+     Improved single instance mechanism robustness
+     
+0.14 Fixed bug with paths with {} characters
+     Characters which can not be part of filenames are now automatically replaced
+      by underscores when substituting placeholders.
+     Added Playlist selector to Foobar browser
+     Added option to determine artist and album by path pattern instead of ID3 tags
+      in the file browser
+     Fixed bug when closing a prior instance while a new one was starting up
+
+0.13 Changed foobar browser to use %album artist% instead of %artist%
+     Fixed bug with parameter values starting with -
+     Upgraded to MediaInfo version 0.7.5.9
+
+0.12.1
+     Fixed rare GUI freezing bug
+     Fixed minor uninstaller bug (not removing aad.exe cached script file)
+
+0.12 Upgraded to .NET Framework 3.5
+     Added queue length indication to Queue Manager
+     Added /minSize and /maxSize parameters to control image size filtering
+     Fixed bug where multiple identical un-named parameters would be ignored
+     Added command line interface (aad.exe)
+     
+0.11 Upgraded to MediaInfo version 0.7.5.7
+     Added /separateInstance parameter, for optional prevention of the single instance
+      behaviour. Use of this parameter is not generally recommended.
+     Added ability to remove items from the File/Foobar browser using the Delete key
+     Added art file size column to File/Foobar browser
+     Added background colouring to the File/Foobar browser rows to help indicate artwork
+      status (missing gives a red highlight, present gives green)
+     Added the ability to view the results unsorted (in the order in which they are found)
+     Fixed bug where local files search would not be searching the right location when
+      the search window was launched from the file or foobar browser.
+     Fixed bug where the default save path would be populated with wildcards from the
+      file or foobar browser.
+     Fixed scripts:
+       Coveralia
+       CoverIsland
+     
+0.10 Added workaround for mediainfo bug with FLAC tag casing
+     Failing to save settings will no longer crash
+     Failing to load settings will no longer crash, and will provide options for recovery
+     Fixed bug where invalid characters in the Save path would cause a crash
+     Version and Author information for sources no longer widens the source list, instead
+      it overflows with a tooltip when it won't fit.
+     
+0.9.1
+    Added iTunes Music Shop search script, and included ICSharpCode.SharpZipLib.dll
+     which is required by it.
+
+0.9 Added Foobar2000 library browser
+    Improved performance of search results thumbnails list
+    Improved handling of larger-than-screen preview popups
+    Fixed Coveralia and Yes24 scripts which had become out of date
+    Updated to version 0.7.5.2 of the MediaInfo tag reading library
+    Persistent Preview window (right click on a result and choose "Preview...")
+    Added command line parameter for setting the sorting to use for results
+    All sources now limit the results returned to the first 10 by default.
+    Fixed bug where all windows would share a single remembered size, so
+     windows of different types now remember their size independently.
+    Added re-use of existing search window from the command line, if "Open
+     Results in New Window" option is turned off, and there is only one search
+     window currently open, and search terms are passed on the command line.
+    
+    Known issues:
+    The preview popups can display incorrectly (large black areas) when the size of the
+    art changes while it is being shown. This will occur, for example, if the size of the
+    art is unknown, as once a popup is shown the full size art will be downloaded, and
+    the size determined from that.
+    
+    This is a known Microsoft bug with WPF Popups, due to be fixed by them soon. The only 
+    workaround is to re-open the preview popup by releasing and re-clicking on the
+    thumbnail.
+
+0.8 Added Drag and Drop support to drop files and folders on to the File Browser window
+    Cancel All button in Queue Manager window
+    Warning added, if queueing large number of searches from the File Browser
+    Added ability to force a queued search to start immediately, by double clicking it.
+
+0.7 Stability improvements:
+     Plugged some memory leaks
+     Updated to version 0.7.5.0 of the MediaInfo tag reading library
+     
+0.6 Basic Search Queueing system added
+    Script Cache DLL creation made compatible with running without admin privileges on Vista
+     Note: If you are upgrading from a previous version, the "boo script cache.dll" file in
+           your scripts folder should be deleted.
+    Fixed bug where the same path would be used for all search windows when opening multiple
+     search windows from the file browser.
+     
+0.5 Added File Browser
+    Added Single-Instance behaviour. Only one instance of the application will now be
+     allowed to run (others will have their command line parameters passed on to the first
+     for execution).
+    Added Window list menu.
+    Added FreeCovers script, and updated Google script
+    Improved detection of changed scripts for recreating the script cache
+    
+0.4 Local Files Source now has the ability to specify the path to search for images in
+     separately to the path to save images in. Set this either in the Local Files Source
+     settings, or using the /localImagesPath command line parameter.
+    Experimental authenticating proxy support (undocumented feature)
+    
+0.3 Stability improvements:
+      Stop All should not cause the app to become unresponsive
+      Fixed bug where app could hang while previewing during a search
+    If a search is performed for the same album and artist, but with different sources,
+     a minimal search is now performed where only the newly selected sources are queried,
+     and the existing results are kept in the same window.
+    Added better error reporting. If a crash occurs, an errorlog.txt file will be produced.
+      
+0.2 Added "Stop All" button
+    Added ability to toggle display of thumbnail information to go below the thumbnail
+    Enhanced auto download of full size images to give the options: Always, Never, and Only For Unknown Size
+    Added an optional Maximum Image size restriction
+    Fixed bug where Local Files source would lock the files it found, preventing them from being replaced
+    Added checkbox for setting AutoClose behaviour in the UI.
+    Added option to disable AutoClose behaviour from the command line: "/autoclose off"
+    Added option to restrict the maximum number of results to return per source
+
+0.1 Initial Preview Release

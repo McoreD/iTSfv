@@ -1,0 +1,48 @@
+Changelog                                              Album Art Downloader
+---------------------------------------------------------------------------
+
+Legend:
+
+  * New feature
+  + Minor improvement
+  ! Software change requires modification of your configuration
+  x Bugfix
+  - Information only
+
+
+Revision history: ---------------------------------------------------------
+
+Album Art Downloader 0.6 Alpha 2
+
+* Added Save Toolbar - users can predefine buttons to save images
+
+* Added option to specify maximum results returned by a script
+
+! Changed command line switches - use "albumart.exe -?" to get help
+
+Album Art Downloader 0.6 Alpha 1
+
++ changed the way how the size overlay is displayed - now it is over the image
+
+Album Art Downloader 0.5
+
+! Changed command line switches - use "albumart.exe -?" to get help
+
+* Added option to show pictures in current folder
+
+* Added folder browser to scan for music
+
+* Added option to automatically download full images
+
+* Added size overlay on programm side
+
+* Added Script Manager
+
+- Added size column to folder/comserver browser
+
+x Fixed bug when searching with empty save path and Show pictures in
+  current folder is enabled
+
+- Added Juno Records script
+
+- Added artists.trivialbeing script

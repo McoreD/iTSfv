@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AlbumArtDownloader.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PanelWidth" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">-1</Value>
+    </Setting>
+    <Setting Name="ThumbSize" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">77</Value>
+    </Setting>
+    <Setting Name="DefaultSavePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">%default%</Value>
+    </Setting>
+    <Setting Name="ResultsSorting" Type="System.ComponentModel.SortDescription" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SortDescription xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;PropertyName&gt;ResultName&lt;/PropertyName&gt;
+  &lt;Direction&gt;Ascending&lt;/Direction&gt;
+&lt;/SortDescription&gt;</Value>
+    </Setting>
+    <Setting Name="OpenResultsInNewWindow" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="MinimumImageSize" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="DefaultSavePathHistory" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /&gt;</Value>
+    </Setting>
+    <Setting Name="InformationLocation" Type="AlbumArtDownloader.Controls.InformationLocation" Scope="User">
+      <Value Profile="(Default)">Right</Value>
+    </Setting>
+    <Setting Name="MaximumImageSize" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">900</Value>
+    </Setting>
+    <Setting Name="AutoDownloadFullSizeImages" Type="AlbumArtDownloader.AutoDownloadFullSizeImages" Scope="User">
+      <Value Profile="(Default)">Never</Value>
+    </Setting>
+    <Setting Name="UseMinimumImageSize" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="UseMaximumImageSize" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="AutoClose" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ApplicationVersion" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ProxyCredentials" Type="System.Net.NetworkCredential" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="FileBrowseRoot" Type="System.String" Scope="User">
+      <Value Profile="(Default)">%default%</Value>
+    </Setting>
+    <Setting Name="FileBrowseSubfolders" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FileBrowseImagePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Folder%preset%.%extension%|Cover%preset%.%extension%</Value>
+    </Setting>
+    <Setting Name="FileBrowseImagePathHistory" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /&gt;</Value>
+    </Setting>
+    <Setting Name="NumberOfWindowsForQueue" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="EnqueueWarning" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">50</Value>
+    </Setting>
+    <Setting Name="FileBrowseUsePathPattern" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="FileBrowsePathPattern" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\%artist%\%album%\*</Value>
+    </Setting>
+    <Setting Name="ResultsGrouping" Type="AlbumArtDownloader.Controls.Grouping" Scope="User">
+      <Value Profile="(Default)">None</Value>
+    </Setting>
+    <Setting Name="FileBrowseFilePathPatternHistory" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /&gt;</Value>
+    </Setting>
+    <Setting Name="FileBrowseResultsGrid" Type="AlbumArtDownloader.Controls.SortableListView.GridSettings" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;GridSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xmlns:xsd="http://www.w3.org/2001/XMLSchema"/&gt;</Value>
+    </Setting>
+    <Setting Name="FoobarBrowserResultsGrid" Type="AlbumArtDownloader.Controls.SortableListView.GridSettings" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;GridSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xmlns:xsd="http://www.w3.org/2001/XMLSchema"/&gt;
+			</Value>
+    </Setting>
+    <Setting Name="DonationsMenuItemVisibility" Type="System.Windows.Visibility" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="Presets" Type="AlbumArtDownloader.Preset[]" Scope="User">
+      <Value Profile="(Default)">&lt;ArrayOfPreset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Preset&gt;&lt;Name&gt;Default&lt;/Name&gt;&lt;Value&gt;&lt;/Value&gt;&lt;/Preset&gt;
+  &lt;Preset&gt;&lt;Name&gt;Front&lt;/Name&gt;&lt;Value&gt;-Front&lt;/Value&gt;&lt;/Preset&gt;
+  &lt;Preset&gt;&lt;Name&gt;Back&lt;/Name&gt;&lt;Value&gt;-Back&lt;/Value&gt;&lt;/Preset&gt;
+  &lt;Preset&gt;&lt;Name&gt;Inside&lt;/Name&gt;&lt;Value&gt;-Inside&lt;/Value&gt;&lt;/Preset&gt;
+  &lt;Preset&gt;&lt;Name&gt;CD&lt;/Name&gt;&lt;Value&gt;-CD&lt;/Value&gt;&lt;/Preset&gt;
+&lt;/ArrayOfPreset&gt;</Value>
+    </Setting>
+    <Setting Name="IgnoreSP1Missing" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="UpdatesURI" Type="System.Uri" Scope="User">
+      <Value Profile="(Default)">http://album-art.sourceforge.net/Updates.xml</Value>
+    </Setting>
+    <Setting Name="AutoUpdateCheckInterval" Type="System.TimeSpan" Scope="User">
+      <Value Profile="(Default)">1.00:00:00</Value>
+    </Setting>
+    <Setting Name="LastUpdateCheck" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">2009-05-09</Value>
+    </Setting>
+    <Setting Name="AutoUpdateEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AutoDownloadAllScripts" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="NewScriptsAvailable" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ShowPixelsWhenZoomed" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="FileBrowseAutoDownload" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="AllowedCoverTypes" Type="AlbumArtDownloader.AllowedCoverType" Scope="User">
+      <Value Profile="(Default)">Any</Value>
+    </Setting>
+    <Setting Name="ShowAutoDownloadWarning" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="UseSystemCodepageForID3Tags" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="OverwriteSuggestionHistory" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /&gt;</Value>
+    </Setting>
+    <Setting Name="OverwriteSuggestion" Type="System.String" Scope="User">
+      <Value Profile="(Default)">%filename% (%n2%).%extension%</Value>
+    </Setting>
+    <Setting Name="DisableFilters" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="NoAutoReSort" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="InvalidReplacementCharacter" Type="System.Char" Scope="User">
+      <Value Profile="(Default)">-</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

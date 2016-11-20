@@ -1,0 +1,21 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    >
+
+
+	<Style TargetType="ProgressBar">
+		<Style.Triggers>
+			<Trigger Property="IsVisible" Value="False">
+				<!-- Windows Vista will keep animating a progress bar even when it is not visible, so nuke the thing by giving
+								it an empty control template -->
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="ProgressBar" />
+					</Setter.Value>
+				</Setter>
+			</Trigger>
+		</Style.Triggers>
+	</Style>
+
+</ResourceDictionary>

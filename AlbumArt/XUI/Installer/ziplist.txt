@@ -1,0 +1,6 @@
+"License.txt"
+"..\AlbumArtDownloader\AlbumArtDownloader.ico"
+"..\AlbumArtDownloader\bin\Release\AlbumArt.exe"
+"..\AlbumArtDownloader\bin\Release\*.dll"
+"..\CommandLineInterface\bin\Release\aad.exe"
+"..\Scripts\Scripts"
